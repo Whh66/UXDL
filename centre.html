@@ -47,7 +47,7 @@
                     <li><a href="design.html">设计模板</a></li>
                     <li><a href="javascript:;">创意背景</a></li>
                     <li><a href="javascript:;">插画</a></li>
-                    <li><a href="javascript:;">免扣元素</a></li>
+                    <li><a href="pickFree.html">免扣元素</a></li>
                     <li><a href="javascript:;">办公文档</a></li>
                     <li><a href="javascript:;">视频</a></li>
                     <li><a href="javascript:;">商城</a></li>
@@ -209,29 +209,29 @@
     <script type="text/html" id="templatePhone">
         <!-- 昵称 -->
         {{if nickName == ''}}
-        <li>未填写</li>
-        {{else if nickName !== ''}}
-        <li>{{nickName}}</li>
-        {{/if}}
-        <!-- 手机号码 -->
-        {{if phone == ''}}
-        <li>未填写</li>
-        {{else if phone !== ''}}
-        <li>{{phone}}</li>
-        {{/if}}
+    <li>未填写</li>
+    {{else if nickName !== ''}}
+    <li>{{nickName}}</li>
+    {{/if}}
+    <!-- 手机号码 -->
+    {{if phone == ''}}
+    <li>未填写</li>
+    {{else if phone !== ''}}
+    <li>{{phone}}</li>
+    {{/if}}
 
-        <!-- QQ号码 -->
-        {{if qq == 'null'}}
-        <li>未填写</li>
-        {{else if qq !== ''}}
-        <li>{{qq}}</li>
-        {{/if}}
-        <!-- 微信 -->
-        {{if weixin == ''}}
-        <li>未填写</li>
-        {{else if weixin !== ''}}
-        <li>{{weixin}}</li>
-        {{/if}}
+    <!-- QQ号码 -->
+    {{if qq == 'null'}}
+    <li>未填写</li>
+    {{else if qq !== ''}}
+    <li>{{qq}}</li>
+    {{/if}}
+    <!-- 微信 -->
+    {{if weixin == ''}}
+    <li>未填写</li>
+    {{else if weixin !== ''}}
+    <li>{{weixin}}</li>
+    {{/if}}
     </script>
     <!-- 用户昵称模板 -->
     <script type="text/html" id="templateName">
@@ -248,15 +248,15 @@
     <script type="text/html" id="templateUserWorks">
         <!-- <section id="gallery-wrapper"> -->
         {{each data.rows}}
-        <article class="white-panel">
-            <div class="top-btn ">
-                <button class="amend color_orange " id="alter" data-id="{{$value.id}}">修改</button>
-                <button class="amend color_orange " id="deleteUserImg" data-index="{{$value.id}}">删除</button>
-            </div>
-            <img src="{{$value.show_image}}" class="thumb" />
-        </article>
-        {{/each}}
-        <!-- </section> -->
+    <article class="white-panel">
+        <div class="top-btn ">
+            <button class="amend color_orange " id="alter" data-id="{{$value.id}}">修改</button>
+            <button class="amend color_orange " id="deleteUserImg" data-index="{{$value.id}}">删除</button>
+        </div>
+        <img src="{{$value.show_image}}" class="thumb" />
+    </article>
+    {{/each}}
+    <!-- </section> -->
     </script>
 
     <!-- 用户个人收藏图片 模板 -->
