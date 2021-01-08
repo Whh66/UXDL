@@ -136,7 +136,7 @@ $(function () {
         $(window).resize();
         $("html,body").animate({
             scrollTop: 0
-        }, 500);
+        }, 0);
     })
 
     // 暂时渲染
