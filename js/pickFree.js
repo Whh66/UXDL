@@ -120,7 +120,9 @@ $(function () {
             $(picture[index]).show().siblings('div').hide();
         }
         $(window).resize();
-
+        $("html,body").animate({
+            scrollTop: 0
+        }, 500);
     })
     two.on('click', function () {
         $(this).addClass('color-change').siblings('li').removeClass('color-change');
@@ -132,6 +134,9 @@ $(function () {
             $(picture[index]).show().siblings('div').hide();
         }
         $(window).resize();
+        $("html,body").animate({
+            scrollTop: 0
+        }, 500);
     })
 
     // 暂时渲染
