@@ -66,7 +66,7 @@
     <div class="search-bigbox">
         <div class="top-search-box">
             <div class="func-search-class">
-                <span>设计模板</span>
+                <span>免扣元素</span>
                 <i class="layui-icon" style="font-size: 7px">&#xe61a;</i>
                 <ul class="search-selected">
                     <li data-falg="0">设计模板</li>
@@ -86,25 +86,6 @@
         <div class="classification">
             <div class="fication">
                 <ul class="fic-text" id="fic-text-one">
-                    <li class="color-change">
-                        <a href=" javascript:;">全部</a>
-                    </li>
-                    <li>
-                        <a href=" javascript:;">节日素材</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">产品素材 </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">人物素材</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">动物素材</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">装饰元素</a>
-                    </li>
-
                 </ul>
                 <ul class="fic-img">
                     <li>
@@ -166,29 +147,10 @@
                 </ol>
             </div>
         </div>
-
+        <!-- 上滑时的二级导航栏 -->
         <div class="classification">
             <div class="fication">
                 <ul class="fic-text" id="fic-text-two">
-                    <li class="color-change">
-                        <a href="javascript:;">全部</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">节日素材</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">产品素材 </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">人物素材</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">动物素材</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">装饰元素</a>
-                    </li>
-
                 </ul>
                 <ul class="fic-img">
                     <li>
@@ -696,20 +658,15 @@
         </form>
     </div>
 
-    <!-- 一级分类导航模板 -->
+    <!-- 二级分类导航模板 -->
     <script type="text/html" id="classify">
-        <li>
+        <li class="color-change">
             <a href="javascript:;">全部</a>
         </li>
         {{each}}
         <li>
             <a href="javascript:;"><span>{{$value.name}}</span>
-                <i class="layui-icon" style="font-size: 7px">&#xe61a;</i></a>
-            <ul class="fic-text-menu">
-                {{each $value.categoryList}} {{each $value.categoryList}}
-                <li><a href="javascript:;">{{$value.name}}</a></li>
-                {{/each}} {{/each}}
-            </ul>
+            </a>
         </li>
         {{/each}}
     </script>
@@ -728,7 +685,6 @@
         </article>
         {{/each}}
     </script>
-
 
     <!-- jquery -->
     <!-- <script src="/assets/lib/jquery.js"></script> -->

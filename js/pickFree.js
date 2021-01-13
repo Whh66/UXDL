@@ -69,30 +69,43 @@ $(function () {
     //         $(".fic-text").html(htmlStr);
     //     },
     // });
+    fenlei = [{
+        name: '节日素材',
+    }, {
+        name: '产品素材',
+    }, {
+        name: '人物素材',
+    }, {
+        name: '动物素材',
+    }, {
+        name: '装饰素材',
+    }]
+    var htmlStrFenlei = template("classify", fenlei);
+    $(".fic-text").html(htmlStrFenlei);
     // $.get(
-    //   "http://139.9.143.69:8001/materials/categorys/level/1",
-    //   function (res1) {
-    //     // console.log(res1.data);
-    //     var classifyData = [];
+    //     "http://139.9.143.69:8001/materials/categorys/level/1",
+    //     function (res1) {
+    //         // console.log(res1.data);
+    //         var classifyData = [];
 
-    //     res1.data.slice(0, 6).forEach(function (v) {
-    //       $.ajax({
-    //         method: "GET",
-    //         url: "http://139.9.143.69:8001/materials/categorys/" + v.id,
-    //         async: false,
-    //         success: function (res2) {
-    //           // console.log(res2.data[0]);
-    //           classifyData.push(res2.data[0]);
-    //         },
-    //       });
-    //     });
-    //     // console.log(classifyData);
-    //     // 调用 template 函数
-    //     var htmlStr = template("classify", classifyData);
-    //     // // console.log(htmlStr);
-    //     // // 渲染 HTML 结构
-    //     $(".fic-text").html(htmlStr);
-    //   }
+    //         res1.data.slice(0, 6).forEach(function (v) {
+    //             $.ajax({
+    //                 method: "GET",
+    //                 url: "http://139.9.143.69:8001/materials/categorys/" + v.id,
+    //                 async: false,
+    //                 success: function (res2) {
+    //                     // console.log(res2.data[0]);
+    //                     classifyData.push(res2.data[0]);
+    //                 },
+    //             });
+    //         });
+    //         // console.log(classifyData);
+    //         // 调用 template 函数
+    //         var htmlStr = template("classify", classifyData);
+    //         // // console.log(htmlStr);
+    //         // // 渲染 HTML 结构
+    //         $(".fic-text").html(htmlStr);
+    //     }
     // );
 
     // 点击模块导航栏，可切换内容
@@ -100,7 +113,6 @@ $(function () {
     function bianli(ele) {
         $.each(ele, function (i, element) {
             $(element).attr("index", i);
-            // console.log(e);
         });
     }
     var one = $('#fic-text-one li');
@@ -111,6 +123,7 @@ $(function () {
     bianli(picture);
     //利用index控制页面瀑布流的显示
     one.on('click', function () {
+        console.log($(this));
         $(this).addClass('color-change').siblings('li').removeClass('color-change');
         var index = $(this).attr('index');
         $(two[index]).addClass('color-change').siblings('li').removeClass('color-change');
@@ -119,10 +132,10 @@ $(function () {
         } else {
             $(picture[index]).show().siblings('div').hide();
         }
-        $(window).resize();
+        refresh();
         $("html,body").animate({
             scrollTop: 0
-        }, 500);
+        }, 0);
     })
     two.on('click', function () {
         $(this).addClass('color-change').siblings('li').removeClass('color-change');
@@ -133,7 +146,7 @@ $(function () {
         } else {
             $(picture[index]).show().siblings('div').hide();
         }
-        $(window).resize();
+        refresh();
         $("html,body").animate({
             scrollTop: 0
         }, 0);
@@ -190,9 +203,158 @@ $(function () {
         "id": 1,
         "category1_name": '小女孩',
         "favourite_num": 20
-    }, ];
+    }, {
+        "show_image": './img/6.png',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/6.jpg',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/7.png',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/7.jpg',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/5.jpg',
+        "id": 1,
+        "category1_name": '大男孩',
+        "favourite_num": 299
+    }, {
+        "show_image": './img/5.png',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/8.png',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/10.jpg',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/9.png',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/9.jpg',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/6.png',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/6.jpg',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/7.png',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/7.jpg',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/5.jpg',
+        "id": 1,
+        "category1_name": '大男孩',
+        "favourite_num": 299
+    }, {
+        "show_image": './img/5.png',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/8.png',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/10.jpg',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/9.png',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/9.jpg',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/6.png',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/6.jpg',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/7.png',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/7.jpg',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/5.jpg',
+        "id": 1,
+        "category1_name": '大男孩',
+        "favourite_num": 299
+    }, {
+        "show_image": './img/5.png',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/8.png',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/10.jpg',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/9.png',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/9.jpg',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }];
     var htmlStr = template("pictures", data);
-
     $("#gallery-wrapper").html(htmlStr);
     $("#gallery-wrapper1").html(htmlStr);
     $("#gallery-wrapper2").html(htmlStr);
@@ -200,6 +362,7 @@ $(function () {
     $("#gallery-wrapper4").html(htmlStr);
     $("#gallery-wrapper5").html(htmlStr);
     $(window).resize();
+
 
 
 
@@ -278,20 +441,50 @@ $(function () {
     // );
 
     // 显示更多按钮
+    // $(".morr").on("click", function () {
+    //     // console.log($(this).prev()[0]);
+    //     // console.log($('#gallery-wrapper').css('height'));
+    //     $(this)
+    //         .prev()
+    //         .css({
+    //             // 'overflow': 'visible',
+    //             "max-height": $("#gallery-wrapper").css("height"),
+    //             // "max-height": $("#gallery-wrapper1").css("height"),
+    //             // "max-height": $("#gallery-wrapper2").css("height"),
+    //             // "max-height": $("#gallery-wrapper3").css("height"),
+    //             // "max-height": $("#gallery-wrapper4").css("height"),
+    //             // "max-height": $("#gallery-wrapper5").css("height"),
+    //         });
+    //     $(this).css({
+    //         background: "#ccc",
+    //         cursor: "not-allowed",
+    //     });
+    // });
+    // 显示更多按钮
     $(".morr").on("click", function () {
-        // console.log($(this).prev()[0]);
-        // console.log($('#gallery-wrapper').css('height'));
         $(this)
             .prev()
             .css({
                 // 'overflow': 'visible',
-                "max-height": $("#gallery-wrapper").css("height"),
+                "max-height": $(this).prev().children().css('height')
             });
         $(this).css({
             background: "#ccc",
             cursor: "not-allowed",
         });
     });
+
+    function refresh() {
+        $(".morr").prev()
+            .css({
+                // 'overflow': 'visible',
+                "max-height": '1220px'
+            });
+        $(".morr").css({
+            background: " linear-gradient(90deg, #f7ad44, #eb5753)",
+            cursor: "pointer",
+        })
+    }
     // // 调整iframe
     // function setIframeHeight(iframe) {
     //     if (iframe) {
