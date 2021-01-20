@@ -1,0 +1,20 @@
+designThree        设计模板三级导航
+页面单词参考
+album  		画册设计
+app      		APP页面
+banner		banner
+colorpage	单页折页
+detailpage    	详情页
+festival  		节日设计
+h5		h5
+icon		icon图标
+indexdesign	首页
+onshow  		展览展示
+package		包装设计
+poster		海报设计
+proto		样机素材
+taobaocellphone	淘宝手机模板
+train		直通车
+uiproto		ui设计
+web		web界面
+topicPage	专题页

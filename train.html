@@ -233,63 +233,16 @@
             </div>
         </div>
     </div>
-     <!-- 精选典藏 selected 
-  <div class="selected-text">精选藏管</div>
-  <div class="selected w ">
-      <section id="gallery-wrapper0">
-          <h3 style="text-align:center;margin: auto;">暂无作品</h3>
-      </section>
-  </div>
-  <div class="morr">显示更多</div>   -->
- 
-    <!-- 平面广告 selected -->
-    <div class="selected-text">&nbsp;&nbsp;平面类</div>
+    <!-- 直通车 selected -->
+    <div class="selected-text">&nbsp;&nbsp;直通车</div>
     <div class="selected w">
         <section id="gallery-wrapper">
             <h3 style="text-align: center; margin: auto">暂无作品</h3>
         </section>
     </div>
-    <div class="morr">显示更多</div>
-    <input type="text" />
-
-    <!-- 淘宝电商 selected -->
-    <div class="selected-text">&nbsp;&nbsp;电商类</div>
-    <div class="selected w">
-        <section id="gallery-wrapper1">
-            <h3 style="text-align: center; margin: auto">暂无作品</h3>
-        </section>
-    </div>
-    <div class="morr">显示更多</div>
-    <input type="text" />
-
-    <!-- UI设计 selected -->
-    <div class="selected-text" style="white-space: nowrap;">UI交互类</div>
-    <div class="selected w">
-        <section id="gallery-wrapper3">
-            <h3 style="text-align: center; margin: auto">暂无作品</h3>
-        </section>
-    </div>
-    <div class="morr">显示更多</div>
-    <input type="text" />
-
-      <!-- 装饰类 selected -->
-      <div class="selected-text">&nbsp;&nbsp;装饰类</div>
-      <div class="selected w">
-          <section id="gallery-wrapper4">
-              <h3 style="text-align: center; margin: auto">暂无作品</h3>
-          </section>
-      </div>
-      <div class="morr">显示更多</div>
-    <!-- 样机模板 selected -->
-    <div class="selected-text">手机配图</div>
-    <div class="selected w">
-        <section id="gallery-wrapper5">
-            <h3 style="text-align: center; margin: auto">暂无作品</h3>
-        </section>
-    </div>
-    <div class="morr">显示更多</div>
-    <!-- 页码搜索模块 -->
-    <div class="search-text">
+    <div class="morr">下一页</div>
+      <!-- 页码搜索模块 -->
+      <div class="search-text">
         <span>当前共 <b id="searchTotal">?</b> 个素材</span>
         <span>
             <a href="javascript:;" id="left-page"></a>
@@ -298,7 +251,7 @@
             共 <i class="totalPage"></i>? 页
           </span>
       </div>
-
+  
     <!-- 详情页面 -->
     <div class="details">
         <div class="details-background"></div>
@@ -307,11 +260,10 @@
                 <ol>
                     <li>设计模板</li>
                     <li>·</li>
-                    <li>平面广告</li>
+                    <li>电商</li>
                     <li>·</li>
-                    <li>海报设计</li>
-                    <li>·</li>
-                    <li>国庆海报</li>
+                    <li>直通车</li>
+
                 </ol>
             </div>
             <div class="datails-img">
@@ -687,8 +639,7 @@
         </form>
     </div>
 
-
-    <!-- 二级分类导航模板 -->
+    <!-- 一级分类导航模板 -->
     <script type="text/html" id="classify">
         <li>
             <a href="javascript:;" style="color: #ed6650">全部</a>
@@ -707,9 +658,7 @@
         {{/each}}
     </script>
 
- 
-
-    <!-- 2级图片模板 -->
+    <!-- 图片模板 -->
     <script type="text/html" id="pictures">
         {{each}}
         <article class="white-panel">
@@ -719,7 +668,7 @@
                 <span class="search-img-Collection">{{$value.favourite_num}}
             <img src="./img/favorite1.png" alt="" id="favourite"
           /></span>
-                <a class="search-img-download">查看详情</a>
+                <a class="search-img-download">免费下载</a>
             </div>
         </article>
         {{/each}}
@@ -727,14 +676,14 @@
 
     <!-- jquery -->
     <!-- <script src="/assets/lib/jquery.js"></script> -->
-    <script src="./lib/jquery.js"></script>
-    <script src="./lib/layui/layui.all.js"></script>
+    <script src="lib/jquery.js"></script>
+    <script src="lib/layui/layui.all.js"></script>
     <!-- 瀑布流插件 -->
-    <!--  <script src="/assets/lib/pinterest_grid.js"></script>  -->
+    <!-- <script src="/assets/lib/pinterest_grid.js"></script> -->
     <script src="lib/pinterest_grid.js"></script>
     <script src="../html/js/template-web.js"></script>
     <!-- 导入自己的js -->
-     <script src="../html/js/design.js"></script> 
+    <!-- <script src="/assets/js/design.js"></script> -->
     <script src="js/common.js"></script>
     <script src="js/design.js"></script>
 </body>
