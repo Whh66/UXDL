@@ -314,7 +314,7 @@ $(function() {
     // })
     // $('.scrollbot-scrollbar').css('width', '10px')
     // $('.scrollbot-scrollbar').css('margin-right', '5px')
-    //$(".details").hide();
+    // $(".details").hide();
 
     // const win = $(window)
     // const selector = $('.scroll-bar')

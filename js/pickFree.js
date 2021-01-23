@@ -1,7 +1,7 @@
-$(function () {
+$(function() {
     // 搜索功能
     $("body")
-        .on("click", ".qtw-button", function () {
+        .on("click", ".qtw-button", function() {
             // 获取搜索框内容
             var searchText = $(".search-input input").val().trim();
             if (searchText) {
@@ -9,7 +9,7 @@ $(function () {
             }
             $(".search-input input").val("");
         })
-        .on("keyup", function (e) {
+        .on("keyup", function(e) {
             // 同步搜索框内容
             $(".search-input input").val(e.target.value);
             // 按回车键触发搜索
@@ -20,15 +20,15 @@ $(function () {
 
     // 搜素下拉选择框
     $(".func-search-class")
-        .click(function () {
+        .click(function() {
             $(this).find(".search-selected").show();
         })
-        .mouseleave(function () {
+        .mouseleave(function() {
             $(".search-selected").hide();
         });
 
     var catId = "";
-    $(".top-search-box").on("click", ".search-selected li", function () {
+    $(".top-search-box").on("click", ".search-selected li", function() {
         // console.log($(this).text());
         $(".func-search-class span").text($(this).text());
         catId = $(this).attr("data-falg");
@@ -38,7 +38,7 @@ $(function () {
     // 下滑搜索框
     var detailsFlag = 1;
     var resFlag = false;
-    $(window).scroll(function () {
+    $(window).scroll(function() {
         if ($(window).scrollTop() > 500 && detailsFlag) {
             $(".fication-slide").css("top", "0px");
         } else {
@@ -47,11 +47,11 @@ $(function () {
     });
 
     // 搜索框焦点事件
-    $(".search-input input").focus(function () {
+    $(".search-input input").focus(function() {
         // console.log(1);
         $(this).attr("placeholder", "");
     });
-    $(".search-input input").blur(function () {
+    $(".search-input input").blur(function() {
         // console.log(1);
         $(this).attr("placeholder", "通 过 关 键 字 搜 索 U X D L");
     });
@@ -111,7 +111,7 @@ $(function () {
     // 点击模块导航栏，可切换内容
     // 为li添加自定义元素index，
     function bianli(ele) {
-        $.each(ele, function (i, element) {
+        $.each(ele, function(i, element) {
             $(element).attr("index", i);
         });
     }
@@ -122,7 +122,7 @@ $(function () {
     bianli(two);
     bianli(picture);
     //利用index控制页面瀑布流的显示
-    one.on('click', function () {
+    one.on('click', function() {
         console.log($(this));
         $(this).addClass('color-change').siblings('li').removeClass('color-change');
         var index = $(this).attr('index');
@@ -137,7 +137,7 @@ $(function () {
             scrollTop: 0
         }, 0);
     })
-    two.on('click', function () {
+    two.on('click', function() {
         $(this).addClass('color-change').siblings('li').removeClass('color-change');
         var index = $(this).attr('index');
         $(one[index]).addClass('color-change').siblings('li').removeClass('color-change');
@@ -368,7 +368,7 @@ $(function () {
 
 
     // 添加收藏功能
-    $("#gallery-wrapper").on("click", "#favourite", function (e) {
+    $("#gallery-wrapper").on("click", "#favourite", function(e) {
         e.stopPropagation();
         if (sessionStorage.getItem("status") === "401") {
             layer.msg("请登陆", {
@@ -385,7 +385,7 @@ $(function () {
             headers: {
                 uid: localStorage.getItem("uid"),
             },
-            success: function (res) {
+            success: function(res) {
                 console.log(res);
                 if (res.flag) {
                     $(favouriteThis)
@@ -399,7 +399,7 @@ $(function () {
     });
 
     // 详情页收藏功能
-    $("body").on("click", ".favourite", function () {
+    $("body").on("click", ".favourite", function() {
         $("#favourite").click();
     });
 
@@ -461,7 +461,7 @@ $(function () {
     //     });
     // });
     // 显示更多按钮
-    $(".morr").on("click", function () {
+    $(".morr").on("click", function() {
         $(this)
             .prev()
             .css({
@@ -632,12 +632,12 @@ $(function () {
         single_column_breakpoint: 700,
     });
 
-    $(".search-img-download").on("click", function () {
+    $(".search-img-download").on("click", function() {
         $(".details").show();
         window.scroll(0, 0);
         $(window).resize();
     });
-    $(".datails-close").on("click", function () {
+    $(".datails-close").on("click", function() {
         $(".details").hide();
         $(window).resize();
     });
@@ -696,7 +696,7 @@ $(function () {
     var tbCommerce = []; //淘宝电商
     var uiDesign = []; //UI设计
     var template1 = []; //样机模板
-    $.get("http://139.9.143.69:8001/materials/categorys/level/3", function (res) {
+    $.get("http://139.9.143.69:8001/materials/categorys/level/3", function(res) {
         for (var i = 0; i < res.data.length; i++) {
             if (res.data[i].parent_id == 9) {
                 designer.push(res.data[i]);
@@ -747,23 +747,23 @@ $(function () {
         $(".fic-text li:nth-child(5) .main-submenu").html(templateHtml.join(""));
 
         // 小li鼠标滑入事件
-        $(".main-submenu li").mouseenter(function () {
+        $(".main-submenu li").mouseenter(function() {
             $(this).siblings("li").removeClass("main-submit-hover");
             $(this).addClass("main-submit-hover");
         });
 
-        $(function () {
+        $(function() {
             var $li = $(".fic-text>li");
-            $li.mouseenter(function () {
+            $li.mouseenter(function() {
                 $(this).children("ul").show();
             });
-            $li.mouseleave(function () {
+            $li.mouseleave(function() {
                 $(this).children("ul").hide();
             });
         });
     });
 
-    $(".menus .nav-box li").mouseenter(function () {
+    $(".menus .nav-box li").mouseenter(function() {
         $(this).siblings("li").removeClass("color-change");
         $(this).addClass("color-change");
     });
@@ -793,7 +793,7 @@ $(function () {
     // })
 
     $(window).resize();
-    setTimeout(function () {
+    setTimeout(function() {
         $(window).resize();
     }, 1500);
 
@@ -803,14 +803,14 @@ $(function () {
         // 显示登录盒子
         $(".user").show();
         // 退出登录
-        $(".exit").on("click", function () {
+        $(".exit").on("click", function() {
             // 提示用户是否确认退出
             layer.confirm(
                 "确定退出登录？", {
                     icon: 3,
                     title: "提示",
                 },
-                function (index) {
+                function(index) {
                     // 1.清空本地存储中的 uid
                     localStorage.removeItem("uid");
                     // 2.重新跳转到登录页面
@@ -826,63 +826,63 @@ $(function () {
     var form = layui.form;
     var layer = layui.layer;
     //1. 点击登录注册按钮显示对应页面
-    $("#login").on("click", function () {
+    $("#login").on("click", function() {
         $("#layui-layer-shade").show();
         $("#login-box1").show();
     });
-    $("#register").on("click", function () {
+    $("#register").on("click", function() {
         $("#layui-layer-shade").show();
         $("#register-box1").show();
     });
     // 2.1点击密码验证码登陆的切换
-    $("#tab-passwords1").on("click", function () {
+    $("#tab-passwords1").on("click", function() {
         $("#layui-layer-shade").show();
         $("#login-box2").show();
     });
-    $("#tab-passwords2").on("click", function () {
+    $("#tab-passwords2").on("click", function() {
         $("#layui-layer-shade").show();
         $("#login-box2").hide();
         $("#login-box1").show();
     });
     // 2.2点击密码验证码注册的切换
-    $("#tab-passwords3").on("click", function () {
+    $("#tab-passwords3").on("click", function() {
         $("#layui-layer-shade").show();
         $("#register-box1").hide();
         $("#register-box2").show();
     });
-    $("#tab-passwords4").on("click", function () {
+    $("#tab-passwords4").on("click", function() {
         $("#layui-layer-shade").show();
         $("#register-box2").hide();
         $("#register-box1").show();
     });
     // 2.3注册跳到登陆，登陆跳到注册
-    $("#forget-link1").on("click", function () {
+    $("#forget-link1").on("click", function() {
         $("#layui-layer-shade").show();
         $("#login-box1").hide();
         $("#register-box1").show();
     });
-    $("#forget-link2").on("click", function () {
+    $("#forget-link2").on("click", function() {
         $("#layui-layer-shade").show();
         $("#login-box2").hide();
         $("#register-box1").show();
     });
-    $("#forget-link3").on("click", function () {
+    $("#forget-link3").on("click", function() {
         $("#layui-layer-shade").show();
         $("#register-box1").hide();
         $("#login-box1").show();
     });
-    $("#forget-link4").on("click", function () {
+    $("#forget-link4").on("click", function() {
         $("#layui-layer-shade").show();
         $("#register-box2").hide();
         $("#login-box1").show();
     });
     // 2.4登陆跳转到找回密码页面
-    $("#to-findpsw1").on("click", function () {
+    $("#to-findpsw1").on("click", function() {
         $("#layui-layer-shade").show();
         $("#login-box1").hide();
         $("#if-forget").show();
     });
-    $("#to-findpsw2").on("click", function () {
+    $("#to-findpsw2").on("click", function() {
         $("#layui-layer-shade").show();
         $("#login-box2").hide();
         $("#if-forget").show();
@@ -896,7 +896,7 @@ $(function () {
         psw: [/^\d{1,20}$/, "请输入正确的密码"],
         psw2: [/^[a-zA-Z0-9]{6,8}$/, "请输入正确的密码"],
         // 校验两次密码是否一致的规则
-        repwd: function (value) {
+        repwd: function(value) {
             // 通过形参拿到的是确认密码框中的内容
             // 还需要拿到密码框中的内容
             // 然后进行一次等于的判断
@@ -908,7 +908,7 @@ $(function () {
         },
     });
     //4.1   input输入框超限提醒
-    $("form input").on("keyup", function () {
+    $("form input").on("keyup", function() {
         if (this.value.length == 20) {
             layer.open({
                 title: "提示！",
@@ -917,7 +917,7 @@ $(function () {
         }
     });
     //    4.2    按钮样式变化
-    $("#login-box1").on("keyup", function (e) {
+    $("#login-box1").on("keyup", function(e) {
         var phone1 = $(".phone-ipt1").val();
         var psw1 = $("#psw1").val();
         if (phone1 != "" && psw1 != "") {
@@ -925,7 +925,7 @@ $(function () {
             $("#post-btn1").removeClass("layui-btn-disabled");
         }
     });
-    $("#register-box1").on("keyup", function (e) {
+    $("#register-box1").on("keyup", function(e) {
         var phone2 = $(".phone-ipt2").val();
         var psw2 = $("#psw3").val();
         var psw5 = $("#regist-psw").val();
@@ -934,7 +934,7 @@ $(function () {
             $("#post-btn3").removeClass("layui-btn-disabled");
         }
     });
-    $("#register-box2").on("keyup", function (e) {
+    $("#register-box2").on("keyup", function(e) {
         var phone3 = $(".phone-ipt3").val();
         var psw3 = $("#psw4").val();
         if (phone3 != "" && psw3 != "") {
@@ -942,7 +942,7 @@ $(function () {
             $("#post-btn4").removeClass("layui-btn-disabled");
         }
     });
-    $("#if-forget").on("keyup", function (e) {
+    $("#if-forget").on("keyup", function(e) {
         var phone3 = $(".phone-ipt5").val();
         var psw3 = $("#psw5").val();
         if (phone3 != "" && psw3 != "") {
@@ -956,7 +956,7 @@ $(function () {
     var jishu = 0;
     var flag = 0;
     // 5.1登陆1的验证码发送事件
-    $(".send-to1").on("click", function (e) {
+    $(".send-to1").on("click", function(e) {
         var phone1 = $(".phone-ipt1").val();
         console.log(phone1);
         var count = 4;
@@ -1005,7 +1005,7 @@ $(function () {
                 $.ajax({
                     method: "GET",
                     url: "http://139.9.143.69:8001/oauth/msm/" + phone1,
-                    success: function (res) {
+                    success: function(res) {
                         console.log(res);
                     },
                 });
@@ -1032,7 +1032,7 @@ $(function () {
         }
     });
     //5.2 注册1验证码
-    $(".send-to2").on("click", function (e) {
+    $(".send-to2").on("click", function(e) {
         var phone2 = $(".phone-ipt2").val();
         console.log(phone2);
         var count = 4;
@@ -1081,7 +1081,7 @@ $(function () {
                 $.ajax({
                     method: "GET",
                     url: "http://139.9.143.69:8001/oauth/msm/" + phone2,
-                    success: function (res) {
+                    success: function(res) {
                         console.log(res);
                     },
                 });
@@ -1108,7 +1108,7 @@ $(function () {
         }
     });
     // 5.3注册2验证码
-    $(".send-to3").on("click", function (e) {
+    $(".send-to3").on("click", function(e) {
         var phone3 = $(".phone-ipt3").val();
         var count = 4;
         var count60 = 3;
@@ -1156,7 +1156,7 @@ $(function () {
                 $.ajax({
                     method: "GET",
                     url: "http://139.9.143.69:8001/oauth/msm/" + phone3,
-                    success: function (res) {
+                    success: function(res) {
                         console.log(res);
                     },
                 });
@@ -1183,7 +1183,7 @@ $(function () {
         }
     });
     // 5.4找回密码验证码
-    $(".send-to5").on("click", function (e) {
+    $(".send-to5").on("click", function(e) {
         // $('#layui-layer-shade').show();
         // $('#if-forget').hide();
         // $('#if-reset').show();
@@ -1237,7 +1237,7 @@ $(function () {
                     data: {
                         phone: phone5,
                     },
-                    success: function (res) {
+                    success: function(res) {
                         console.log(res);
                         localStorage.setItem("uid", res.data);
                     },
@@ -1267,7 +1267,7 @@ $(function () {
 
     // 6登陆注册提交发送数据post
     // 6.1登陆1提交数据
-    $("#post-btn1").on("click", function (e) {
+    $("#post-btn1").on("click", function(e) {
         var phone1 = $(".phone-ipt1").val();
         var psw1 = $("#psw1").val();
         if (phone1 != "" && psw1 != "") {
@@ -1281,7 +1281,7 @@ $(function () {
                     phone: $(".phone-ipt1").val(),
                     code: $("#psw1").val(),
                 },
-                success: function (res) {
+                success: function(res) {
                     if (res.code !== 0) {
                         return layer.msg("登验证码输入错误");
                     }
@@ -1295,7 +1295,7 @@ $(function () {
         }
     });
     // 6.2登陆2提交数据
-    $("#post-btn2").on("click", function (e) {
+    $("#post-btn2").on("click", function(e) {
         var phone2 = $("#phone-input").val();
         var psw2 = $("#psw-input").val();
         if (phone2 != "" && psw2 != "") {
@@ -1309,7 +1309,7 @@ $(function () {
                     phone: phone2,
                     password: psw2,
                 },
-                success: function (res) {
+                success: function(res) {
                     if (res.code !== 0) {
                         return layer.msg("执行出错");
                     }
@@ -1323,7 +1323,7 @@ $(function () {
         }
     });
     // 6.3注册1提交数据
-    $("#post-btn3").on("click", function (e) {
+    $("#post-btn3").on("click", function(e) {
         var phone3 = $(".phone-ipt2").val();
         console.log(phone3);
         var psw3 = $("#psw3").val();
@@ -1342,7 +1342,7 @@ $(function () {
                     code: $("#psw3").val(),
                     password: $("#regist-psw").val(),
                 },
-                success: function (res) {
+                success: function(res) {
                     if (res.code !== 0) {
                         return layer.msg("执行出错");
                     }
@@ -1356,7 +1356,7 @@ $(function () {
         }
     });
     // 6.3注册2提交数据
-    $("#post-btn4").on("click", function (e) {
+    $("#post-btn4").on("click", function(e) {
         var phone4 = $(".phone-ipt3").val();
         var psw4 = $("#psw4").val();
         if (phone4 != "" && psw4 != "") {
@@ -1367,7 +1367,7 @@ $(function () {
                 method: "POST",
                 url: "http://139.9.143.69:8001/oauth/login",
                 data: $(this).serialize(),
-                success: function (res) {
+                success: function(res) {
                     if (res.code !== 0) {
                         return layer.msg("执行出错");
                     }
@@ -1382,7 +1382,7 @@ $(function () {
     });
 
     // 7找回密码提交数据,跳转至重置盒子
-    $("#if-forget").on("click", function (e) {
+    $("#if-forget").on("click", function(e) {
         var phone5 = $(".phone-ipt5").val();
         var psw5 = $("#psw5").val();
         if (phone5 != "" && psw5 != "") {
@@ -1401,7 +1401,7 @@ $(function () {
                         code: psw5,
                         password: renewpsw,
                     },
-                    success: function (res) {
+                    success: function(res) {
                         if (res.code !== 0) {
                             return layer.msg("执行出错");
                         }
@@ -1421,7 +1421,7 @@ $(function () {
     var datailsId = "";
 
     // 详情页面
-    $("[id*=gallery-wrapper]").on("click", ".search-img-hover", function () {
+    $("[id*=gallery-wrapper]").on("click", ".search-img-hover", function() {
         // if (sessionStorage.getItem('status') === '401') return
         // console.log($(this).attr('id'));
         // $.ajax({
@@ -1439,7 +1439,7 @@ $(function () {
             // 获取作品详情
             $.get(
                 "http://139.9.143.69:8001/materials/" + $(this)[0].dataset.id,
-                function (res) {
+                function(res) {
                     detailsName = res.data.name;
                     console.log(res, 123);
                     $(".datails-text h4").text(res.data.name);
@@ -1460,7 +1460,7 @@ $(function () {
             $.get(
                 "http://139.9.143.69:8001/materials/recommends/" +
                 $(this)[0].dataset.id,
-                function (res) {
+                function(res) {
                     console.log(res);
                     for (
                         var flag = 0; flag < (res.data.rows.length >= 8 ? 8 : res.data.rows.length); flag++
@@ -1488,7 +1488,7 @@ $(function () {
         }
         $(window).resize();
     });
-    $(".datails-close").on("click", function () {
+    $(".datails-close").on("click", function() {
         $(".details").hide();
         $(window).resize();
         detailsFlag = 1;
@@ -1498,7 +1498,7 @@ $(function () {
     var detailsLink = $("#datails-download-none")[0];
 
     // 下载
-    $("body").on("click", ".datails-download", function () {
+    $("body").on("click", ".datails-download", function() {
         // console.log(1);
         if (sessionStorage.getItem("status") === "401") {
             $(".details").hide();
@@ -1511,7 +1511,7 @@ $(function () {
             headers: {
                 uid: localStorage.getItem("uid"),
             },
-            success: function (res) {
+            success: function(res) {
                 console.log(res);
                 detailsLink.href = res.data.split("8080")[1];
                 console.log(detailsLink.href);
