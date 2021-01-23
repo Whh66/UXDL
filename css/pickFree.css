@@ -5,6 +5,11 @@
     right: -26px;
 }
 
+/* 鼠标hover查看详情按钮时，按钮向上 */
+#btnDetails:hover {
+    transform: translate(-59px, -14px);
+}
+
 #register,
 .right .register {
     margin-top: 30px;
@@ -23,7 +28,8 @@
     margin: 0 auto;
     max-height: 1220px;
     padding-left: 15px;
-    /* min-height: 2220px!important; */
+    height: 100%;
+    /* min-height: 2220px !important; */
 }
 
 .selected-text {
@@ -73,6 +79,7 @@
     position: relative;
     max-width: 100%;
     width: 100%;
+    height: 100%;
 }
 
 img.thumb {
@@ -85,8 +92,8 @@ img.thumb {
     position: absolute;
     background: white;
     /* border-radius: 5px;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
-    padding: 10px; */
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+      padding: 10px; */
 }
 
 .white-panel h1 {
