@@ -11,7 +11,7 @@ $(function() {
         })
         .on("keyup", function(e) {
             // 同步搜索框内容 （这个不是很理解加它有什么意义）
-            // $(".search-input input").val(e.target.value);
+            $(".search-input input").val(e.target.value);
             // 按回车键触发搜索
             if (e.keyCode === 13 && $(".search-input input").val().trim()) {
                 $(".qtw-button").click();
@@ -21,7 +21,7 @@ $(function() {
     // 搜素下拉选择框(我觉得这个也写得不完善，绑定两个事件应该用on)
     $('.func-search-class')
         .click(function() {
-            $('.search-selected').show();
+            $(this).find('.search-selected').show();
         })
         .mouseleave(function() {
             $('.search-selected').hide();
@@ -31,11 +31,11 @@ $(function() {
     $('.top-search-box').on('click', '.search-selected li', function() {
         $('.func-search-class span').text($(this).text());
         catId = $(this).attr('data-falg');
-        $('.search-selected').hide();
+        $(this).parent().hide();
     });
 
     // 下滑搜索框
-    /* var detailsFlag = 1;
+    var detailsFlag = 1;
     var resFlag = false;
     $(window).scroll(function() {
         if ($(window).scrollTop() > 500 && detailsFlag) {
@@ -43,7 +43,20 @@ $(function() {
         } else {
             $(".fication-slide").css("top", "-145px");
         }
-    }); */
+    });
+
+    $('.slide-logo')
+        .click(function() {
+            $(this).find('.search-selected2').show();
+        })
+        .mouseleave(function() {
+            $('.search-selected2').hide();
+        });
+
+    $('.slide-logo').on('click', '.search-selected2 li', function() {
+        $('.slide-logo span').html($(this).text() + '<i class="layui-icon layui-icon-down"></i>');
+        $(this).parent().hide()
+    });
 
     // 搜索框焦点事件(我觉得也不完善，应该没有内容失去焦点为默认的；而原来有内容失去焦点应该为内容)
     $(".search-input input").focus(function() {
@@ -68,7 +81,7 @@ $(function() {
     }); */
 
     // 添加收藏功能（这个最后看）
-    /* $("#gallery-wrapper").on("click", "#favourite", function(e) {
+    $("#gallery-wrapper").on("click", "#favourite", function(e) {
         e.stopPropagation();
         if (sessionStorage.getItem("status") === "401") {
             layer.msg("请登陆", {
@@ -96,12 +109,12 @@ $(function() {
         });
         $(this).attr("src", "./img/favorite2.png");
         $(".favourite img").attr("src", "./img/favorite2.png");
-    }); */
+    });
 
     // 详情页收藏功能
-    /* $("body").on("click", ".favourite", function() {
+    $("body").on("click", ".favourite", function() {
         $("#favourite").click();
-    }); */
+    });
 
 
     // 精选藏管图片渲染
@@ -281,7 +294,7 @@ $(function() {
         single_column_breakpoint: 700,
     });
 
-    $(".details").hide();
+
     $(".search-img-download").on("click", function() {
         $(".details").show();
         window.scroll(0, 0);
@@ -291,6 +304,8 @@ $(function() {
         $(".details").hide();
         $(window).resize();
     });
+
+    $(".details").hide();
     // $('#gallery-wrapper').pinterest_grid({
     //   no_columns: 4,
     //   padding_x: 40,
@@ -359,7 +374,7 @@ $(function() {
             }
         }
 
-        //平面设计
+        //人物
         var tbCommerceHtml = [];
         for (var i = 0; i < tbCommerce.length; i++) {
             tbCommerceHtml.push(`
@@ -368,7 +383,7 @@ $(function() {
         }
 
         $(".fic-text li:nth-child(3) .main-submenu").html(tbCommerceHtml.join(""));
-        //淘宝电商
+        //动物
         var designerHtml = [];
         for (var i = 0; i < designer.length; i++) {
             designerHtml.push(`
@@ -377,7 +392,7 @@ $(function() {
         }
 
         $(".fic-text li:nth-child(2) .main-submenu").html(designerHtml.join(""));
-        //UI设计
+        //产品
         var uiDesignHtml = [];
         for (var i = 0; i < uiDesign.length; i++) {
             uiDesignHtml.push(`
@@ -386,7 +401,7 @@ $(function() {
         }
 
         $(".fic-text li:nth-child(4) .main-submenu").html(uiDesignHtml.join(""));
-        //样机模板
+        //风景
         var templateHtml = [];
         for (var i = 0; i < template1.length; i++) {
             templateHtml.push(`
