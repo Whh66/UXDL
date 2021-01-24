@@ -11,7 +11,7 @@ $(function() {
         })
         .on("keyup", function(e) {
             // 同步搜索框内容 （这个不是很理解加它有什么意义）
-            // $(".search-input input").val(e.target.value);
+            $(".search-input input").val(e.target.value);
             // 按回车键触发搜索
             if (e.keyCode === 13 && $(".search-input input").val().trim()) {
                 $(".qtw-button").click();
@@ -21,7 +21,7 @@ $(function() {
     // 搜素下拉选择框(我觉得这个也写得不完善，绑定两个事件应该用on)
     $('.func-search-class')
         .click(function() {
-            $('.search-selected').show();
+            $(this).find('.search-selected').show();
         })
         .mouseleave(function() {
             $('.search-selected').hide();
@@ -31,11 +31,11 @@ $(function() {
     $('.top-search-box').on('click', '.search-selected li', function() {
         $('.func-search-class span').text($(this).text());
         catId = $(this).attr('data-falg');
-        $('.search-selected').hide();
+        $(this).parent().hide();
     });
 
     // 下滑搜索框
-    /* var detailsFlag = 1;
+    var detailsFlag = 1;
     var resFlag = false;
     $(window).scroll(function() {
         if ($(window).scrollTop() > 500 && detailsFlag) {
@@ -43,7 +43,22 @@ $(function() {
         } else {
             $(".fication-slide").css("top", "-145px");
         }
-    }); */
+    });
+
+    $('.slide-logo')
+        .click(function() {
+            $(this).find('.search-selected2').show();
+        })
+        .mouseleave(function() {
+            $('.search-selected2').hide();
+        });
+
+    $('.slide-logo').on('click', '.search-selected2 li', function() {
+        $('.slide-logo span').html($(this).text() + '<i class="layui-icon layui-icon-down"></i>');
+        $(this).parent().hide()
+    });
+
+
 
     // 搜索框焦点事件(我觉得也不完善，应该没有内容失去焦点为默认的；而原来有内容失去焦点应该为内容)
     $(".search-input input").focus(function() {
@@ -67,8 +82,191 @@ $(function() {
         },
     }); */
 
+
+    // 点击模块导航栏，可切换内容
+    // 为li添加自定义元素index，
+    function toggle(element) {
+        $.each(element, function(i, ele) {
+            $(ele).attr("index", i);
+        });
+    }
+    toggle($('.fic-text-one li'));
+    toggle($('.fic-text-two li'));
+    toggle($('.content>div'));
+    //利用index控制页面瀑布流的显示
+    $('.fic-text-one li').on('click', function() {
+        $(this).addClass('color-change').siblings('li').removeClass('color-change');
+        var index = $(this).attr('index');
+        $('.fic-text-two li').eq(index).addClass('color-change').siblings('li').removeClass('color-change');
+        if (index === "0") {
+            $('.content').children('div').show();
+        } else {
+            $('.content>div').eq(index).show().siblings('div').hide();
+        }
+        refresh();
+        $("html,body").animate({
+            scrollTop: 0
+        }, 0);
+    })
+    $('.fic-text-two li').on('click', function() {
+        $(this).addClass('color-change').siblings('li').removeClass('color-change');
+        var index = $(this).attr('index');
+        $('.fic-text-one li').eq(index).addClass('color-change').siblings('li').removeClass('color-change');
+        if (index === "0") {
+            $('.content').children('div').show();
+        } else {
+            $('.content>div').eq(index).show().siblings('div').hide();
+        }
+        refresh();
+        $("html,body").animate({
+            scrollTop: 0
+        }, 0);
+    })
+
+    // 暂时渲染
+    var data = [{
+        "show_image": './image-w/14.jpg',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/13.jpg',
+        "id": 1,
+        "category1_name": 'b',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/15.jpg',
+        "id": 1,
+        "category1_name": 'c',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/16.jpg',
+        "id": 1,
+        "category1_name": 'd',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/17.jpg',
+        "id": 1,
+        "category1_name": 'e',
+        "favourite_num": 299
+    }, {
+        "show_image": './image-w/18.jpg',
+        "id": 1,
+        "category1_name": 'f',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/19.jpg',
+        "id": 1,
+        "category1_name": 'g',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/20.jpg',
+        "id": 1,
+        "category1_name": 'h',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/21.jpg',
+        "id": 1,
+        "category1_name": 'c',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/14.jpg',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/13.jpg',
+        "id": 1,
+        "category1_name": 'b',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/15.jpg',
+        "id": 1,
+        "category1_name": 'i',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/16.jpg',
+        "id": 1,
+        "category1_name": 'j',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/17.jpg',
+        "id": 1,
+        "category1_name": 'k',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/18.jpg',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/19.jpg',
+        "id": 1,
+        "category1_name": 'o',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/20.jpg',
+        "id": 1,
+        "category1_name": 'm',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/21.jpg',
+        "id": 1,
+        "category1_name": 'i',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/13.jpg',
+        "id": 1,
+        "category1_name": 'b',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/14.jpg',
+        "id": 1,
+        "category1_name": 'e',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/15.png',
+        "id": 1,
+        "category1_name": 'r',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/16.png',
+        "id": 1,
+        "category1_name": 's',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/17.jpg',
+        "id": 1,
+        "category1_name": 'o',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/18.jpg',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/19.jpg',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/20.jpg',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }];
+    var htmlStr = template("pictures", data);
+    $("#gallery-wrapper").html(htmlStr);
+    $("#gallery-wrapper1").html(htmlStr);
+    $("#gallery-wrapper2").html(htmlStr);
+    $("#gallery-wrapper3").html(htmlStr);
+    $("#gallery-wrapper4").html(htmlStr);
+    $("#gallery-wrapper5").html(htmlStr);
+    $(window).resize();
+
+
     // 添加收藏功能（这个最后看）
-    /* $("#gallery-wrapper").on("click", "#favourite", function(e) {
+    $("#gallery-wrapper").on("click", "#favourite", function(e) {
         e.stopPropagation();
         if (sessionStorage.getItem("status") === "401") {
             layer.msg("请登陆", {
@@ -96,16 +294,16 @@ $(function() {
         });
         $(this).attr("src", "./img/favorite2.png");
         $(".favourite img").attr("src", "./img/favorite2.png");
-    }); */
+    });
 
     // 详情页收藏功能
-    /* $("body").on("click", ".favourite", function() {
+    $("body").on("click", ".favourite", function() {
         $("#favourite").click();
-    }); */
+    });
 
 
     // 精选藏管图片渲染
-    var searchHtml = [];
+    /* var searchHtml = [];
     $.get(
         "http://139.9.143.69:8001/materials/choiceness/0", {
             page: 1,
@@ -139,7 +337,9 @@ $(function() {
             // $('#gallery-wrapper4').html(searchHtml.join(''))
             // $('#gallery-wrapper5').html(searchHtml.join(''))
         }
-    );
+    ); */
+
+
     // 显示更多按钮
     $(".morr").on("click", function() {
         // console.log($(this).prev()[0]);
@@ -268,10 +468,10 @@ $(function() {
 
     $("#gallery-wrapper3").pinterest_grid({
         no_columns: 4,
-        padding_x: 20,
-        padding_y: 20,
+        padding_x: 15,
+        padding_y: 15,
         margin_bottom: 120,
-        single_column_breakpoint: 700,
+        single_column_breakpoint: 0,
     });
     $("#gallery-wrapper4").pinterest_grid({
         no_columns: 4,
@@ -281,7 +481,7 @@ $(function() {
         single_column_breakpoint: 700,
     });
 
-    $(".details").hide();
+
     $(".search-img-download").on("click", function() {
         $(".details").show();
         window.scroll(0, 0);
@@ -291,6 +491,7 @@ $(function() {
         $(".details").hide();
         $(window).resize();
     });
+    $(".details").hide();
     // $('#gallery-wrapper').pinterest_grid({
     //   no_columns: 4,
     //   padding_x: 40,

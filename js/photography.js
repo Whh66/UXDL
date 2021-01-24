@@ -80,6 +80,189 @@ $(function() {
         },
     }); */
 
+    // 点击模块导航栏，可切换内容
+    // 为li添加自定义元素index，
+    function toggle(element) {
+        $.each(element, function(i, ele) {
+            $(ele).attr("index", i);
+        });
+    }
+    toggle($('.fic-text-one li'));
+    toggle($('.fic-text-two li'));
+    toggle($('.content>div'));
+    //利用index控制页面瀑布流的显示
+    $('.fic-text-one li').on('click', function() {
+        $(this).addClass('color-change').siblings('li').removeClass('color-change');
+        var index = $(this).attr('index');
+        $('.fic-text-two li').eq(index).addClass('color-change').siblings('li').removeClass('color-change');
+        if (index === "0") {
+            $('.content').children('div').show();
+        } else {
+            $('.content>div').eq(index).show().siblings('div').hide();
+        }
+        refresh();
+        $("html,body").animate({
+            scrollTop: 0
+        }, 0);
+    })
+    $('.fic-text-two li').on('click', function() {
+        $(this).addClass('color-change').siblings('li').removeClass('color-change');
+        var index = $(this).attr('index');
+        $('.fic-text-one li').eq(index).addClass('color-change').siblings('li').removeClass('color-change');
+        if (index === "0") {
+            $('.content').children('div').show();
+        } else {
+            $('.content>div').eq(index).show().siblings('div').hide();
+        }
+        refresh();
+        $("html,body").animate({
+            scrollTop: 0
+        }, 0);
+    })
+
+    // 暂时渲染
+    var data = [{
+        "show_image": './image-w/6.jpg',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/3.jpg',
+        "id": 1,
+        "category1_name": 'b',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/8.jpg',
+        "id": 1,
+        "category1_name": 'c',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/10.jpg',
+        "id": 1,
+        "category1_name": 'd',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/4.jpg',
+        "id": 1,
+        "category1_name": 'e',
+        "favourite_num": 299
+    }, {
+        "show_image": './image-w/9.jpg',
+        "id": 1,
+        "category1_name": 'f',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/11.jpg',
+        "id": 1,
+        "category1_name": 'g',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/5.jpg',
+        "id": 1,
+        "category1_name": 'h',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/8.jpg',
+        "id": 1,
+        "category1_name": 'c',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/6.jpg',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/3.jpg',
+        "id": 1,
+        "category1_name": 'b',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/1.jpg',
+        "id": 1,
+        "category1_name": 'i',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/10.jpg',
+        "id": 1,
+        "category1_name": 'j',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/2.jpg',
+        "id": 1,
+        "category1_name": 'k',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/6.jpg',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/5.jpg',
+        "id": 1,
+        "category1_name": 'o',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/3.jpg',
+        "id": 1,
+        "category1_name": 'm',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/1.jpg',
+        "id": 1,
+        "category1_name": 'i',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/8.jpg',
+        "id": 1,
+        "category1_name": 'b',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/4.jpg',
+        "id": 1,
+        "category1_name": 'e',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/8.png',
+        "id": 1,
+        "category1_name": 'r',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/10.png',
+        "id": 1,
+        "category1_name": 's',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/5.jpg',
+        "id": 1,
+        "category1_name": 'o',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/11.jpg',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/6.jpg',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image-w/2.jpg',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }];
+    var htmlStr = template("pictures", data);
+    $("#gallery-wrapper").html(htmlStr);
+    $("#gallery-wrapper1").html(htmlStr);
+    $("#gallery-wrapper2").html(htmlStr);
+    $("#gallery-wrapper3").html(htmlStr);
+    $("#gallery-wrapper4").html(htmlStr);
+    $("#gallery-wrapper5").html(htmlStr);
+    $(window).resize();
+
+
+
     // 添加收藏功能（这个最后看）
     $("#gallery-wrapper").on("click", "#favourite", function(e) {
         e.stopPropagation();
@@ -118,41 +301,43 @@ $(function() {
 
 
     // 精选藏管图片渲染
-    var searchHtml = [];
-    $.get(
-        "http://139.9.143.69:8001/materials/choiceness/0", {
-            page: 1,
-            size: 30,
-        },
-        function(res) {
-            console.log(res);
+    // var searchHtml = [];
+    // $.get(
+    //     "http://139.9.143.69:8001/materials/choiceness/0", {
+    //         page: 1,
+    //         size: 30,
+    //     },
+    //     function(res) {
+    //         console.log(res);
 
-            // 调用 template 函数
-            var htmlStr = template('pictures', res.data.rows);
-            // 渲染 HTML 结构
-            $("#gallery-wrapper").html(htmlStr);
-            $("#gallery-wrapper1").html(htmlStr);
-            $("#gallery-wrapper2").html(htmlStr);
-            $("#gallery-wrapper3").html(htmlStr);
-            $("#gallery-wrapper4").html(htmlStr);
-            $(window).resize();
-            // for (var flag = 0; flag < res.data.rows.length; flag++) {
-            //   searchHtml.push(` <article class="white-panel">
-            //       <img src="${res.data.rows[flag].show_image}" class="thumb">
-            //       <div class="search-img-hover">
-            //           <span class="search-img-label">${res.data.rows[flag].category1_name}</span>
-            //           <span class="search-img-Collection">2 <a href="javascript:;" class="layui-icon layui-icon-heart" style="font-size: 20px;color: #ffff;"></a></span>
-            //           <a class="search-img-download" >免 费 下 载</a>
-            //       </div>
-            //   </article>`)
-            // }
-            // $('#gallery-wrapper').html(searchHtml.join(''))
-            // $('#gallery-wrapper2').html(searchHtml.join(''))
-            // $('#gallery-wrapper3').html(searchHtml.join(''))
-            // $('#gallery-wrapper4').html(searchHtml.join(''))
-            // $('#gallery-wrapper5').html(searchHtml.join(''))
-        }
-    );
+    //         // 调用 template 函数
+    //         var htmlStr = template('pictures', res.data.rows);
+    //         // 渲染 HTML 结构
+    //         $("#gallery-wrapper").html(htmlStr);
+    //         $("#gallery-wrapper1").html(htmlStr);
+    //         $("#gallery-wrapper2").html(htmlStr);
+    //         $("#gallery-wrapper3").html(htmlStr);
+    //         $("#gallery-wrapper4").html(htmlStr);
+    //         $(window).resize();
+    //         // for (var flag = 0; flag < res.data.rows.length; flag++) {
+    //         //   searchHtml.push(` <article class="white-panel">
+    //         //       <img src="${res.data.rows[flag].show_image}" class="thumb">
+    //         //       <div class="search-img-hover">
+    //         //           <span class="search-img-label">${res.data.rows[flag].category1_name}</span>
+    //         //           <span class="search-img-Collection">2 <a href="javascript:;" class="layui-icon layui-icon-heart" style="font-size: 20px;color: #ffff;"></a></span>
+    //         //           <a class="search-img-download" >免 费 下 载</a>
+    //         //       </div>
+    //         //   </article>`)
+    //         // }
+    //         // $('#gallery-wrapper').html(searchHtml.join(''))
+    //         // $('#gallery-wrapper2').html(searchHtml.join(''))
+    //         // $('#gallery-wrapper3').html(searchHtml.join(''))
+    //         // $('#gallery-wrapper4').html(searchHtml.join(''))
+    //         // $('#gallery-wrapper5').html(searchHtml.join(''))
+    //     }
+    // );
+
+
     // 显示更多按钮
     $(".morr").on("click", function() {
         // console.log($(this).prev()[0]);
@@ -273,10 +458,10 @@ $(function() {
 
     $("#gallery-wrapper2").pinterest_grid({
         no_columns: 4,
-        padding_x: 20,
-        padding_y: 20,
+        padding_x: 15,
+        padding_y: 15,
         margin_bottom: 120,
-        single_column_breakpoint: 700,
+        single_column_breakpoint: 0
     });
 
     $("#gallery-wrapper3").pinterest_grid({
