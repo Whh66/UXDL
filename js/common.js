@@ -1,4 +1,4 @@
-  $(function() {
+$(function() {
     // 验证登录状态
     $.ajax({
             method: 'GET',
@@ -48,7 +48,7 @@
         });
     })
 
-    //  公共区域下载记录
+    //  公共区域下载记录
     $('#download_history').on('click', function() {
         // console.log(12);
         // sessionStorage.setItem("from", "pageA");
@@ -655,9 +655,9 @@
                             return layer.msg('登录失败！')
                         }
                         layer.msg('登录成功！')
-                            // 将登录成功得到的 token 字符串，保存到 localStorage 中
+                            // 将登录成功得到的 token 字符串，保存到 localStorage 中
                         localStorage.setItem('uid', res.data)
-                            // 跳转到后台主页
+                            // 跳转到后台主页
                         location.href = ''
                     },
                 })
