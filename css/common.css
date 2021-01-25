@@ -64,7 +64,7 @@ ol li {
 
 .color-change {
     background: linear-gradient(0deg, #f7ad44 0%, #eb5753 100%);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
