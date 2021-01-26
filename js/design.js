@@ -1477,12 +1477,12 @@ $('.fic-text').on('click', '.cate2', function() {
       var cateIndex = $(this).parent().index()
       var catename = $(this).children('span').html()
       console.log(catename);
-      /* console.log(cateindex); */
         $(this).css('color','#ed6650')
        $(this).parent().siblings().children('a').css('color','') 
        $('.selected-text').html(catename)  
        $('.selected-text').eq(cateIndex).parent(".show").show().siblings('.show').hide()
        $('.selected-text').css('white-space','nowrap')   
+       $(window).scrollTop(0);
      }) 
   
 // 给3级分类绑定点击事件
@@ -1492,7 +1492,7 @@ $('.fic-text').on('click', '.cate2', function() {
     //  点击三级导航 让3级导航字段在对应的2级导航字段显示 并加文字颜色样式
         $(this).parents().siblings('a').children('span').html(cateName3) 
       $(this).parent().siblings('.cate2').click()
-     
+         
    }) 
   })
   
