@@ -56,23 +56,27 @@ $(function () {
     $(this).attr("placeholder", "通 过 关 键 字 搜 索 U X D L");
   });
 
-  // 分类导航部分
-  $.ajax({
-    method: "GET",
-    url: "http://139.9.143.69:8001/materials/categorys/0",
-    success: function (res) {
-      console.log(res.data);
-      // 调用 template 函数
-      var htmlStr = template("classify", res.data);
-      // // console.log(htmlStr);
-      // // 渲染 HTML 结构
-      $(".fic-text").html(htmlStr);
-    },
-  });
+  // 2级分类导航部分
+  initCate()
+  function initCate() {
+    $.ajax({
+      method: "GET",
+      url: "http://139.9.143.69:8001/materials/categorys/0",
+      success: function (res) {
+         console.log(res.data); 
+        // 调用 template 函数
+        var htmlStr = template("classify", res.data);
+        // // console.log(htmlStr);
+        // // 渲染 HTML 结构
+        $(".fic-text").html(htmlStr);
+      },
+    });
+  }
+
   // $.get(
   //   "http://139.9.143.69:8001/materials/categorys/level/1",
   //   function (res1) {
-  //     // console.log(res1.data);
+  //      console.log(res1.data);
   //     var classifyData = [];
 
   //     res1.data.slice(0, 6).forEach(function (v) {
@@ -133,25 +137,237 @@ $(function () {
   });
 
   // 精选藏管图片渲染
-  var searchHtml = [];
-  $.get(
-    "http://139.9.143.69:8001/materials/choiceness/0",
-    {
-      page: 1,
-      size: 30,
-    },
-    function (res) {
-      // console.log(res.data.rows)
-      // 调用 template 函数
-      var htmlStr = template("pictures", res.data.rows);
-      // console.log(htmlStr);
-      // 渲染 HTML 结构
-      $("#gallery-wrapper").html(htmlStr);
-      $("#gallery-wrapper1").html(htmlStr);
-      $("#gallery-wrapper3").html(htmlStr);
-      $("#gallery-wrapper4").html(htmlStr);
-      $("#gallery-wrapper5").html(htmlStr);
-      $(window).resize();
+  // var searchHtml = [];
+  // $.get(
+  //   "http://139.9.143.69:8001/materials/choiceness/0",
+  //   {
+  //     page: 1,
+  //     size: 30,
+  //   },
+  //   function (res) {
+  //     // console.log(res.data.rows)
+  //     // 调用 template 函数
+  //     var htmlStr = template("pictures", res.data.rows);
+  //     // console.log(htmlStr);
+  //     // 渲染 HTML 结构
+  
+    // 暂时渲染
+  var data = [{
+    "show_image": './img/6.png',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/6.jpg',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/7.png',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/7.jpg',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/5.jpg',
+    "id": 1,
+    "category1_name": '大男孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/5.png',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/8.png',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/10.jpg',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/9.png',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/9.jpg',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 20
+}, {
+    "show_image": './img/6.png',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/6.jpg',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/7.png',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/7.jpg',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/5.jpg',
+    "id": 1,
+    "category1_name": '大男孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/5.png',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/8.png',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/10.jpg',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/9.png',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/9.jpg',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/6.png',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/6.jpg',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/7.png',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/7.jpg',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/5.jpg',
+    "id": 1,
+    "category1_name": '大男孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/5.png',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/8.png',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/10.jpg',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/9.png',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/9.jpg',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 20
+}, {
+    "show_image": './img/6.png',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/6.jpg',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/7.png',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/7.jpg',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/5.jpg',
+    "id": 1,
+    "category1_name": '大男孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/5.png',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/8.png',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {
+    "show_image": './img/10.jpg',
+    "id": 1,
+    "category1_name": '小女孩',
+    "favourite_num": 30
+}, {"show_image": './img/6.png',
+"id": 1,
+"category1_name": '小女孩',
+"favourite_num": 30
+},{"show_image": './img/6.png',
+"id": 1,
+"category1_name": '小女孩',
+"favourite_num": 30 },
+{"show_image": './img/8.png',
+"id": 1,
+"category1_name": '小女孩',
+"favourite_num": 30 }, 
+{"show_image": './img/8.png',
+"id": 1,
+"category1_name": '小女孩',
+"favourite_num": 30 }
+];
+ var htmlStr = template("pictures", data)
+  $("#gallery-wrapper2").html(htmlStr)
+  $("#gallery-wrapper").html(htmlStr)
+  $("#gallery-wrapper1").html(htmlStr)
+  $("#gallery-wrapper3").html(htmlStr)
+  $("#gallery-wrapper4").html(htmlStr)
+  $("#gallery-wrapper5").html(htmlStr)
+  $(window).resize();
+ 
       // for (var flag = 0; flag < res.data.rows.length; flag++) {
       //   searchHtml.push(` <article class="white-panel">
       //       <img src="${res.data.rows[flag].show_image}" class="thumb">
@@ -167,8 +383,8 @@ $(function () {
       // $('#gallery-wrapper3').html(searchHtml.join(''))
       // $('#gallery-wrapper4').html(searchHtml.join(''))
       // $('#gallery-wrapper5').html(searchHtml.join(''))
-    }
-  );
+  //   }
+  // );
 
   // 显示更多按钮
   $(".morr").on("click", function () {
@@ -1216,4 +1432,67 @@ $(function () {
       },
     });
   });
-});
+
+
+
+// // 给3级导航绑定点击事件
+
+//   $('.fic-text').on('click','.fic-text-menu li', function() {
+//     //  获取到三级导航 每个li标签对应的id
+//       var id = $(this).attr('data-index');
+//       // 获取三级导航的字段
+//       var cateName3 = $(this).children().html();
+//      /*  console.log(cateName3); */
+//     //  点击三级导航 让3级导航字段在对应的2级导航字段显示 并加文字颜色样式
+//         $(this).parents().siblings('a').children('span').html(cateName3)
+//       $(this).parents('li').siblings().children().css('color','')
+//       $(this).parent().siblings().css('color','#ed6650');
+//       jump(id) 
+          
+//    }) 
+
+// //  封装一个函数 用来判断点击的li标签的id 从而跳转至对应的页面
+// function jump(id) {
+//     switch (id) {
+//       case '7':
+//      /*  window.location.href = 'onshow.html';    */
+//     /*  window.open()方法就相当于a标签 加了target="_blank" */
+//     window.open('onshow.html')
+//         break;
+//         case '8':
+//   window.open('album.html')
+//         break;
+//       default:
+//         break; 
+//     }
+// } 
+
+// 给全部按钮绑定点击事件
+ $('.fic-text').on('click', '.all', function(){
+ window.location.href ='design.html'
+})
+
+// 暂时给2级分类绑定点击事件渲染
+$('.fic-text').on('click', '.cate2', function() {
+      var cateIndex = $(this).parent().index()
+      var catename = $(this).children('span').html()
+      console.log(catename);
+      /* console.log(cateindex); */
+        $(this).css('color','#ed6650')
+       $(this).parent().siblings().children('a').css('color','') 
+       $('.selected-text').html(catename)  
+       $('.selected-text').eq(cateIndex).parent(".show").show().siblings('.show').hide()
+       $('.selected-text').css('white-space','nowrap')   
+     }) 
+  
+// 给3级分类绑定点击事件
+ 
+  $('.fic-text').on('click','.fic-text-menu li', function() {
+       var cateName3 = $(this).children().html(); 
+    //  点击三级导航 让3级导航字段在对应的2级导航字段显示 并加文字颜色样式
+        $(this).parents().siblings('a').children('span').html(cateName3) 
+      $(this).parent().siblings('.cate2').click()
+     
+   }) 
+  })
+  
