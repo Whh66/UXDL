@@ -74,7 +74,7 @@ $(function() {
 
 
     // 鼠标滑动，改变颜色
-    $('.fic-text').on('mouseenter', '.second-li', function() {
+    $('.fic-text').on('click', '.second-li', function() {
         // console.log(1);
         $(this).siblings().children('a').removeClass('changeColor')
         $(this).siblings().children('a').children('i').html('&#xe61a;')
@@ -117,28 +117,162 @@ $(function() {
     $("body").on("click", ".favourite", function() {
         $("#favourite").click();
     });
+    // 模拟·渲染数据
+    var data = [{
+        id: 1,
+        show_image: './img-moni/1.jpeg',
+        category1_name: '创意背景',
+        favourite_num: 66
+
+    }, {
+        id: 2,
+        show_image: './img-moni/2.jpeg',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 3,
+        show_image: './img-moni/3.jpeg',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 4,
+        show_image: './img-moni/4.jpg',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 5,
+        show_image: './img-moni/5.jpeg',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 6,
+        show_image: './img-moni/6.jpeg',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 7,
+        show_image: './img-moni/7.jpg',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 8,
+        show_image: './img-moni/8.jpeg',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 9,
+        show_image: './img-moni/9.jpeg',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 10,
+        show_image: './img-moni/10.jpeg',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 11,
+        show_image: './img-moni/11.jpeg',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 12,
+        show_image: './img-moni/12.jpeg',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 13,
+        show_image: './img-moni/13.jpeg',
+        category1_name: '创意背景',
+        favourite_num: 66
+
+    }, {
+        id: 14,
+        show_image: './img-moni/14.jpeg',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 15,
+        show_image: './img-moni/15.jpeg',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 16,
+        show_image: './img-moni/16.jpg',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 17,
+        show_image: './img-moni/17.jpg',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 18,
+        show_image: './img-moni/18.jpeg',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 19,
+        show_image: './img-moni/19.jpg',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 20,
+        show_image: './img-moni/20.jpeg',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 9,
+        show_image: './img-moni/9.jpeg',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 21,
+        show_image: './img-moni/21.jpg',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 22,
+        show_image: './img-moni/22.jpeg',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 23,
+        show_image: './img-moni/23s.jpeg',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }];
+    var htmlStr = template("pictures", data);
+    // console.log(htmlStr);
+    // 渲染 HTML 结构
+    $("#gallery-wrapper").html(htmlStr);
+    $("#gallery-wrapper2").html(htmlStr);
+    $("#gallery-wrapper1").html(htmlStr);
+    $("#gallery-wrapper3").html(htmlStr);
+    $("#gallery-wrapper4").html(htmlStr);
+    $("#gallery-wrapper5").html(htmlStr);
+    $(window).resize();
 
     // 精选藏管图片渲染
-    var searchHtml = [];
-    $.get(
-        "http://139.9.143.69:8001/materials/choiceness/0", {
-            page: 1,
-            size: 30,
-        },
-        function(res) {
-            // console.log(res.data.rows)
-            // 调用 template 函数
-            var htmlStr = template("pictures", res.data.rows);
-            // console.log(htmlStr);
-            // 渲染 HTML 结构
-            $("#gallery-wrapper").html(htmlStr);
-            $("#gallery-wrapper1").html(htmlStr);
-            $("#gallery-wrapper3").html(htmlStr);
-            $("#gallery-wrapper4").html(htmlStr);
-            $("#gallery-wrapper5").html(htmlStr);
-            $(window).resize();
-        }
-    );
+    // var searchHtml = [];
+    // $.get(
+    //     "http://139.9.143.69:8001/materials/choiceness/0", {
+    //         page: 1,
+    //         size: 30,
+    //     },
+    //     function(res) {
+    //         // console.log(res.data.rows)
+    //         // 调用 template 函数
+    //         var htmlStr = template("pictures", res.data.rows);
+    //         // console.log(htmlStr);
+    //         // 渲染 HTML 结构
+    //         $("#gallery-wrapper").html(htmlStr);
+    //         $("#gallery-wrapper1").html(htmlStr);
+    //         $("#gallery-wrapper3").html(htmlStr);
+    //         $("#gallery-wrapper4").html(htmlStr);
+    //         $("#gallery-wrapper5").html(htmlStr);
+    //         $(window).resize();
+    //     }
+    // );
 
     // 显示更多按钮
     $(".more").on("click", function() {
@@ -155,6 +289,56 @@ $(function() {
             cursor: "not-allowed",
         });
     });
+    // 模拟跳转页面功能
+    // 添加自定义属性
+    function toggle(element) {
+        $.each(element, function(i, ele) {
+            $(ele).attr("index", i);
+        });
+    }
+    toggle($('.one li'));
+    toggle($('.two li'));
+    toggle($('#w>div'));
+    //利用index控制页面瀑布流的显示
+    $('.one li').on('click', function() {
+        $(this).addClass('changeColor').siblings('li').removeClass('changeColor');
+        var index = $(this).attr('index');
+        $('.one li').eq(index).addClass('changeColor').siblings('li').removeClass('changeColor');
+        console.log(index);
+        if (index === "0") {
+            $('#w').children('div').show();
+        } else {
+            $('#w>div').eq(index).show().siblings('div').hide();
+        }
+        // 重新渲染一次数据函数
+
+
+
+        //
+        $("html,body").animate({
+            scrollTop: 0
+        }, 0);
+    });
+    $('.two li').on('click', function() {
+        $(this).addClass('changeColor').siblings('li').removeClass('changeColor');
+        var index = $(this).attr('index');
+        $('.two li').eq(index).addClass('changeColor').siblings('li').removeClass('changeColor');
+        console.log(index);
+        if (index === "0") {
+            $('#w').children('div').show();
+        } else {
+            $('#w>div').eq(index).show().siblings('div').hide();
+        }
+        // 重新渲染一次数据函数
+
+
+
+        //
+        $("html,body").animate({
+            scrollTop: 0
+        }, 0);
+    })
+
 
 
     $("#gallery-wrapper").pinterest_grid({
@@ -306,6 +490,537 @@ $(function() {
         //   }
         // })
 
+        // 3手机号码和验证码密码自定义验证规则
+        form.verify({
+            // 手机号码规则
+            phonenumber: [/^\d{1,20}$/, "请输入正确手机号码"],
+            // 密码规则
+            psw: [/^\d{1,20}$/, "请输入正确的密码"],
+            psw2: [/^[a-zA-Z0-9]{6,8}$/, "请输入正确的密码"],
+            // 校验两次密码是否一致的规则
+            repwd: function(value) {
+                // 通过形参拿到的是确认密码框中的内容
+                // 还需要拿到密码框中的内容
+                // 然后进行一次等于的判断
+                // 如果判断失败,则return一个提示消息即可
+                var pwd = $(".reg-box [name=password]").val();
+                if (pwd !== value) {
+                    return "两次密码不一致！";
+                }
+            },
+        });
+        //4.1   input输入框超限提醒
+        $("form input").on("keyup", function() {
+            if (this.value.length == 20) {
+                layer.open({
+                    title: "提示！",
+                    content: "输入已到上限",
+                });
+            }
+        });
+        //    4.2    按钮样式变化
+        $("#login-box1").on("keyup", function(e) {
+            var phone1 = $(".phone-ipt1").val();
+            var psw1 = $("#psw1").val();
+            if (phone1 != "" && psw1 != "") {
+                $("#post-btn1").addClass("color-trans");
+                $("#post-btn1").removeClass("layui-btn-disabled");
+            }
+        });
+        $("#register-box1").on("keyup", function(e) {
+            var phone2 = $(".phone-ipt2").val();
+            var psw2 = $("#psw3").val();
+            var psw5 = $("#regist-psw").val();
+            if (phone2 != "" && psw2 != "" && psw5 != "") {
+                $("#post-btn3").addClass("color-trans");
+                $("#post-btn3").removeClass("layui-btn-disabled");
+            }
+        });
+        $("#register-box2").on("keyup", function(e) {
+            var phone3 = $(".phone-ipt3").val();
+            var psw3 = $("#psw4").val();
+            if (phone3 != "" && psw3 != "") {
+                $("#post-btn4").addClass("color-trans");
+                $("#post-btn4").removeClass("layui-btn-disabled");
+            }
+        });
+        $("#if-forget").on("keyup", function(e) {
+            var phone3 = $(".phone-ipt5").val();
+            var psw3 = $("#psw5").val();
+            if (phone3 != "" && psw3 != "") {
+                $("#next-step").addClass("color-trans");
+                $("#next-step").removeClass("layui-btn-disabled");
+            }
+        });
+
+        // 5 手机验证码发送事件
+        // 首先定义一个名为jishu的变量用来统计代表点击次数
+        var jishu = 0;
+        var flag = 0;
+        // 5.1登陆1的验证码发送事件
+        $(".send-to1").on("click", function(e) {
+            var phone1 = $(".phone-ipt1").val();
+            console.log(phone1);
+            var count = 4;
+            var count60 = 3;
+            if (phone1 == "") {
+                $(this).addClass("layui-btn-disabled");
+                layer.open({
+                    title: "提示！",
+                    content: "请输入符合规范的手机号",
+                });
+            } else if (isNaN(phone1)) {
+                $(this).addClass("layui-btn-disabled");
+                layer.open({
+                    title: "提示！",
+                    content: "只允许输入纯数字！",
+                });
+            } else if (flag == 0) {
+                if (jishu < 3) {
+                    flag = 1;
+                    $(".send-to1").addClass("layui-btn-disabled");
+                    console.log("点击了 " + ++jishu + "次<br>");
+                    layer.open({
+                        title: "提示！",
+                        content: "已发送验证码",
+                    });
+                    // 设置倒计时按钮样式
+                    var interval = null; //timer变量，控制时间
+                    $(".send-to1").text(count + "秒倒计时");
+                    var interval = setInterval(downset, 1000);
+
+                    function downset() {
+                        $(".send-to1").text(count + "秒倒计时");
+                        $(".send-to1").addClass("color-trans");
+                        $(".send-to1").addClass("layui-btn-disabled");
+                        count--;
+                        if (count === -1) {
+                            $(".send-to1").text("重发验证码");
+                            clearInterval(interval);
+                            $(".send-to1").removeClass("color-trans");
+                            $(".send-to1").removeClass("layui-btn-disabled");
+                            flag = 0;
+                        }
+                    } //请求后台发送验证码 TODO
+                    //ajax获取手机验证码
+                    e.preventDefault();
+                    $.ajax({
+                        method: "GET",
+                        url: "http://139.9.143.69:8001/oauth/msm/" + phone1,
+                        success: function(res) {
+                            console.log(res);
+                        },
+                    });
+                } else if (jishu == 3) {
+                    flag = 1;
+                    $(".send-to1").text(count60 + "后重发");
+                    $(".send-to1").addClass("layui-btn-disabled");
+                    var interval2 = null; //timer变量，控制时间
+                    var interval2 = setInterval(downset2, 1000);
+
+                    function downset2() {
+                        $(".send-to1").text(count60 + "秒倒计时");
+                        count60--;
+                        if (count60 === -1) {
+                            $(".send-to1").text("重发验证码");
+                            clearInterval(interval2);
+                            $(".send-to1").removeClass("layui-btn-disabled");
+                            $(".send-to1").removeClass("color-trans");
+                            flag = 0;
+                            jishu = 0;
+                        }
+                    }
+                }
+            }
+        });
+        //5.2 注册1验证码
+        $(".send-to2").on("click", function(e) {
+            var phone2 = $(".phone-ipt2").val();
+            console.log(phone2);
+            var count = 4;
+            var count60 = 3;
+            if (phone2 == "") {
+                $(this).addClass("layui-btn-disabled");
+                layer.open({
+                    title: "提示！",
+                    content: "请输入符合规范的手机号",
+                });
+            } else if (isNaN(phone2)) {
+                $(this).addClass("layui-btn-disabled");
+                layer.open({
+                    title: "提示！",
+                    content: "只允许输入纯数字！",
+                });
+            } else if (flag == 0) {
+                if (jishu < 3) {
+                    flag = 1;
+                    $(".send-to2").addClass("layui-btn-disabled");
+                    console.log("点击了 " + ++jishu + "次<br>");
+                    layer.open({
+                        title: "提示！",
+                        content: "已发送验证码",
+                    });
+                    // 设置倒计时按钮样式
+                    var interval = null; //timer变量，控制时间
+                    $(".send-to2").text(count + "秒倒计时");
+                    var interval = setInterval(downset, 1000);
+
+                    function downset() {
+                        $(".send-to2").text(count + "秒倒计时");
+                        $(".send-to2").addClass("color-trans");
+                        $(".send-to2").addClass("layui-btn-disabled");
+                        count--;
+                        if (count === -1) {
+                            $(".send-to2").text("重发验证码");
+                            clearInterval(interval);
+                            $(".send-to2").removeClass("color-trans");
+                            $(".send-to2").removeClass("layui-btn-disabled");
+                            flag = 0;
+                        }
+                    } //请求后台发送验证码 TODO
+                    //ajax获取手机验证码
+                    e.preventDefault();
+                    $.ajax({
+                        method: "GET",
+                        url: "http://139.9.143.69:8001/oauth/msm/" + phone2,
+                        success: function(res) {
+                            console.log(res);
+                        },
+                    });
+                } else if (jishu == 3) {
+                    flag = 1;
+                    $(".send-to2").text(count60 + "后重发");
+                    $(".send-to2").addClass("layui-btn-disabled");
+                    var interval2 = null; //timer变量，控制时间
+                    var interval2 = setInterval(downset2, 1000);
+
+                    function downset2() {
+                        $(".send-to2").text(count60 + "秒倒计时");
+                        count60--;
+                        if (count60 === -1) {
+                            $(".send-to2").text("重发验证码");
+                            clearInterval(interval2);
+                            $(".send-to2").removeClass("color-trans");
+                            $(".send-to2").removeClass("layui-btn-disabled");
+                            flag = 0;
+                            jishu = 0;
+                        }
+                    }
+                }
+            }
+        });
+        // 5.3注册2验证码
+        $(".send-to3").on("click", function(e) {
+            var phone3 = $(".phone-ipt3").val();
+            var count = 4;
+            var count60 = 3;
+            if (phone3 == "") {
+                $(this).addClass("layui-btn-disabled");
+                layer.open({
+                    title: "提示！",
+                    content: "请输入符合规范的手机号",
+                });
+            } else if (isNaN(phone3)) {
+                $(this).addClass("layui-btn-disabled");
+                layer.open({
+                    title: "提示！",
+                    content: "只允许输入纯数字！",
+                });
+            } else if (flag == 0) {
+                if (jishu < 3) {
+                    flag = 1;
+                    $(".send-to3").addClass("layui-btn-disabled");
+                    console.log("点击了 " + ++jishu + "次<br>");
+                    layer.open({
+                        title: "提示！",
+                        content: "已发送验证码",
+                    });
+                    // 设置倒计时按钮样式
+                    var interval = null; //timer变量，控制时间
+                    $(".send-to3").text(count + "秒倒计时");
+                    var interval = setInterval(downset, 1000);
+
+                    function downset() {
+                        $(".send-to3").text(count + "秒倒计时");
+                        $(".send-to3").addClass("color-trans");
+                        $(".send-to3").addClass("layui-btn-disabled");
+                        count--;
+                        if (count === -1) {
+                            $(".send-to3").text("重发验证码");
+                            clearInterval(interval);
+                            $(".send-to3").removeClass("color-trans");
+                            $(".send-to3").removeClass("layui-btn-disabled");
+                            flag = 0;
+                        }
+                    } //请求后台发送验证码 TODO
+                    //ajax获取手机验证码
+                    e.preventDefault();
+                    $.ajax({
+                        method: "GET",
+                        url: "http://139.9.143.69:8001/oauth/msm/" + phone3,
+                        success: function(res) {
+                            console.log(res);
+                        },
+                    });
+                } else if (jishu == 3) {
+                    flag = 1;
+                    $(".send-to3").text(count60 + "后重发");
+                    $(".send-to3").addClass("layui-btn-disabled");
+                    var interval2 = null; //timer变量，控制时间
+                    var interval2 = setInterval(downset2, 1000);
+
+                    function downset2() {
+                        $(".send-to3").text(count60 + "秒倒计时");
+                        count60--;
+                        if (count60 === -1) {
+                            $(".send-to3").text("重发验证码");
+                            clearInterval(interval2);
+                            $(".send-to3").removeClass("layui-btn-disabled");
+                            $(".send-to3").removeClass("color-trans");
+                            flag = 0;
+                            jishu = 0;
+                        }
+                    }
+                }
+            }
+        });
+        // 5.4找回密码验证码
+        $(".send-to5").on("click", function(e) {
+            // $('#layui-layer-shade').show();
+            // $('#if-forget').hide();
+            // $('#if-reset').show();
+            var phone5 = $(".phone-ipt5").val();
+            var count = 4;
+            var count60 = 3;
+            if (phone5 == "") {
+                $(this).addClass("layui-btn-disabled");
+                layer.open({
+                    title: "提示！",
+                    content: "请输入符合规范的手机号",
+                });
+            } else if (isNaN(phone5)) {
+                $(this).addClass("layui-btn-disabled");
+                layer.open({
+                    title: "提示！",
+                    content: "只允许输入纯数字！",
+                });
+            } else if (flag == 0) {
+                if (jishu < 3) {
+                    flag = 1;
+                    $(".send-to5").addClass("layui-btn-disabled");
+                    console.log("点击了 " + ++jishu + "次<br>");
+                    layer.open({
+                        title: "提示！",
+                        content: "已发送验证码",
+                    });
+                    // 设置倒计时按钮样式
+                    var interval = null; //timer变量，控制时间
+                    $(".send-to5").text(count + "秒倒计时");
+                    var interval = setInterval(downset, 1000);
+
+                    function downset() {
+                        $(".send-to5").text(count + "秒倒计时");
+                        $(".send-to5").addClass("color-trans");
+                        $(".send-to5").addClass("layui-btn-disabled");
+                        count--;
+                        if (count === -1) {
+                            $(".send-to5").text("重发验证码");
+                            clearInterval(interval);
+                            $(".send-to5").removeClass("color-trans");
+                            $(".send-to5").removeClass("layui-btn-disabled");
+                            flag = 0;
+                        }
+                    } //请求后台发送验证码 TODO
+                    //ajax获取手机验证码
+                    e.preventDefault();
+                    $.ajax({
+                        method: "GET",
+                        url: "http://139.9.143.69:8001/oauth/msm/" + phone5,
+                        data: {
+                            phone: phone5,
+                        },
+                        success: function(res) {
+                            console.log(res);
+                            localStorage.setItem("uid", res.data);
+                        },
+                    });
+                } else if (jishu == 3) {
+                    flag = 1;
+                    $(".send-to5").text(count60 + "后重发");
+                    $(".send-to5").addClass("layui-btn-disabled");
+                    var interval2 = null; //timer变量，控制时间
+                    var interval2 = setInterval(downset2, 1000);
+
+                    function downset2() {
+                        $(".send-to5").text(count60 + "秒倒计时");
+                        count60--;
+                        if (count60 === -1) {
+                            $(".send-to5").text("重发验证码");
+                            clearInterval(interval2);
+                            $(".send-to5").removeClass("layui-btn-disabled");
+                            $(".send-to5").removeClass("color-trans");
+                            flag = 0;
+                            jishu = 0;
+                        }
+                    }
+                }
+            }
+        });
+
+        // 6登陆注册提交发送数据post
+        // 6.1登陆1提交数据
+        $("#post-btn1").on("click", function(e) {
+            var phone1 = $(".phone-ipt1").val();
+            var psw1 = $("#psw1").val();
+            if (phone1 != "" && psw1 != "") {
+                $(this).addClass("bgc-change");
+                $(this).removeClass("layui-btn-disabled");
+                e.preventDefault();
+                $.ajax({
+                    method: "POST",
+                    url: "http://139.9.143.69:8001/oauth/login/phone",
+                    data: {
+                        phone: $(".phone-ipt1").val(),
+                        code: $("#psw1").val(),
+                    },
+                    success: function(res) {
+                        if (res.code !== 0) {
+                            return layer.msg("登验证码输入错误");
+                        }
+                        layer.msg("登录成功！");
+                        // 将登录成功得到的 token 字符串，保存到 localStorage 中
+                        localStorage.setItem("uid", res.data);
+                        // 跳转到后台主页
+                        location.href = "index.html";
+                    },
+                });
+            }
+        });
+        // 6.2登陆2提交数据
+        $("#post-btn2").on("click", function(e) {
+            var phone2 = $("#phone-input").val();
+            var psw2 = $("#psw-input").val();
+            if (phone2 != "" && psw2 != "") {
+                $(this).addClass("bgc-change");
+                $(this).removeClass("layui-btn-disabled");
+                e.preventDefault();
+                $.ajax({
+                    method: "POST",
+                    url: "http://139.9.143.69:8001/oauth/login",
+                    data: {
+                        phone: phone2,
+                        password: psw2,
+                    },
+                    success: function(res) {
+                        if (res.code !== 0) {
+                            return layer.msg("执行出错");
+                        }
+                        layer.msg("登陆成功！");
+                        // 将登录成功得到的 token 字符串，保存到 localStorage 中
+                        localStorage.setItem("uid", res.data);
+                        // 跳转到后台主页
+                        location.href = "index.html";
+                    },
+                });
+            }
+        });
+        // 6.3注册1提交数据
+        $("#post-btn3").on("click", function(e) {
+            var phone3 = $(".phone-ipt2").val();
+            console.log(phone3);
+            var psw3 = $("#psw3").val();
+            console.log(psw3);
+            var setname = $("#regist-psw").val();
+            console.log(setname);
+            if (phone3 != "" && psw3 != "" && setname != "") {
+                $(this).addClass("bgc-change");
+                $(this).removeClass("layui-btn-disabled");
+                e.preventDefault();
+                $.ajax({
+                    method: "POST",
+                    url: "http://139.9.143.69:8001/oauth/register",
+                    data: {
+                        phone: $(".phone-ipt2").val(),
+                        code: $("#psw3").val(),
+                        password: $("#regist-psw").val(),
+                    },
+                    success: function(res) {
+                        if (res.code !== 0) {
+                            return layer.msg("执行出错");
+                        }
+                        layer.msg("注册成功！");
+                        // 将登录成功得到的 token 字符串，保存到 localStorage 中
+                        localStorage.setItem("uid", res.data);
+                        // 跳转到后台主页
+                        location.href = "index.html";
+                    },
+                });
+            }
+        });
+        // 6.3注册2提交数据
+        $("#post-btn4").on("click", function(e) {
+            var phone4 = $(".phone-ipt3").val();
+            var psw4 = $("#psw4").val();
+            if (phone4 != "" && psw4 != "") {
+                $(this).addClass("bgc-change");
+                $(this).removeClass("layui-btn-disabled");
+                e.preventDefault();
+                $.ajax({
+                    method: "POST",
+                    url: "http://139.9.143.69:8001/oauth/login",
+                    data: $(this).serialize(),
+                    success: function(res) {
+                        if (res.code !== 0) {
+                            return layer.msg("执行出错");
+                        }
+                        layer.msg("登录成功！");
+                        // 将登录成功得到的 token 字符串，保存到 localStorage 中
+                        localStorage.setItem("uid", res.data);
+                        // 跳转到后台主页
+                        location.href = "index.html";
+                    },
+                });
+            }
+        });
+
+        // 7找回密码提交数据,跳转至重置盒子
+        $("#if-forget").on("click", function(e) {
+            var phone5 = $(".phone-ipt5").val();
+            var psw5 = $("#psw5").val();
+            if (phone5 != "" && psw5 != "") {
+                $("#layui-layer-shade").show();
+                $("#if-forget").hide();
+                $("#if-reset").show();
+                var newpsw = $("#new-psw").val();
+                var renewpsw = $("#re-newpsw").val();
+                if (newpsw === renewpsw) {
+                    e.preventDefault();
+                    $.ajax({
+                        method: "POST",
+                        url: "http://139.9.143.69:8001/oauth/pwd",
+                        data: {
+                            phone: phone5,
+                            code: psw5,
+                            password: renewpsw,
+                        },
+                        success: function(res) {
+                            if (res.code !== 0) {
+                                return layer.msg("执行出错");
+                            }
+                            layer.msg("登录成功！");
+                            // 将登录成功得到的 token 字符串，保存到 localStorage 中
+                            localStorage.setItem("uid", res.data);
+                            // 跳转到后台主页
+                            location.href = "index.html";
+                        },
+                    });
+                }
+            }
+        });
+
+        var searchRecommend = [];
+
+        var datailsId = "";
         $(".details").show();
         window.scroll(0, 0);
         if ($(this)[0].dataset.id) {
@@ -330,6 +1045,34 @@ $(function() {
                     );
                 }
             );
+            $.get(
+                "http://139.9.143.69:8001/materials/recommends/" +
+                $(this)[0].dataset.id,
+                function(res) {
+                    console.log(res);
+                    for (
+                        var flag = 0; flag < (res.data.rows.length >= 8 ? 8 : res.data.rows.length); flag++
+                    ) {
+                        searchRecommend.push(`<article class="white-panel">
+          <img src="${res.data.rows[flag].show_image}" class="thumb">
+          <div class="search-img-hover">
+              <a class="search-img-download" data-id = ${res.data.rows[flag].id}>免 费 下 载</a>
+          </div>
+        </article>`);
+                    }
+                    $("#gallery-wrapper2").html(searchRecommend.join(""));
+                    detailsFlag = 0;
+                    searchRecommend.splice(0, searchRecommend.length);
+                    $("#gallery-wrapper2").pinterest_grid({
+                        no_columns: 4,
+                        padding_x: 15,
+                        padding_y: 15,
+                        // margin_bottom: 50,
+                        single_column_breakpoint: 0,
+                    });
+                    $(window).resize();
+                }
+            );
         }
         $(window).resize();
     });
@@ -341,6 +1084,32 @@ $(function() {
 
     var detailsName = "";
     var detailsLink = $("#datails-download-none")[0];
-
+    $("body").on("click", ".datails-download", function() {
+        // console.log(1);
+        if (sessionStorage.getItem("status") === "401") {
+            $(".details").hide();
+            $("#login").click();
+            return;
+        }
+        $.ajax({
+            method: "POST",
+            url: "http://139.9.143.69:8001/usercenter/download/105",
+            headers: {
+                uid: localStorage.getItem("uid"),
+            },
+            success: function(res) {
+                console.log(res);
+                detailsLink.href = res.data.split("8080")[1];
+                console.log(detailsLink.href);
+                detailsLink.download = detailsName;
+                console.log(detailsName);
+                detailsLink.click();
+                // location.href = res.data
+                // $('.datails-download')[0].href = res.data
+                // var imgURL = URL.createObjectURL(res.data)
+                // console.log(imgURL);
+            },
+        });
+    });
 
 });
