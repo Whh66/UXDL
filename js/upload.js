@@ -1,28 +1,49 @@
-$(function () {
+$(function() {
     // 验证登录状态
     $.ajax({
-        method: 'GET',
-        url: 'http://139.9.143.69:8001/users/info',
-        headers: {
-            uid: localStorage.getItem('uid')
-        },
-        complete: function (res) {
-            // console.log(res.status);
-            if (res.status === 401) {
-                // 清空本地存储中的 uid
-                localStorage.removeItem('uid')
-                location.href = 'index.html'
-            }
-        },
-    })
-    // 从 layui 中获取相应对象
+            method: 'GET',
+            url: 'http://139.9.143.69:8001/users/info',
+            headers: {
+                uid: localStorage.getItem('uid')
+            },
+            complete: function(res) {
+                // console.log(res.status);
+                if (res.status === 401) {
+                    // 清空本地存储中的 uid
+                    localStorage.removeItem('uid')
+                    location.href = 'index.html'
+                }
+            },
+        })
+        // 从 layui 中获取相应对象
     var form = layui.form
     var layer = layui.layer
 
-    // 跳转至摄影上传页面
-    $('#photography').on('click', function () {
-        location.href = '/upload2.html'
+    // 跳转至设计模板上传页面
+    $('#design').on('click', function() {
+        location.href = './upload.html'
     })
+
+    // 跳转至创意背景上传页面
+    $('#backGround').on('click', function() {
+        location.href = './upload3.html'
+    })
+
+    // 跳转至插画上传页面
+    $('#addPic').on('click', function() {
+        location.href = './upload4.html'
+    })
+
+
+    //跳转至摄影上传页面
+    $('#photography').on('click', function() {
+        location.href = './upload2.html'
+    })
+
+    // 上传列表点击切换效果
+    // $('.thead button').on('click', function() {
+    //     $(this).addClass('gradient').siblings().removeClass('gradient')
+    // })
 
     // 通过 form.verify() 函数自定义校验规则
     form.verify({
@@ -38,7 +59,7 @@ $(function () {
             /^[\s\S]{1,5}$/, '最多不能超过5个'
         ],
         // 标签必选验证规则
-        req: function () {
+        req: function() {
             if (tagsArr1.length === 0) {
                 return '请选择标签'
             }
@@ -49,19 +70,19 @@ $(function () {
     $.ajax({
         type: 'GET',
         url: 'http://139.9.143.69:8001/materials/categorys/2',
-        success: function (res) {
+        success: function(res) {
             // console.log(res.data[0].categoryList);
             if (res.code !== 0) {
                 return layer.msg('获取分类数据失败！')
             }
             // 调用 template 函数
             var htmlStr = template('classifyTem', res.data[0])
-            // console.log(htmlStr);
-            // 渲染 HTML 结构
+                // console.log(htmlStr);
+                // 渲染 HTML 结构
             $('.classify').html(htmlStr)
-            // 通知 layui 重新渲染表单区域的UI结构
+                // 通知 layui 重新渲染表单区域的UI结构
             form.render()
-            // 去除 select 选项默认文字
+                // 去除 select 选项默认文字
             $('.layui-unselect').prop({
                 'placeholder': '',
                 'value': ''
@@ -70,9 +91,9 @@ $(function () {
     })
 
     // 上传附件点击事件
-    $('.accessory button').on('click', function () {
+    $('.accessory button').on('click', function() {
         // 模拟点击隐藏 input[type='file']
-        $('#fileCover').click().on('change', function () { // 监听 input[type='file'] 的 change 事件
+        $('#fileCover').click().on('change', function() { // 监听 input[type='file'] 的 change 事件
             var filePath = $(this).val();
             // console.log(filePath);
             var arr = filePath.split('\\'); // 以 \ 分割字符串，前面加 \ 转义
@@ -85,7 +106,7 @@ $(function () {
     })
 
     // 监听单选框事件
-    form.on('radio', function (e) {
+    form.on('radio', function(e) {
         // console.log($('input[title="手动填写"]').prop('checked'));
         // 判断 手动填写 单选框是否被选中，选中则后面文本框和对应验证规则可用，否则禁用
         if ($('input[title="手动填写"]').prop('checked')) {
@@ -96,7 +117,7 @@ $(function () {
     })
 
     // 监听 介绍 文本域字数变化
-    $('#presentation textarea').on('input', function () {
+    $('#presentation textarea').on('input', function() {
         var len = $(this).val().length
         $('#wordsLength').html(len + '/' + $(this).prop('maxlength'))
     })
@@ -104,14 +125,14 @@ $(function () {
     // 标签部分
     // 定义存放标签数组
     var tagsArr1 = []
-    $.each($('.addTag span'), function (i, ele) {
-        // console.log(i); 
-        // console.log(ele.innerText);
-        tagsArr1.push(ele.innerText)
-        // console.log(tagsArr1);
-    })
-    // 点击底部选择标签事件
-    $('.tagList').on('click', 'li', function (e) {
+    $.each($('.addTag span'), function(i, ele) {
+            // console.log(i); 
+            // console.log(ele.innerText);
+            tagsArr1.push(ele.innerText)
+                // console.log(tagsArr1);
+        })
+        // 点击底部选择标签事件
+    $('.tagList').on('click', 'li', function(e) {
         // 判断选择框是否有相同标签
         // console.log(tagsArr1);
         // console.log(tagsArr1.indexOf(e.target.innerText));
@@ -123,7 +144,7 @@ $(function () {
             // 将对应标签添加至标签框里
             $('.addTag button').before(`<span>${$(this).text()}<strong class="layui-icon layui-icon-close"></strong></span>`)
             tagsArr1.push(e.target.innerText)
-            // console.log(tagsArr1);
+                // console.log(tagsArr1);
         } else {
             layer.msg('最多可选择六个标签', {
                 icon: 7
@@ -132,38 +153,38 @@ $(function () {
     })
 
     var indexAdd = null
-    // 点击添加标签事件
-    $('.addTag button').on('click', function () {
+        // 点击添加标签事件
+    $('.addTag button').on('click', function() {
         if (tagsArr1.length < 6) {
             indexAdd = layer.open({
-                type: 1,
-                area: ['500px', '260px'],
-                title: '添加标签',
-                content: $('#dialog-add').html()
-            })
-            // 文本框聚焦
+                    type: 1,
+                    area: ['500px', '260px'],
+                    title: '添加标签',
+                    content: $('#dialog-add').html()
+                })
+                // 文本框聚焦
             let tag = $('input[name=tag]')
             tag.focus()
-            // 确认添加
-            $('#dialog-confirm').on('click', function (e) {
-                let reg = /^\s+$/
-                if (tagsArr1.indexOf(tag.val().trim()) !== -1) {
-                    e.preventDefault()
-                    layer.msg('标签已存在', {
-                        icon: 7
-                    });
-                } else if (tag.val().trim() && tag.val().length < 6) {
-                    $('.addTag button').before(`<span>${tag.val().trim()}<strong class="layui-icon layui-icon-close"></strong></span>`)
-                    e.preventDefault()
-                    tagsArr1.push(tag.val().trim())
-                    // 根据索引关闭对应的弹出层
-                    layer.close(indexAdd)
-                } else if (reg.test(tag.val())) {
-                    tag.val('')
-                }
-            })
-            // 取消添加
-            $('#dialog-cancel').on('click', function () {
+                // 确认添加
+            $('#dialog-confirm').on('click', function(e) {
+                    let reg = /^\s+$/
+                    if (tagsArr1.indexOf(tag.val().trim()) !== -1) {
+                        e.preventDefault()
+                        layer.msg('标签已存在', {
+                            icon: 7
+                        });
+                    } else if (tag.val().trim() && tag.val().length < 6) {
+                        $('.addTag button').before(`<span>${tag.val().trim()}<strong class="layui-icon layui-icon-close"></strong></span>`)
+                        e.preventDefault()
+                        tagsArr1.push(tag.val().trim())
+                            // 根据索引关闭对应的弹出层
+                        layer.close(indexAdd)
+                    } else if (reg.test(tag.val())) {
+                        tag.val('')
+                    }
+                })
+                // 取消添加
+            $('#dialog-cancel').on('click', function() {
                 layer.close(indexAdd)
             })
         } else {
@@ -174,21 +195,21 @@ $(function () {
     })
 
     // 点击关闭按钮 X 事件
-    $('.addTag').on('click', 'strong', function () {
+    $('.addTag').on('click', 'strong', function() {
         // 从添加标签框里移除当前标签
         $(this).parent().remove()
-        // 同时从数组中移除
+            // 同时从数组中移除
         tagsArr1.splice(tagsArr1.indexOf($(this).innerText))
-        // console.log(tagsArr1);
+            // console.log(tagsArr1);
     })
 
 
     // 选择封面
-    $('#uploadCover').on('click', function () {
-        $('#coverFile').click();
-    })
-    // 为文件选择框绑定 change 事件
-    $('#coverFile').on('change', function () {
+    $('#uploadCover').on('click', function() {
+            $('#coverFile').click();
+        })
+        // 为文件选择框绑定 change 事件
+    $('#coverFile').on('change', function() {
         // 判断是否选择了文件
         if (this.files.length !== 0) {
             // 创建formData对象实现二进制文件上传
@@ -205,12 +226,12 @@ $(function () {
                 processData: false, // 不处理数据
                 contentType: false, // 不设置内容类型
                 data: fd1,
-                success: function (res) {
+                success: function(res) {
                     if (res.code === -1) {
                         return layer.msg('上传封面失败')
                     }
                     $('input[name=show_image]').val(res.data.url)
-                    // 渲染封面
+                        // 渲染封面
                     $('.cover img').attr('src', res.data.url)
 
                 }
@@ -222,17 +243,17 @@ $(function () {
     var draft = 0
 
     // 为存为保存按钮绑定点击事件
-    $('#save').on('click', function () {
-        draft = 1
-    })
-    // 监听到Ajax请求被发起了
-    $(document).ajaxStart(function () {
+    $('#save').on('click', function() {
+            draft = 1
+        })
+        // 监听到Ajax请求被发起了
+    $(document).ajaxStart(function() {
         // $('#loading').show()
         NProgress.start()
     })
 
     // 监听到 Ajax 完成的事件
-    $(document).ajaxStop(function () {
+    $(document).ajaxStop(function() {
         // $('#loading').hide()
         NProgress.done()
     })
@@ -251,14 +272,14 @@ $(function () {
     // })
 
     // 提交表单事件
-    form.on('submit(formDemo)', function (e) {
+    form.on('submit(formDemo)', function(e) {
         layer.confirm('是否确认当前操作?', {
             icon: 3,
             title: '提示'
-        }, function (index) {
+        }, function(index) {
             var fd = new FormData($('#uploadList')[0])
             fd.append('file', $('#fileCover')[0].files[0])
-            // 上传源文件
+                // 上传源文件
             $.ajax({
                 method: 'POST',
                 url: 'http://139.9.143.69:8001/usercenter/upload',
@@ -268,7 +289,7 @@ $(function () {
                 processData: false, // 不处理数据
                 contentType: false, // 不设置内容类型
                 data: fd,
-                success: function (res) {
+                success: function(res) {
                     // console.log(res);
                     if (res.code === -1) {
                         return layer.msg('上传源文件失败')
@@ -302,7 +323,7 @@ $(function () {
                         dataType: 'json',
                         contentType: "application/json",
                         data: JSON.stringify(jsonData),
-                        success: function (res) {
+                        success: function(res) {
                             // console.log(res);
                             if (res.code === -1) {
                                 return layer.msg('发布失败')
