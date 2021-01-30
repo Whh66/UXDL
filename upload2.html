@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/upload2.css">
 </head>
 
+
 <body>
     <!-- 头部导航栏 -->
     <header class="nav">
@@ -44,12 +45,12 @@
             <div class="menus">
                 <img src="img/menus.png" alt="">
                 <ul class="nav-box">
-                    <li class="color-change"><a href="index.html">首页</a></li>
-                    <li><a href="javascript:;">摄影</a></li>
-                    <li><a href="design.html">设计模板</a></li>
-                    <li><a href="javascript:;">创意背景</a></li>
-                    <li><a href="javascript:;">插画</a></li>
-                    <li><a href="pickFree.html">免扣元素</a></li>
+                    <li class="color-change"><a href="./index.html">首页</a></li>
+                    <li><a href="./photography.html">摄影</a></li>
+                    <li><a href="./design.html">设计模板</a></li>
+                    <li><a href="./creative.html">创意背景</a></li>
+                    <li><a href="./illustration.html">插画</a></li>
+                    <li><a href="./pickFree.html">免扣元素</a></li>
                     <li><a href="javascript:;">办公文档</a></li>
                     <li><a href="javascript:;">视频</a></li>
                     <li><a href="javascript:;">商城</a></li>
@@ -64,11 +65,11 @@
         <div class="thead">
             <h2>上传列表</h2>
             <button type="button" id="design">设计模板</button>
-            <button type="button">创意背景</button>
-            <button type="button">插画</button>
+            <button type="button" id="backGround">创意背景</button>
+            <button type="button" id="addPic">插画</button>
             <button type="button" class="gradient">摄影</button>
-            <button type="button">免扣元素</button>
-            <button type="button">办公文档</button>
+            <!-- <button type="button">免扣元素</button>
+            <button type="button">办公文档</button> -->
         </div>
         <!-- 上传作品部分 -->
         <div class="uploading">
@@ -91,16 +92,14 @@
                 <div class="layui-form-item">
                     <label>作品名称</label>
                     <div>
-                        <input type="text" name="name" required lay-verify="required|production" autocomplete="off"
-                            class="layui-input">
+                        <input type="text" name="name" required lay-verify="required|production" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <!-- 介绍 -->
                 <div class="layui-form-item layui-form-text" id="presentation">
                     <label>介绍</label>
                     <div style="position: relative;">
-                        <textarea name="description" placeholder="作品说明（选填）" class="layui-textarea"
-                            maxlength="1000"></textarea>
+                        <textarea name="description" placeholder="作品说明（选填）" class="layui-textarea" maxlength="1000"></textarea>
                         <span id="wordsLength">0/1000</span>
                     </div>
                 </div>
@@ -217,8 +216,7 @@
     <script type="text/html" id="dialog-add">
         <form class="layui-form">
             <div class="layui-form-item" id="dialog-tag">
-                <input type="text" name="tag" required lay-verify="required|max5" placeholder="请输入标签名"
-                    autocomplete="off" class="layui-input">
+                <input type="text" name="tag" required lay-verify="required|max5" placeholder="请输入标签名" autocomplete="off" class="layui-input">
             </div>
             <div class="layui-form-item">
                 <div class="layui-input-block">

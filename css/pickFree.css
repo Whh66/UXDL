@@ -5,6 +5,70 @@
     right: -26px;
 }
 
+/* 搜索下拉选择框 */
+
+.search-selected {
+    display: none;
+    width: 132px;
+    position: absolute;
+    top: 50px;
+    left: -8px;
+    box-shadow: 2px 3px 5px #ccc;
+}
+
+.content {
+    margin: 0 auto;
+    width: 1260px;
+}
+
+.search-selected1 {
+    display: none;
+    width: 132px;
+    position: absolute;
+    top: 45px;
+    left: -8px;
+    box-shadow: 2px 3px 5px #ccc;
+}
+
+.search-selected2,
+.search-selected3 {
+    display: none;
+    width: 132px;
+    position: absolute;
+    top: 50px;
+    left: 130px;
+    box-shadow: 2px 3px 5px #ccc;
+    z-index: 3;
+}
+
+.search-selected2 {
+    position: absolute;
+    top: 50px;
+    left: 0px;
+}
+
+.search-selected li,
+.search-selected1 li,
+.search-selected2 li,
+.search-selected3 li {
+    display: inline-block;
+    text-align: center;
+    width: 132px;
+    height: 44px;
+    line-height: 44px;
+    color: #666;
+    background-color: #fff;
+}
+
+.search-selected li:hover,
+.search-selected1 li:hover,
+.search-selected2 li:hover,
+.search-selected3 li:hover {
+    color: #fff;
+    cursor: pointer;
+    background: -webkit-linear-gradient(left, #ffa53c, #f3504b);
+}
+
 /* 鼠标hover查看详情按钮时，按钮向上 */
 #btnDetails:hover {
     transform: translate(-59px, -14px);
@@ -75,7 +139,8 @@
 #gallery-wrapper1,
 #gallery-wrapper3,
 #gallery-wrapper4,
-#gallery-wrapper5 {
+#gallery-wrapper5,
+#gallery-wrapper6 {
     position: relative;
     max-width: 100%;
     width: 100%;

@@ -44,12 +44,12 @@
             <div class="menus">
                 <img src="img/menus.png" alt="">
                 <ul class="nav-box">
-                    <li class="color-change"><a href="index.html">首页</a></li>
-                    <li><a href="javascript:;">摄影</a></li>
-                    <li><a href="design.html">设计模板</a></li>
-                    <li><a href="javascript:;">创意背景</a></li>
-                    <li><a href="javascript:;">插画</a></li>
-                    <li><a href="pickFree.html">免扣元素</a></li>
+                    <li class="color-change"><a href="./index.html">首页</a></li>
+                    <li><a href="./photography.html">摄影</a></li>
+                    <li><a href="./design.html">设计模板</a></li>
+                    <li><a href="./creative.html">创意背景</a></li>
+                    <li><a href="./illustration.html">插画</a></li>
+                    <li><a href="./pickFree.html">免扣元素</a></li>
                     <li><a href="javascript:;">办公文档</a></li>
                     <li><a href="javascript:;">视频</a></li>
                     <li><a href="javascript:;">商城</a></li>
@@ -63,12 +63,12 @@
         <!-- 表头 -->
         <div class="thead">
             <h2>上传列表</h2>
-            <button type="button" class="gradient">设计模板</button>
-            <button type="button">创意背景</button>
-            <button type="button">插画</button>
+            <button type="button" class="gradient" id="design">设计模板</button>
+            <button type="button" id="backGround">创意背景</button>
+            <button type="button" id="addPic">插画</button>
             <button type="button" id="photography">摄影</button>
-            <button type="button">免扣元素</button>
-            <button type="button">办公文档</button>
+            <!-- <button type="button">免扣元素</button>
+            <button type="button">办公文档</button> -->
         </div>
         <div class="clearfix">
             <!-- 左边部分 -->
@@ -77,8 +77,7 @@
                 <div class="layui-form-item">
                     <label>作品名称</label>
                     <div>
-                        <input type="text" name="name" required lay-verify="required|production" autocomplete="off"
-                            class="layui-input">
+                        <input type="text" name="name" required lay-verify="required|production" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <!-- 分类 -->
@@ -87,12 +86,12 @@
                     <div class="classify">
                     </div>
                 </div>
+
                 <!-- 上传文件 -->
                 <div class="layui-form-item clearfix" id="uploadFile">
                     <div id="file">
                         <!-- 隐藏的文本选择框 -->
-                        <input type="file" id="fileCover" lay-verify="required" style="display: none;"
-                            accept=".zip,.rar">
+                        <input type="file" id="fileCover" lay-verify="required" style="display: none;" accept=".zip,.rar">
 
                         <label>上传源文件</label>
                         <div class="accessory">
@@ -122,13 +121,11 @@
                 <div class="layui-form-item" id="size">
                     <label>源文件尺寸</label>
                     <div class="layui-inline">
-                        <input type="text" name="length" required lay-verify="required|number|size" autocomplete="off"
-                            class="layui-input">
+                        <input type="text" name="length" required lay-verify="required|number|size" autocomplete="off" class="layui-input">
                     </div>
                     <span>PX</span>
                     <div class="layui-inline">
-                        <input type="text" name="width" required lay-verify="required|number|size" autocomplete="off"
-                            class="layui-input">
+                        <input type="text" name="width" required lay-verify="required|number|size" autocomplete="off" class="layui-input">
                     </div>
                     <span>PX</span>
                 </div>
@@ -141,8 +138,7 @@
                         <input type="radio" name="source_dpi" value="300dpi" title="300dpi">
                         <input type="radio" name="source_dpi" title="手动填写">
                         <div class="layui-inline">
-                            <input type="text" name="source_dpi" required lay-verify="" autocomplete="off"
-                                class="layui-input" disabled="true">
+                            <input type="text" name="source_dpi" required lay-verify="" autocomplete="off" class="layui-input" disabled="true">
                         </div>
                         <span>dpi</span>
                     </div>
@@ -151,8 +147,7 @@
                 <div class="layui-form-item layui-form-text" id="presentation">
                     <label>介绍</label>
                     <div style="position: relative;">
-                        <textarea name="description" placeholder="作品说明（选填）" class="layui-textarea"
-                            maxlength="1000"></textarea>
+                        <textarea name="description" placeholder="作品说明（选填）" class="layui-textarea" maxlength="1000"></textarea>
                         <span id="wordsLength">0/1000</span>
                     </div>
                 </div>
@@ -296,8 +291,7 @@
     <script type="text/html" id="dialog-add">
         <form class="layui-form">
             <div class="layui-form-item" id="dialog-tag">
-                <input type="text" name="tag" required lay-verify="required|max5" placeholder="请输入标签名"
-                    autocomplete="off" class="layui-input">
+                <input type="text" name="tag" required lay-verify="required|max5" placeholder="请输入标签名" autocomplete="off" class="layui-input">
             </div>
             <div class="layui-form-item">
                 <div class="layui-input-block">

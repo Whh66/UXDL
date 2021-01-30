@@ -5,8 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>个人中心</title>
+    <link rel="stylesheet" href="css/pinterest_grid.css" />
+    <link rel="stylesheet" href="lib/base.css" />
+    <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="./lib/layui/css/layui.css" />
-    <link rel="stylesheet" href="/css/common.css" />
+
     <link rel="stylesheet" href="./css/centre.css" />
 </head>
 
@@ -35,19 +38,19 @@
         </div>
         <!-- 左侧图标 -->
         <div class="logo">
-            <a href="index.html"><img data-funlazy="img/logo.png" alt="" /></a>
+            <a href="index.html"><img src="img/logo.png" alt="" /></a>
         </div>
         <!-- 中间导航栏 -->
         <div class="w">
             <div class="menus">
                 <img src="img/menus.png" alt="" />
                 <ul class="nav-box">
-                    <li class="color-change"><a href="index.html">首页</a></li>
-                    <li><a href="javascript:;">摄影</a></li>
-                    <li><a href="design.html">设计模板</a></li>
-                    <li><a href="javascript:;">创意背景</a></li>
-                    <li><a href="javascript:;">插画</a></li>
-                    <li><a href="pickFree.html">免扣元素</a></li>
+                    <li class="color-change"><a href="./index.html">首页</a></li>
+                    <li><a href="./photography.html">摄影</a></li>
+                    <li><a href="./design.html">设计模板</a></li>
+                    <li><a href="./creative.html">创意背景</a></li>
+                    <li><a href="./illustration.html">插画</a></li>
+                    <li><a href="./pickFree.html">免扣元素</a></li>
                     <li><a href="javascript:;">办公文档</a></li>
                     <li><a href="javascript:;">视频</a></li>
                     <li><a href="javascript:;">商城</a></li>
@@ -64,13 +67,13 @@
             <div class="msg-box">
                 <!-- 个人头像 -->
                 <div class="photo">
-                    <!--<img src="./img/t.png" alt=""> -->
+                    <img src="./img/t.png" alt="">
                 </div>
                 <!-- 用户信息区域 -->
                 <div class="userInfo">
                     <!-- 用户名 -->
                     <div class="username">
-                        <!-- <h3>设计诗</h3> -->
+                        <h3>设计诗</h3>
                     </div>
                     <!-- 名片 -->
                     <div class="info">
@@ -83,10 +86,10 @@
                                 <li> <img src="./img/weixin (1).png" alt="" /></li>
                             </ul>
                             <ul class="info-list">
-                                <!-- <li>454812</li>
+                                <li>454812</li>
                                 <li>18911187544</li>
                                 <li>951177084</li>
-                                <li>xxxccxxc</li> -->
+                                <li>xxxccxxc</li>
                             </ul>
                         </div>
                     </div>
@@ -115,7 +118,8 @@
             </div>
             <!-- tab 栏菜单 -->
             <ul class="tab-menu">
-                <li><a href="javascript:;" class="sizeColor" id="create">创作</a></li>
+                <li><a href="javascript:;" class="sizeColor" id="index">首页</a></li>
+                <li><a href="javascript:;" id="create">创作</a></li>
                 <li><a href="javascript:;" id="userCollect">收藏</a></li>
                 <li><a href="javascript:;" id="history">记录</a></li>
             </ul>
@@ -123,11 +127,15 @@
         <!-- 图片区域 -->
         <!-- 图片区域菜单栏 -->
         <div class="menu-list">
-            <!-- <a href="javascript:;" class="color_orange" id="all">全部</a>
-    <a href="javascript:;" >平面设计</a>
-    <a href="javascript:;" >摄影</a>
-    <a href="javascript:;" >UI设计</a>
-    <a href="javascript:;" >淘宝电商</a> -->
+            <a href="javascript:;" class="color_orange" id="all">全部</a>
+            <a href="javascript:;">设计模板</a>
+            <a href="javascript:;">摄影</a>
+            <a href="javascript:;">创意背景</a>
+            <a href="javascript:;">免扣元素</a>
+            <a href="javascript:;">插画</a>
+            <a href="javascript:;">办公文档</a>
+            <a href="javascript:;">视频</a>
+
         </div>
         <div class="img-box">
             <!-- 首页 -->
@@ -139,7 +147,7 @@
             </div>
             <!-- 显示更多按钮 -->
             <div id="ShowMore">
-                <!-- <button class="btn color_orange">显示更多</button> -->
+                <button class="btn color_orange">显示更多</button>
             </div>
         </div>
     </div>
@@ -209,29 +217,29 @@
     <script type="text/html" id="templatePhone">
         <!-- 昵称 -->
         {{if nickName == ''}}
-    <li>未填写</li>
-    {{else if nickName !== ''}}
-    <li>{{nickName}}</li>
-    {{/if}}
-    <!-- 手机号码 -->
-    {{if phone == ''}}
-    <li>未填写</li>
-    {{else if phone !== ''}}
-    <li>{{phone}}</li>
-    {{/if}}
+        <li>未填写</li>
+        {{else if nickName !== ''}}
+        <li>{{nickName}}</li>
+        {{/if}}
+        <!-- 手机号码 -->
+        {{if phone == ''}}
+        <li>未填写</li>
+        {{else if phone !== ''}}
+        <li>{{phone}}</li>
+        {{/if}}
 
-    <!-- QQ号码 -->
-    {{if qq == 'null'}}
-    <li>未填写</li>
-    {{else if qq !== ''}}
-    <li>{{qq}}</li>
-    {{/if}}
-    <!-- 微信 -->
-    {{if weixin == ''}}
-    <li>未填写</li>
-    {{else if weixin !== ''}}
-    <li>{{weixin}}</li>
-    {{/if}}
+        <!-- QQ号码 -->
+        {{if qq == 'null'}}
+        <li>未填写</li>
+        {{else if qq !== ''}}
+        <li>{{qq}}</li>
+        {{/if}}
+        <!-- 微信 -->
+        {{if weixin == ''}}
+        <li>未填写</li>
+        {{else if weixin !== ''}}
+        <li>{{weixin}}</li>
+        {{/if}}
     </script>
     <!-- 用户昵称模板 -->
     <script type="text/html" id="templateName">
@@ -248,15 +256,15 @@
     <script type="text/html" id="templateUserWorks">
         <!-- <section id="gallery-wrapper"> -->
         {{each data.rows}}
-    <article class="white-panel">
-        <div class="top-btn ">
-            <button class="amend color_orange " id="alter" data-id="{{$value.id}}">修改</button>
-            <button class="amend color_orange " id="deleteUserImg" data-index="{{$value.id}}">删除</button>
-        </div>
-        <img src="{{$value.show_image}}" class="thumb" />
-    </article>
-    {{/each}}
-    <!-- </section> -->
+        <article class="white-panel">
+            <div class="top-btn ">
+                <button class="amend color_orange " id="alter" data-id="{{$value.id}}">修改</button>
+                <button class="amend color_orange " id="deleteUserImg" data-index="{{$value.id}}">删除</button>
+            </div>
+            <img src="{{$value.show_image}}" class="thumb" />
+        </article>
+        {{/each}}
+        <!-- </section> -->
     </script>
 
     <!-- 用户个人收藏图片 模板 -->

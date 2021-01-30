@@ -49,11 +49,11 @@
                 <img src="img/menus.png" alt="" />
                 <ul class="nav-box">
                     <li><a href="./index.html">首页</a></li>
-                    <li><a href="javascript:;">摄影</a></li>
+                    <li><a href="./photography.html">摄影</a></li>
                     <li class="color-change"><a href="./design.html">设计模板</a></li>
-                    <li><a href="javascript:;">创意背景</a></li>
-                    <li><a href="javascript:;">插画</a></li>
-                    <li><a href="pickFree.html">免扣元素</a></li>
+                    <li><a href="./creative.html">创意背景</a></li>
+                    <li><a href="./illustration.html">插画</a></li>
+                    <li><a href="./pickFree.html">免扣元素</a></li>
                     <li><a href="javascript:;">办公文档</a></li>
                     <li><a href="javascript:;">视频</a></li>
                     <li><a href="javascript:;">商城</a></li>
@@ -149,17 +149,18 @@
         <div class="classification">
             <div class="fication">
                 <ul class="fic-text">
-                    <li>
+                   <!--  <li>
                         <a href="javascript:;" style="color: #ed6650">全部</a>
-                    </li>
+                    </li> -->
                     <li>
-                        <a href="javascript:;" style="color: #ed6650">设计模板
+                      <!--   <a href="javascript:;" style="color: #ed6650">设计模板
                             <i class="layui-icon" style="font-size: 7px">&#xe61a;</i></a>
                         <ul class="fic-text-menu">
-                            <li><a href="javascript:;">平面广告</a></li>
-                            <li><a href="javascript:;">淘宝电商</a></li>
-                            <li><a href="javascript:;">UI设计</a></li>
-                            <li><a href="javascript:;">样机模板</a></li>
+                            <li><a href="javascript:;">平面类</a></li>
+                            <li><a href="javascript:;">电商类</a></li>
+                            <li><a href="javascript:;">UI交互类</a></li>
+                            <li><a href="javascript:;">装饰类</a></li>
+                            <li><a href="javascript:;">手机配图</a></li>
                         </ul>
                     </li>
                     <li>
@@ -223,60 +224,90 @@
                     <li>
                         <a href="javascript:;"><img src="img/p4.png" alt="" /></a>
                     </li>
-                </ul>
+                </ul> -->
             </div>
         </div>
-    </div>
-    <!-- 精选藏管 selected -->
-    <div class="selected-text">精选藏管</div>
+    </div> 
+    <!-- 精选典藏 selected -->
+ <div class="show">
+  <div class="selected-text">精选藏馆</div>
+  <div class="selected w ">
+      <section id="gallery-wrapper2">
+          <h3 style="text-align:center;margin: auto;">暂无作品</h3>
+      </section>
+  </div>
+  <div class="morr">显示更多</div>
+</div>
+
+
+    <!-- 平面广告 selected -->
+    <div class="show">
+    <div class="selected-text">&nbsp;&nbsp;平面类</div>
     <div class="selected w">
         <section id="gallery-wrapper">
             <h3 style="text-align: center; margin: auto">暂无作品</h3>
         </section>
     </div>
     <div class="morr">显示更多</div>
+</div>
 
-    <!-- 平面广告 selected -->
-    <div class="selected-text">平面广告</div>
+    <!-- 淘宝电商 selected -->
+    <div class="show">
+    <div class="selected-text">&nbsp;&nbsp;电商类</div>
     <div class="selected w">
         <section id="gallery-wrapper1">
             <h3 style="text-align: center; margin: auto">暂无作品</h3>
         </section>
     </div>
     <div class="morr">显示更多</div>
-    <input type="text" />
+</div>
 
-    <!-- 淘宝电商 selected -->
-    <div class="selected-text">淘宝电商</div>
+    <!-- UI交互selected -->
+    <div class="show">
+    <div class="selected-text" style="white-space: nowrap;">UI交互类</div>
     <div class="selected w">
         <section id="gallery-wrapper3">
             <h3 style="text-align: center; margin: auto">暂无作品</h3>
         </section>
     </div>
     <div class="morr">显示更多</div>
-    <input type="text" />
+</div>
 
-    <!-- UI设计 selected -->
-    <div class="selected-text">&nbsp;&nbsp;UI设计</div>
+    <!-- 装饰类 selected -->
+    <div class="show">
+    <div class="selected-text">&nbsp;&nbsp;装饰类</div>
     <div class="selected w">
         <section id="gallery-wrapper4">
             <h3 style="text-align: center; margin: auto">暂无作品</h3>
         </section>
     </div>
     <div class="morr">显示更多</div>
-    <input type="text" />
 
-    <!-- 样机模板 selected -->
-    <div class="selected-text">样机模板</div>
+</div>
+    <!-- 手机配图 selected -->
+    <div class="show">
+    <div class="selected-text">手机配图</div>
     <div class="selected w">
         <section id="gallery-wrapper5">
             <h3 style="text-align: center; margin: auto">暂无作品</h3>
         </section>
     </div>
     <div class="morr">显示更多</div>
+</div>
+
+    <!-- 页码搜索模块 -->
+    <div class="search-text">
+        <span>当前共 <b id="searchTotal">?</b> 个素材</span>
+        <span>
+            <a href="javascript:;" id="left-page"></a>
+            <input type="text" name="" id="page" value="1">
+            <a href="javascript:;" id="right-page"></a>
+            共 <i class="totalPage"></i>? 页
+        </span>
+    </div>
 
     <!-- 详情页面 -->
-    <div class="details">
+    <div class="details" style="display: none;">
         <div class="details-background"></div>
         <div class="details-box">
             <div class="datails-top">
@@ -405,8 +436,7 @@
             <!-- <a class="datails-more">显 示 更 多</a> -->
             <!-- <div  style="height: 200px;"></div> -->
         </div>
-        <a href="javascript:;" class="datails-close layui-icon layui-icon-close"
-            style="font-size: 30px; color: #ffff"></a>
+        <a href="javascript:;" class="datails-close layui-icon layui-icon-close" style="font-size: 30px; color: #ffff"></a>
     </div>
 
     <!-- 底部模块 -->
@@ -467,8 +497,7 @@
         </div>
     </div>
     <!-- 阴影遮罩 -->
-    <div class="layui-layer-shade" id="layui-layer-shade" times="1"
-        style="z-index: 2; background-color: rgb(0, 0, 0); opacity: 0.7"></div>
+    <div class="layui-layer-shade" id="layui-layer-shade" times="1" style="z-index: 2; background-color: rgb(0, 0, 0); opacity: 0.7"></div>
     <!-- 登陆注册切换4个盒子 -->
     <div id="tobe">
         <!-- 登陆盒子2 -->
@@ -478,13 +507,11 @@
             </div>
             <!-- 输入手机号码 -->
             <div class="layui-form-item">
-                <input type="text" name="phone" id="phone-input" maxlength="20" required
-                    lay-verify="required|phonenumber" placeholder="请输入手机号码" autocomplete="off" class="layui-input" />
+                <input type="text" name="phone" id="phone-input" maxlength="20" required lay-verify="required|phonenumber" placeholder="请输入手机号码" autocomplete="off" class="layui-input" />
             </div>
             <!-- 密码输入框 -->
             <div class="layui-form-item">
-                <input type="password" name="password" maxlength="20" id="psw-input" required lay-verify="required|psw2"
-                    placeholder="请输入密码 " autocomplete="off " class="layui-input" />
+                <input type="password" name="password" maxlength="20" id="psw-input" required lay-verify="required|psw2" placeholder="请输入密码 " autocomplete="off " class="layui-input" />
             </div>
             <!-- 登陆按钮 -->
             <div class="layui-form-item">
@@ -499,8 +526,7 @@
             <!-- qq登陆链接 -->
             <div class="layui-form-item qq-box">
                 <i class="login-qq"><img src="./img/图层 43-qq.png" alt="" /></i>
-                <button type="button"
-                    class="box-radiu layui-btn-fluid layui-btn layui-btn-normal pass-login mydeep2">QQ登录</button>
+                <button type="button" class="box-radiu layui-btn-fluid layui-btn layui-btn-normal pass-login mydeep2">QQ登录</button>
             </div>
             <!-- 微信登陆链接 -->
             <div class="layui-form-item vx-box">
@@ -524,21 +550,18 @@
             </div>
             <!-- 输入手机号码 -->
             <div class="layui-form-item">
-                <input type="text" name="phone" maxlength="20" required lay-verify="required|phonenumber"
-                    placeholder="请输入手机号码" autocomplete="off" class="layui-input phone-ipt2" />
+                <input type="text" name="phone" maxlength="20" required lay-verify="required|phonenumber" placeholder="请输入手机号码" autocomplete="off" class="layui-input phone-ipt2" />
             </div>
             <!-- 手机验证码输入框 -->
             <div class="layui-form-item">
                 <div class="layui-input-inline">
-                    <input type="text" name="password" id="psw3" maxlength="20" required lay-verify="required"
-                        placeholder="请输入验证码" autocomplete="off" class="pass-key layui-input" />
+                    <input type="text" name="password" id="psw3" maxlength="20" required lay-verify="required" placeholder="请输入验证码" autocomplete="off" class="pass-key layui-input" />
                 </div>
                 <button type="button" class="send-to2 layui-btn floatr-box">发送验证码</button>
             </div>
             <!-- 设置密码 -->
             <div class="layui-form-item">
-                <input type="password" name="password" id="regist-psw" maxlength="20" required
-                    lay-verify="required|psw2" placeholder="设置密码" autocomplete="off" class="layui-input" />
+                <input type="password" name="password" id="regist-psw" maxlength="20" required lay-verify="required|psw2" placeholder="设置密码" autocomplete="off" class="layui-input" />
             </div>
             <!-- 注册按钮 -->
             <div class="layui-form-item">
@@ -553,14 +576,12 @@
             <!-- 密码注册链接 -->
             <div class="layui-form-item passwords-box" id="tab-passwords3">
                 <i class="layui-icon lay-icon"><img src="./img/图层 44 拷贝-锁.png" alt="" /></i>
-                <button type="button"
-                    class="box-radiu layui-btn-fluid layui-btn layui-btn-primary pass-login">密码注册</button>
+                <button type="button" class="box-radiu layui-btn-fluid layui-btn layui-btn-primary pass-login">密码注册</button>
             </div>
             <!-- qq注册链接 -->
             <div class="layui-form-item qq-box">
                 <i class="login-qq"><img src="./img/图层 43-qq.png" alt="" /></i>
-                <button type="button"
-                    class="box-radiu layui-btn-fluid layui-btn layui-btn-normal pass-login mydeep2">QQ注册</button>
+                <button type="button" class="box-radiu layui-btn-fluid layui-btn layui-btn-normal pass-login mydeep2">QQ注册</button>
             </div>
             <!-- 微信注册链接 -->
             <div class="layui-form-item vx-box">
@@ -585,14 +606,12 @@
             </div>
             <!-- 输入手机号码 -->
             <div class="layui-form-item">
-                <input type="text" name="phone" maxlength="20" required lay-verify="required|phonenumber"
-                    placeholder="请输入手机号码" autocomplete="off" class="layui-input phone-ipt3" />
+                <input type="text" name="phone" maxlength="20" required lay-verify="required|phonenumber" placeholder="请输入手机号码" autocomplete="off" class="layui-input phone-ipt3" />
             </div>
             <!-- 手机验证码输入框 -->
             <div class="layui-form-item">
                 <div class="layui-input-inline">
-                    <input type="text" name="password" id="psw4" maxlength="20" required lay-verify="required|psw"
-                        placeholder="请输入验证码" autocomplete="off" class="pass-key layui-input" />
+                    <input type="text" name="password" id="psw4" maxlength="20" required lay-verify="required|psw" placeholder="请输入验证码" autocomplete="off" class="pass-key layui-input" />
                 </div>
                 <button type="button" class="send-to3 layui-btn floatr-box">发送验证码</button>
             </div>
@@ -609,14 +628,12 @@
             <!-- 密码登陆链接 -->
             <div class="layui-form-item passwords-box" id="tab-passwords4">
                 <i class="login-qq img2"><img src="./img/图层 42 拷贝-手机.png" alt="" /></i>
-                <button type="button"
-                    class="box-radiu layui-btn-fluid layui-btn layui-btn-primary pass-login">手机注册</button>
+                <button type="button" class="box-radiu layui-btn-fluid layui-btn layui-btn-primary pass-login">手机注册</button>
             </div>
             <!-- qq注册链接 -->
             <div class="layui-form-item qq-box">
                 <i class="login-qq"><img src="./img/图层 43-qq.png" alt="" /></i>
-                <button type="button"
-                    class="box-radiu layui-btn-fluid layui-btn layui-btn-normal pass-login mydeep2">QQ注册</button>
+                <button type="button" class="box-radiu layui-btn-fluid layui-btn layui-btn-normal pass-login mydeep2">QQ注册</button>
             </div>
             <!-- 微信注册链接 -->
             <div class="layui-form-item vx-box">
@@ -641,15 +658,12 @@
             </div>
             <!-- 输入手机号码 -->
             <div class="layui-form-item">
-                <input type="text" name="phone" maxlength="20" required lay-verify="required|phonenumber"
-                    placeholder="请输入手机号码" autocomplete="off" class="layui-input phone-ipt5" />
+                <input type="text" name="phone" maxlength="20" required lay-verify="required|phonenumber" placeholder="请输入手机号码" autocomplete="off" class="layui-input phone-ipt5" />
             </div>
             <!-- 手机验证码输入框 -->
             <div class="layui-form-item">
                 <div class="layui-input-inline">
-                    <input type="text" name="password" id="psw5" maxlength="20" required
-                        lay-verify="required|phonenumber" placeholder="验证码" autocomplete="off"
-                        class="pass-key layui-input" />
+                    <input type="text" name="password" id="psw5" maxlength="20" required lay-verify="required|phonenumber" placeholder="验证码" autocomplete="off" class="pass-key layui-input" />
                 </div>
                 <button type="button" class="send-to5 layui-btn floatr-box layui-btn-disabled">发送验证码</button>
             </div>
@@ -665,13 +679,11 @@
             </div>
             <!-- 输入新密码 -->
             <div class="layui-form-item">
-                <input type="text" id="new-psw" name="password" maxlength="20" required lay-verify="required|psw2"
-                    placeholder="输入新密码" autocomplete="off" class="layui-input" />
+                <input type="text" id="new-psw" name="password" maxlength="20" required lay-verify="required|psw2" placeholder="输入新密码" autocomplete="off" class="layui-input" />
             </div>
             <!-- 请再输一遍 -->
             <div class="layui-form-item">
-                <input type="text" id="re-newpsw" name="password" maxlength="20" required lay-verify="required|repsw"
-                    placeholder="请再输一遍" autocomplete="off" class="layui-input" />
+                <input type="text" id="re-newpsw" name="password" maxlength="20" required lay-verify="required|repsw" placeholder="请再输一遍" autocomplete="off" class="layui-input" />
             </div>
             <div class="layui-form-item">
                 <div class="layui-input-inline yes-no">
@@ -682,25 +694,27 @@
         </form>
     </div>
 
-    <!-- 一级分类导航模板 -->
+    <!-- 二级分类导航模板 -->
     <script type="text/html" id="classify">
         <li>
-            <a href="javascript:;" style="color: #ed6650">全部</a>
+            <a href="javascript:;" style="color: #ed6650" class="all">全部</a>
         </li>
         {{each}}
         <li>
-            <a href="javascript:;"><span>{{$value.name}}</span>
+            <a href="javascript:;" class="cate2"><span>{{$value.name}}</span>
                 <i class="layui-icon" style="font-size: 7px">&#xe61a;</i></a>
             <ul class="fic-text-menu">
-                {{each $value.categoryList}} {{each $value.categoryList}}
-                <li><a href="javascript:;">{{$value.name}}</a></li>
-                {{/each}} {{/each}}
+                {{each $value.categoryList[0].categoryList}}  
+                <li data-index="{{$value.id}}"><a href="javascript:;">{{$value.name}}</a></li>
+                {{/each}}
             </ul>
         </li>
         {{/each}}
     </script>
 
-    <!-- 图片模板 -->
+
+<!-- 
+   2级图片模板 
     <script type="text/html" id="pictures">
         {{each}}
         <article class="white-panel">
@@ -713,18 +727,33 @@
             </div>
         </article>
         {{/each}}
-    </script>
+    </script> -->
+
+    <!-- 暂时渲染 -->
+    <script type="text/html" id="pictures">
+        {{each}}
+        <article class="white-panel">
+            <img src="{{$value.show_image}}" class="thumb" />
+            <div class="search-img-hover" data-id="{{$value.id}}">
+                <span class="search-img-label">{{$value.category1_name}}</span>
+                <span class="search-img-Collection">{{$value.favourite_num}}
+                    <img src="./img/favorite1.png" alt="" id="favourite" /></span>
+                <a class="search-img-download">查看详情</a>
+            </div>
+        </article>
+        {{/each}}
+    </script> -->
 
     <!-- jquery -->
     <!-- <script src="/assets/lib/jquery.js"></script> -->
-    <script src="lib/jquery.js"></script>
-    <script src="lib/layui/layui.all.js"></script>
+    <script src="./lib/jquery.js"></script>
+    <script src="./lib/layui/layui.all.js"></script>
     <!-- 瀑布流插件 -->
-    <!-- <script src="/assets/lib/pinterest_grid.js"></script> -->
+    <!--  <script src="/assets/lib/pinterest_grid.js"></script>  -->
     <script src="lib/pinterest_grid.js"></script>
-    <script src="/lib/template-web.js"></script>
+    <script src="./lib/template-web.js"></script>
     <!-- 导入自己的js -->
-    <!-- <script src="/assets/js/design.js"></script> -->
+    <script src="js/design.js"></script>
     <script src="js/common.js"></script>
     <script src="js/design.js"></script>
 </body>
