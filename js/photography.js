@@ -100,7 +100,7 @@ $(function() {
         } else {
             $('.content>div').eq(index).show().siblings('div').hide();
         }
-        refresh();
+        // refresh();
         $("html,body").animate({
             scrollTop: 0
         }, 0);
@@ -114,7 +114,7 @@ $(function() {
         } else {
             $('.content>div').eq(index).show().siblings('div').hide();
         }
-        refresh();
+        // refresh();
         $("html,body").animate({
             scrollTop: 0
         }, 0);
@@ -222,12 +222,12 @@ $(function() {
         "category1_name": 'e',
         "favourite_num": 20
     }, {
-        "show_image": './image-w/8.png',
+        "show_image": './image-w/8.jpg',
         "id": 1,
         "category1_name": 'r',
         "favourite_num": 20
     }, {
-        "show_image": './image-w/10.png',
+        "show_image": './image-w/10.jpg',
         "id": 1,
         "category1_name": 's',
         "favourite_num": 20
@@ -255,7 +255,7 @@ $(function() {
     var htmlStr = template("pictures", data);
     $("#gallery-wrapper").html(htmlStr);
     $("#gallery-wrapper1").html(htmlStr);
-    $("#gallery-wrapper2").html(htmlStr);
+    // $("#gallery-wrapper1").html(htmlStr);
     $("#gallery-wrapper3").html(htmlStr);
     $("#gallery-wrapper4").html(htmlStr);
     $("#gallery-wrapper5").html(htmlStr);
@@ -456,14 +456,6 @@ $(function() {
         single_column_breakpoint: 700,
     });
 
-    $("#gallery-wrapper2").pinterest_grid({
-        no_columns: 4,
-        padding_x: 15,
-        padding_y: 15,
-        margin_bottom: 120,
-        single_column_breakpoint: 0
-    });
-
     $("#gallery-wrapper3").pinterest_grid({
         no_columns: 4,
         padding_x: 20,
@@ -478,7 +470,13 @@ $(function() {
         margin_bottom: 120,
         single_column_breakpoint: 700,
     });
-
+    $("#gallery-wrapper5").pinterest_grid({
+        no_columns: 4,
+        padding_x: 20,
+        padding_y: 20,
+        margin_bottom: 120,
+        single_column_breakpoint: 700,
+    });
 
     $(".search-img-download").on("click", function() {
         $(".details").show();
