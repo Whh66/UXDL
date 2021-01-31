@@ -88,11 +88,11 @@
     <div class="classification">
         <!-- 分类 -->
         <div class="fication">
-            <ul class="fic-text one">
-                <li class="second-li">
+            <ul class="fic-text one" id="one-select">
+                <!-- <li class="second-li">
                     <a href="javascript:;" class="changeColor">全部</a>
-                </li>
-                <li class="second-li">
+                </li> -->
+                <!-- <li class="second-li">
                     <a href="javascript:;">C4D背景</a>
                 </li>
                 <li class="second-li">
@@ -112,7 +112,7 @@
                 <li class="second-li">
                     <a href="javascript:;">插画背景
                 </a>
-                </li>
+                </li> -->
             </ul>
             <!-- 图标 -->
             <ul class="fic-img">
@@ -186,8 +186,8 @@
         <div class="classification">
             <!-- 分类 -->
             <div class="fication">
-                <ul class="fic-text two">
-                    <li class="second-li">
+                <ul class="fic-text " id="two-select">
+                    <!-- <li class="second-li">
                         <a href="javascript:;" class="changeColor">全部</a>
                     </li>
                     <li class="second-li">
@@ -210,7 +210,7 @@
                     <li class="second-li">
                         <a href="javascript:;">插画背景
                     </a>
-                    </li>
+                    </li> -->
                 </ul>
                 <!-- 图标 -->
                 <ul class="fic-img">
@@ -652,21 +652,28 @@
 
     <!-- 一级分类导航模板 -->
     <script type="text/html" id="classify">
-        <li>
-            <a href="javascript:;" style="color: #ed6650">全部</a>
+        <li class="second-li" index="0">
+            <a href="javascript:;" class="changeColor">全部</a>
         </li>
-        {{each}}
-        <li>
-            <a href="javascript:;"><span>{{$value.name}}</span>
-          <i class="layui-icon" style="font-size: 7px">&#xe61a;</i></a
-        >
-        <ul class="fic-text-menu">
-          {{each $value.categoryList}} {{each $value.categoryList}}
-          <li><a href="javascript:;">{{$value.name}}</a></li>
-        {{/each}} {{/each}}
-        </ul>
+        {{each categoryList}}
+        <li class="second-li" index="{{$value.id-19}}">
+            <a href="javascript:;">{{$value.name}}</a>
         </li>
         {{/each}}
+    </script>
+
+    <!-- 二级分类导航栏 -->
+    <script type="text/html" id="two-classify">
+        <li class="second-li" index="0">
+            <a href="javascript:;" class="changeColor">全部</a>
+        </li>
+        {{each creative }}
+        <li class="second-li" index="{{$value.id-19}}">
+            <a href="javascript:;">{{$value.name}}</a>
+        </li>
+        {{/each}}
+
+
     </script>
 
 

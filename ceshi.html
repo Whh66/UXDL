@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="/lib/jquery.js"></script>
+
+<body>
+    <script>
+        // $.get('http://139.9.143.69:8001/materials/categorys/4', function(res) {
+        //     console.log(res);
+        // })
+        // $.get('http://139.9.143.69:8001/materials/categorys/1', function(res) {
+        //     console.log(res);
+        // })
+        // $.get('http://139.9.143.69:8001/materials/categorys/3', function(res) {
+        //     console.log(res);
+        // })
+        // $.get('http://139.9.143.69:8001/materials/categorys/2', function(res) {
+        //     console.log(res);
+        // })
+        // $.get('http://139.9.143.69:8001/materials/categorys/0', function(res) {
+        //     console.log(res);
+        // })
+        // http://139.9.143.69:8001/materials/categorys/3
+        $.ajax({
+            method: 'GET',
+            url: 'http://139.9.143.69:8001/materials/categorys',
+            success: function(res) {
+                console.log(1);
+                console.log(res);
+
+            }
+        });
+        $.ajax({
+            method: 'GET',
+            url: 'http://139.9.143.69:8001/materials/categorys/2',
+            success: function(res) {
+                console.log(2);
+                console.log(res);
+            }
+        });
+        $.ajax({
+            method: 'GET',
+            url: 'http://139.9.143.69:8001/materials/categorys/3',
+            success: function(res) {
+                console.log(3);
+                console.log(res);
+            }
+        });
+        $.ajax({
+            method: 'GET',
+            url: 'http://139.9.143.69:8001/materials/categorys/4',
+            success: function(res) {
+                console.log(4);
+                console.log(res);
+            }
+        });
+        $.ajax({
+            method: 'GET',
+            url: "http://139.9.143.69:8001/materials/categorys/level/2",
+            success: function(res) {
+                console.log(5);
+                console.log(res);
+            }
+        });
+        $.ajax({
+            method: 'GET',
+            url: "http://139.9.143.69:8001/materials/categorys/level/1",
+            success: function(res) {
+                console.log(7);
+                console.log(res);
+            }
+        });
+        $.ajax({
+            method: 'GET',
+            url: "http://139.9.143.69:8001/materials/choiceness/0",
+            success: function(res) {
+                console.log(6);
+                console.log(res);
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // $.ajax({
+        //     method: "GET",
+        //     url: "http://139.9.143.69:8001/oauth/msm/" + phone1,
+        //     success: function(res) {
+        //         console.log(res);
+        //     },
+        // });
+    </script>
+
+
+</body>
+
+</html>
