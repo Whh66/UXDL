@@ -120,124 +120,354 @@ $(function() {
     // 模拟·渲染数据
     var data = [{
         id: 1,
-        show_image: './img-moni/1.jpeg',
+        show_image: './update/图层 23.png',
         category1_name: '创意背景',
         favourite_num: 66
 
     }, {
         id: 2,
-        show_image: './img-moni/2.jpeg',
+        show_image: './update/图层 25.png',
         category1_name: '创意背景',
         favourite_num: 66
     }, {
         id: 3,
-        show_image: './img-moni/3.jpeg',
+        show_image: './update/图层 33.png',
         category1_name: '创意背景',
         favourite_num: 66
     }, {
         id: 4,
-        show_image: './img-moni/4.jpg',
+        show_image: './update/图层 48.png',
         category1_name: '创意背景',
         favourite_num: 66
     }, {
         id: 5,
-        show_image: './img-moni/5.jpeg',
+        show_image: './update/图层 49.png',
         category1_name: '创意背景',
         favourite_num: 66
     }, {
         id: 6,
-        show_image: './img-moni/6.jpeg',
+        show_image: './update/图层 50.png',
         category1_name: '创意背景',
         favourite_num: 66
     }, {
         id: 7,
-        show_image: './img-moni/7.jpg',
+        show_image: './update/图层 51.png',
         category1_name: '创意背景',
         favourite_num: 66
     }, {
         id: 8,
-        show_image: './img-moni/8.jpeg',
+        show_image: './update/图层 52.png',
         category1_name: '创意背景',
         favourite_num: 66
     }, {
         id: 9,
-        show_image: './img-moni/9.jpeg',
+        show_image: './update/图层 57.png',
         category1_name: '创意背景',
         favourite_num: 66
     }, {
         id: 10,
-        show_image: './img-moni/10.jpeg',
+        show_image: './update/图层 58.png',
         category1_name: '创意背景',
         favourite_num: 66
     }, {
         id: 11,
-        show_image: './img-moni/11.jpeg',
+        show_image: './update/图层 59.png',
         category1_name: '创意背景',
         favourite_num: 66
     }, {
         id: 12,
-        show_image: './img-moni/12.jpeg',
+        show_image: './update/图层 60.png',
         category1_name: '创意背景',
         favourite_num: 66
     }, {
         id: 13,
-        show_image: './img-moni/13.jpeg',
+        show_image: './update/图层 61.png',
         category1_name: '创意背景',
         favourite_num: 66
 
     }, {
         id: 14,
-        show_image: './img-moni/14.jpeg',
+        show_image: './update/图层 62.png',
         category1_name: '创意背景',
         favourite_num: 66
     }, {
         id: 15,
-        show_image: './img-moni/15.jpeg',
+        show_image: './update/图层 63.png',
         category1_name: '创意背景',
         favourite_num: 66
     }, {
         id: 16,
-        show_image: './img-moni/16.jpg',
+        show_image: './update/图层 64.png',
         category1_name: '创意背景',
         favourite_num: 66
     }, {
         id: 17,
-        show_image: './img-moni/17.jpg',
+        show_image: './update/图层 65.png',
         category1_name: '创意背景',
         favourite_num: 66
     }, {
         id: 18,
-        show_image: './img-moni/18.jpeg',
+        show_image: './update/图层 66.png',
         category1_name: '创意背景',
         favourite_num: 66
     }, {
         id: 19,
-        show_image: './img-moni/19.jpg',
+        show_image: './update/图层 67.png',
         category1_name: '创意背景',
         favourite_num: 66
     }, {
         id: 20,
-        show_image: './img-moni/20.jpeg',
-        category1_name: '创意背景',
-        favourite_num: 66
-    }, {
-        id: 9,
-        show_image: './img-moni/9.jpeg',
+        show_image: './update/图层68.png',
         category1_name: '创意背景',
         favourite_num: 66
     }, {
         id: 21,
-        show_image: './img-moni/21.jpg',
+        show_image: './update/图层69.png',
         category1_name: '创意背景',
         favourite_num: 66
     }, {
         id: 22,
-        show_image: './img-moni/22.jpeg',
+        show_image: './update/jhk-1600912084427.png',
         category1_name: '创意背景',
         favourite_num: 66
     }, {
         id: 23,
-        show_image: './img-moni/23s.jpeg',
+        show_image: './update/jhk-1600912089044.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 24,
+        show_image: './update/jhk-1600912091318.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 25,
+        show_image: './update/jhk-1600912094975.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 26,
+        show_image: './update/jhk-1600912095476.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 27,
+        show_image: './update/jhk-1600912091318.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 28,
+        show_image: './update/jhk-1600912099677.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 29,
+        show_image: './update/jhk-1600912102542.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 30,
+        show_image: './update/jhk-1600912105899.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 31,
+        show_image: './update/jhk-1600912108638.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 32,
+        show_image: './update/jhk-1600912113307.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 33,
+        show_image: './update/jhk-1600912117786.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 34,
+        show_image: './update/jhk-1600912124948.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 35,
+        show_image: './update/jhk-1600912138641.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 36,
+        show_image: './update/jhk-1600912164350.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 37,
+        show_image: './update/jhk-1600912166690.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 38,
+        show_image: './update/jhk-1600912166690.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 39,
+        show_image: './update/jhk-1600912179180.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 40,
+        show_image: './update/jhk-1600912186639.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 41,
+        show_image: './update/jhk-1600912188520.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 42,
+        show_image: './update/jhk-1600917333677.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 43,
+        show_image: './update/jhk-1600917347025.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 44,
+        show_image: './update/jhk-1600917385530.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 45,
+        show_image: './update/jhk-1600917389115.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 46,
+        show_image: './update/jhk-1600917392691.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 47,
+        show_image: './update/jhk-1600917395334.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 48,
+        show_image: './update/jhk-1600917398090.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 49,
+        show_image: './update/jhk-1600917665328.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 50,
+        show_image: './update/jhk-1600917668957.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 51,
+        show_image: './update/jhk-1600917904980.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 52,
+        show_image: './update/jhk-1600917976501.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 53,
+        show_image: './update/jhk-1600917978478.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 54,
+        show_image: './update/jhk-1600917980860.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 55,
+        show_image: './update/jhk-1600917987209.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 56,
+        show_image: './update/jhk-1600917993579.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 57,
+        show_image: './update/jhk-1600917994808.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 58,
+        show_image: './update/jhk-1600918000940.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 59,
+        show_image: './update/jhk-1600918004686.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 60,
+        show_image: './update/jhk-1600918007805.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 61,
+        show_image: './update/jhk-1600918220838.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 62,
+        show_image: './update/jhk-1600918311096.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 63,
+        show_image: './update/jhk-1600918520085.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 64,
+        show_image: './update/jhk-1600918649712.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 65,
+        show_image: './update/jhk-1600918652392.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 66,
+        show_image: './update/jhk-1600918666715.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 67,
+        show_image: './update/jhk-1600918707732.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 68,
+        show_image: './update/jhk-1600918741039.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 69,
+        show_image: './update/jhk-1600918991675.png',
+        category1_name: '创意背景',
+        favourite_num: 66
+    }, {
+        id: 70,
+        show_image: './update/jhk-1600919036346.png',
         category1_name: '创意背景',
         favourite_num: 66
     }];
@@ -251,6 +481,9 @@ $(function() {
     $("#gallery-wrapper4").html(htmlStr);
     $("#gallery-wrapper5").html(htmlStr);
     $(window).resize();
+    // 渲染
+
+
 
     // 精选藏管图片渲染
     // var searchHtml = [];
@@ -262,16 +495,18 @@ $(function() {
     //     function(res) {
     //         // console.log(res.data.rows)
     //         // 调用 template 函数
-    //         var htmlStr = template("pictures", res.data.rows);
+    //         var htmlStr = template("pictures", res.data);
     //         // console.log(htmlStr);
     //         // 渲染 HTML 结构
     //         $("#gallery-wrapper").html(htmlStr);
     //         $("#gallery-wrapper1").html(htmlStr);
+    //         $("#gallery-wrapper2").html(htmlStr);
     //         $("#gallery-wrapper3").html(htmlStr);
     //         $("#gallery-wrapper4").html(htmlStr);
     //         $("#gallery-wrapper5").html(htmlStr);
     //         $(window).resize();
     //     }
+
     // );
 
     // 显示更多按钮
@@ -289,55 +524,7 @@ $(function() {
             cursor: "not-allowed",
         });
     });
-    // 模拟跳转页面功能
-    // 添加自定义属性
-    function toggle(element) {
-        $.each(element, function(i, ele) {
-            $(ele).attr("index", i);
-        });
-    }
-    toggle($('.one li'));
-    toggle($('.two li'));
-    toggle($('#w>div'));
-    //利用index控制页面瀑布流的显示
-    $('.one li').on('click', function() {
-        $(this).addClass('changeColor').siblings('li').removeClass('changeColor');
-        var index = $(this).attr('index');
-        $('.one li').eq(index).addClass('changeColor').siblings('li').removeClass('changeColor');
-        console.log(index);
-        if (index === "0") {
-            $('#w').children('div').show();
-        } else {
-            $('#w>div').eq(index).show().siblings('div').hide();
-        }
-        // 重新渲染一次数据函数
 
-
-
-        //
-        $("html,body").animate({
-            scrollTop: 0
-        }, 0);
-    });
-    $('.two li').on('click', function() {
-        $(this).addClass('changeColor').siblings('li').removeClass('changeColor');
-        var index = $(this).attr('index');
-        $('.two li').eq(index).addClass('changeColor').siblings('li').removeClass('changeColor');
-        console.log(index);
-        if (index === "0") {
-            $('#w').children('div').show();
-        } else {
-            $('#w>div').eq(index).show().siblings('div').hide();
-        }
-        // 重新渲染一次数据函数
-
-
-
-        //
-        $("html,body").animate({
-            scrollTop: 0
-        }, 0);
-    })
 
 
 
@@ -358,10 +545,10 @@ $(function() {
 
     $("#gallery-wrapper2").pinterest_grid({
         no_columns: 4,
-        padding_x: 15,
-        padding_y: 15,
-        // margin_bottom: 50,
-        single_column_breakpoint: 0,
+        padding_x: 20,
+        padding_y: 20,
+        margin_bottom: 120,
+        single_column_breakpoint: 700,
     });
 
     $("#gallery-wrapper3").pinterest_grid({
@@ -397,98 +584,103 @@ $(function() {
     });
 
     $(".details").hide();
-
+    //分类导航
+    // $.ajax({
+    //     method: "GET",
+    //     url: "http://139.9.143.69:8001/materials/categorys/4",
+    //     success: function(res) {
+    //         console.log(2);
+    //         console.log(res.data);
+    //         // 调用 template 函数
+    //         var htmlStr = template("classify", res.data);
+    //         // // console.log(htmlStr);
+    //         // // 渲染 HTML 结构
+    //         $("#one-select").html(htmlStr);
+    //     },
+    // });
 
     //分类级别信息查询
-    var designer = []; //c4d
-    var tbCommerce = []; //商务
-    var uiDesign = []; //科技
-    var template1 = []; //节日
-    $.get("http://139.9.143.69:8001/materials/categorys/level/3", function(res) {
+    var twoClassify = {
+        creative: [] //创意背景分类
+    }
+
+    $.get("http://139.9.143.69:8001/materials/categorys/level/2", function(res) {
+        console.log(235);
+        console.log(res);
         for (var i = 0; i < res.data.length; i++) {
-            if (res.data[i].parent_id == 9) {
-                designer.push(res.data[i]);
-            } else if (res.data[i].parent_id == 10) {
-                tbCommerce.push(res.data[i]);
-            } else if (res.data[i].parent_id == 11) {
-                uiDesign.push(res.data[i]);
-            } else if (res.data[i].parent_id == 12) {
-                template1.push(res.data[i]);
+            if (res.data[i].parent_id == 4) {
+                twoClassify.creative.push(res.data[i]);
             }
         }
+        console.log(twoClassify.creative);
+        var htmlstr = template('two-classify', twoClassify);
+        $('#two-select').html(htmlstr);
+        console.log($('.two').html(htmlstr));
+        $('#one-select').html(htmlstr);
 
-        //c4d
-        var tbCommerceHtml = [];
-        for (var i = 0; i < tbCommerce.length; i++) {
-            tbCommerceHtml.push(`
-            <li><a href="javascript:;">${tbCommerce[i].name}</a></li>
-            `);
-        }
-
-        $(".fic-text li:nth-child(3) .main-submenu").html(tbCommerceHtml.join(""));
-        //商务
-        var designerHtml = [];
-        for (var i = 0; i < designer.length; i++) {
-            designerHtml.push(`
-            <li><a href="javascript:;">${designer[i].name}</a></li>
-            `);
-        }
-
-        $(".fic-text li:nth-child(2) .main-submenu").html(designerHtml.join(""));
-        //科技
-        var uiDesignHtml = [];
-        for (var i = 0; i < uiDesign.length; i++) {
-            uiDesignHtml.push(`
-            <li><a href="javascript:;">${uiDesign[i].name}</a></li>
-            `);
-        }
-
-        $(".fic-text li:nth-child(4) .main-submenu").html(uiDesignHtml.join(""));
-        //节日
-        var templateHtml = [];
-        for (var i = 0; i < template1.length; i++) {
-            templateHtml.push(`
-            <li><a href="javascript:;">${template1[i].name}</a></li>
-            `);
-        }
-
-        $(".fic-text li:nth-child(5) .main-submenu").html(templateHtml.join(""));
-
-        // 小li鼠标滑入事件
-        $(".main-submenu li").mouseenter(function() {
-            $(this).siblings("li").removeClass("main-submit-hover");
-            $(this).addClass("main-submit-hover");
-        });
-
-        $(function() {
-            var $li = $(".fic-text>li");
-            $li.mouseenter(function() {
-                $(this).children("ul").show();
-            });
-            $li.mouseleave(function() {
-                $(this).children("ul").hide();
-            });
-        });
     });
+    // 模拟跳转页面功能
+
+    // 添加自定义属性
+    function toggle(element) {
+        $.each(element, function(i, ele) {
+            $(ele).attr("index", i);
+        });
+    }
+    toggle($('#w>div'));
+    // 利用index控制页面瀑布流的显示
+    $('#one-select').on('click', 'li', function() {
+        $(this).addClass('changeColor').siblings('li').removeClass('changeColor');
+        var index = $(this).attr('index');
+        console.log(index);
+        $('#two-select li').eq(index).addClass('changeColor').siblings('li').removeClass('changeColor');
+        if (index === "0") {
+            $('#w').children('div').show();
+        } else {
+            $('#w>div').eq(index).show().siblings('div').hide();
+            console.log($('#w>div').eq(index));
+        }
+        $("html,body").animate({
+            scrollTop: 0
+        }, 0);
+    })
+
+    $('#two-select ').on('click', 'li', function() {
+        $(this).addClass('changeColor').siblings('li').removeClass('changeColor');
+        var index = $(this).attr('index');
+        console.log(index);
+        $('#one-select>li').eq(index).addClass('changeColor').siblings('li').removeClass('changeColor');
+        // console.log($('.one li').eq(index).children().html());
+
+        if (index === "0") {
+            $('#w').children('div').show();
+        } else {
+            $('#w>div').eq(index).show().siblings('div').hide();
+        }
+        $("html,body").animate({
+            scrollTop: 0
+        }, 0);
+    })
+
 
     $(".menus .nav-box li").mouseenter(function() {
-        $(this).siblings("li").removeClass("color-change");
-        $(this).addClass("color-change");
+        $(this).siblings("li").removeClass("changeColor");
+        $(this).addClass("changeColor");
     });
 
 
 
     // 详情页面
     $("[id*=gallery-wrapper]").on("click", ".search-img-hover", function() {
-        // if (sessionStorage.getItem('status') === '401') return
-        // console.log($(this).attr('id'));
-        // $.ajax({
-        //   method: 'GET',
-        //   url: 'http://139.9.143.69:8001/materials/' + $(this).attr('id'),
-        //   success: function (res) {
-        //     console.log(res);
-        //   }
-        // })
+        if (sessionStorage.getItem('status') === '401') return
+        console.log($(this).attr('id'));
+        $.ajax({
+            method: 'GET',
+            url: 'http://139.9.143.69:8001/materials/' + $(this).attr('id'),
+            success: function(res) {
+                console.log(res);
+            }
+        })
 
         // 3手机号码和验证码密码自定义验证规则
         form.verify({
@@ -1084,6 +1276,7 @@ $(function() {
 
     var detailsName = "";
     var detailsLink = $("#datails-download-none")[0];
+    //下载
     $("body").on("click", ".datails-download", function() {
         // console.log(1);
         if (sessionStorage.getItem("status") === "401") {
@@ -1104,10 +1297,10 @@ $(function() {
                 detailsLink.download = detailsName;
                 console.log(detailsName);
                 detailsLink.click();
-                // location.href = res.data
-                // $('.datails-download')[0].href = res.data
-                // var imgURL = URL.createObjectURL(res.data)
-                // console.log(imgURL);
+                location.href = res.data
+                $('.datails-download')[0].href = res.data
+                var imgURL = URL.createObjectURL(res.data)
+                console.log(imgURL);
             },
         });
     });
