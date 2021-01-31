@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/design-style.css" />
+    <link rel="stylesheet" href="css/illustration-style.css" />
     <link rel="stylesheet" href="css/pinterest_grid.css" />
     <!-- 清除默认样式 -->
     <link rel="stylesheet" href="lib/base.css" />
@@ -86,21 +86,6 @@
         <div class="classification">
             <div class="fication">
                 <ul class="fic-text fic-text-one">
-                    <li class="color-change">
-                        <a href="javascript:;">全部</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">人物插画</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">动物插画</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">场景插画</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">产品插画</a>
-                    </li>
                 </ul>
                 <ul class="fic-img">
                     <li>
@@ -174,21 +159,6 @@
             <!-- 分类 -->
             <div class="fication">
                 <ul class="fic-text fic-text-two">
-                    <li class="color-change">
-                        <a href="javascript:;">全部</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">人像插画</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">动物插画</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">场景插画</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">产品插画</a>
-                    </li>
                 </ul>
                 <!-- 图标 -->
                 <ul class="fic-img">
@@ -236,7 +206,7 @@
         <div class="dwch">
             <div class="selected-text">动物插画</div>
             <div class="selected w">
-                <section id="gallery-wrapper2">
+                <section id="gallery-wrapper3">
                     <h3 style="text-align: center; margin: auto">暂无作品</h3>
                 </section>
             </div>
@@ -247,7 +217,7 @@
         <div class="cjch">
             <div class="selected-text">场景插画</div>
             <div class="selected w">
-                <section id="gallery-wrapper3">
+                <section id="gallery-wrapper4">
                     <h3 style="text-align: center; margin: auto">暂无作品</h3>
                 </section>
             </div>
@@ -258,7 +228,7 @@
         <div class="cpch">
             <div class="selected-text">产品插画</div>
             <div class="selected w">
-                <section id="gallery-wrapper4">
+                <section id="gallery-wrapper5">
                     <h3 style="text-align: center; margin: auto">暂无作品</h3>
                 </section>
             </div>
@@ -652,22 +622,16 @@
     </div>
 
     <!-- 二级分类导航模板 -->
-    <!-- <script type="text/html" id="classify">
+    <script type="text/html" id="classify">
         <li>
             <a href="javascript:;" style="color: #ed6650">全部</a>
         </li>
         {{each}}
         <li>
-            <a href="javascript:;"><span>{{$value.name}}</span>
-                <i class="layui-icon" style="font-size: 7px">&#xe61a;</i></a>
-            <ul class="fic-text-menu">
-                {{each $value.categoryList}} {{each $value.categoryList}}
-                <li><a href="javascript:;">{{$value.name}}</a></li>
-                {{/each}} {{/each}}
-            </ul>
+            <a href="javascript:;"><span>{{$value.name}}</span></a>
         </li>
         {{/each}}
-    </script> -->
+    </script>
 
     <!-- 图片模板 -->
     <script type="text/html" id="pictures">

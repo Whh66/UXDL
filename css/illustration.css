@@ -1,29 +1,3 @@
-.search-selected2 li {
-    /* display: inline-block; */
-    color: #666;
-    background-color: #fff;
-    height: 44px;
-    font-size: 18px;
-    text-align: center;
-    line-height: 44px;
-    cursor: pointer;
-}
-
-.search-selected2 li:hover {
-    color: #fff;
-    cursor: pointer;
-    background: -webkit-linear-gradient(left, #ffa53c, #f3504b);
-}
-
-.slide-logo .search-selected2 {
-    display: none;
-    position: relative;
-    top: 3px;
-    left: 139px;
-    width: 48%;
-}
-
-
 /* 下滑登录注册盒子 */
 
 .fication-slide .right {
