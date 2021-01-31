@@ -67,18 +67,18 @@ $(function() {
     });
 
     // 二级分类导航部分
-    /* $.ajax({
+    $.ajax({
         method: "GET",
-        url: "http://139.9.143.69:8001/materials/categorys/0",
+        url: "http://139.9.143.69:8001/materials/categorys/2",
         success: function(res) {
-            console.log(res.data);
+            // console.log(res.data);
             // 调用 template 函数
-            var htmlStr = template("classify", res.data);
-            // // console.log(htmlStr);
-            // // 渲染 HTML 结构
+            var htmlStr = template("classify", res.data[0].categoryList);
+            // 渲染 HTML 结构
             $(".fic-text").html(htmlStr);
         },
-    }); */
+    });
+
 
     // 点击模块导航栏，可切换内容
     // 为li添加自定义元素index，
@@ -87,11 +87,10 @@ $(function() {
             $(ele).attr("index", i);
         });
     }
-    toggle($('.fic-text-one li'));
-    toggle($('.fic-text-two li'));
     toggle($('.content>div'));
     //利用index控制页面瀑布流的显示
-    $('.fic-text-one li').on('click', function() {
+    $('.fic-text-one').on('click', 'li', function() {
+        toggle($('.fic-text-one li'));
         $(this).addClass('color-change').siblings('li').removeClass('color-change');
         var index = $(this).attr('index');
         $('.fic-text-two li').eq(index).addClass('color-change').siblings('li').removeClass('color-change');
@@ -105,7 +104,8 @@ $(function() {
             scrollTop: 0
         }, 0);
     })
-    $('.fic-text-two li').on('click', function() {
+    $('.fic-text-two').on('click', 'li', function() {
+        toggle($('.fic-text-two li'));
         $(this).addClass('color-change').siblings('li').removeClass('color-change');
         var index = $(this).attr('index');
         $('.fic-text-one li').eq(index).addClass('color-change').siblings('li').removeClass('color-change');
@@ -122,134 +122,364 @@ $(function() {
 
     // 暂时渲染
     var data = [{
-        "show_image": './image-w/6.jpg',
-        "id": 1,
-        "category1_name": 'a',
-        "favourite_num": 20
-    }, {
-        "show_image": './image-w/3.jpg',
-        "id": 1,
-        "category1_name": 'b',
-        "favourite_num": 20
-    }, {
-        "show_image": './image-w/8.jpg',
-        "id": 1,
-        "category1_name": 'c',
-        "favourite_num": 20
-    }, {
-        "show_image": './image-w/10.jpg',
-        "id": 1,
-        "category1_name": 'd',
-        "favourite_num": 20
-    }, {
-        "show_image": './image-w/4.jpg',
-        "id": 1,
-        "category1_name": 'e',
-        "favourite_num": 299
-    }, {
-        "show_image": './image-w/9.jpg',
-        "id": 1,
-        "category1_name": 'f',
-        "favourite_num": 20
-    }, {
-        "show_image": './image-w/11.jpg',
-        "id": 1,
-        "category1_name": 'g',
-        "favourite_num": 20
-    }, {
-        "show_image": './image-w/5.jpg',
-        "id": 1,
-        "category1_name": 'h',
-        "favourite_num": 20
-    }, {
-        "show_image": './image-w/8.jpg',
-        "id": 1,
-        "category1_name": 'c',
-        "favourite_num": 20
-    }, {
-        "show_image": './image-w/6.jpg',
-        "id": 1,
-        "category1_name": 'a',
-        "favourite_num": 20
-    }, {
-        "show_image": './image-w/3.jpg',
-        "id": 1,
-        "category1_name": 'b',
-        "favourite_num": 20
-    }, {
-        "show_image": './image-w/1.jpg',
-        "id": 1,
-        "category1_name": 'i',
-        "favourite_num": 20
-    }, {
-        "show_image": './image-w/10.jpg',
-        "id": 1,
-        "category1_name": 'j',
-        "favourite_num": 20
-    }, {
-        "show_image": './image-w/2.jpg',
-        "id": 1,
-        "category1_name": 'k',
-        "favourite_num": 20
-    }, {
-        "show_image": './image-w/6.jpg',
-        "id": 1,
-        "category1_name": 'a',
-        "favourite_num": 20
-    }, {
-        "show_image": './image-w/5.jpg',
+        "show_image": './image/jhk-1600912091318.png',
         "id": 1,
         "category1_name": 'o',
         "favourite_num": 20
     }, {
-        "show_image": './image-w/3.jpg',
+        "show_image": './image/jhk-1600912094975.png',
         "id": 1,
-        "category1_name": 'm',
+        "category1_name": 'a',
         "favourite_num": 20
     }, {
-        "show_image": './image-w/1.jpg',
+        "show_image": './image/jhk-1600912095476.png',
         "id": 1,
-        "category1_name": 'i',
+        "category1_name": 'a',
         "favourite_num": 20
     }, {
-        "show_image": './image-w/8.jpg',
+        "show_image": './image/jhk-1600912099677.png',
         "id": 1,
-        "category1_name": 'b',
+        "category1_name": 'a',
         "favourite_num": 20
     }, {
-        "show_image": './image-w/4.jpg',
+        "show_image": './image/jhk-1600912102542.png',
         "id": 1,
-        "category1_name": 'e',
+        "category1_name": 'a',
         "favourite_num": 20
     }, {
-        "show_image": './image-w/8.jpg',
+        "show_image": './image/jhk-1600912105899.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600912108638.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600912113307.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600912115896.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600912117786.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600912124948.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600912138641.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600912164350.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600912166690.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600912179180.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600912186639.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600912188520.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600917333677.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600917347025.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600917381473.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600917385530.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600917389115.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600917392691.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600917395334.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600917398090.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600917665328.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600917668957.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600917763452.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600917904980.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600917976501.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600917978478.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600917980860.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600917987209.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600917993579.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600917994808.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600918000940.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600918004686.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600918007805.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600918220838.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600918311096.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600918520085.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600918649712.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600918652392.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600918666715.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600918671614.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600918678467.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600918707732.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600918741039.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600918991675.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600919036346.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/jhk-1600912084427.png',
         "id": 1,
         "category1_name": 'r',
         "favourite_num": 20
     }, {
-        "show_image": './image-w/10.jpg',
+        "show_image": './image/jhk-1600912089044.png',
         "id": 1,
         "category1_name": 's',
         "favourite_num": 20
     }, {
-        "show_image": './image-w/5.jpg',
+        "show_image": './image/图层 23.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/图层 25.png',
+        "id": 1,
+        "category1_name": 'b',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/图层 33.png',
+        "id": 1,
+        "category1_name": 'c',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/图层 48.png',
+        "id": 1,
+        "category1_name": 'd',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/图层 49.png',
+        "id": 1,
+        "category1_name": 'e',
+        "favourite_num": 299
+    }, {
+        "show_image": './image/图层 50.png',
+        "id": 1,
+        "category1_name": 'f',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/图层 51.png',
+        "id": 1,
+        "category1_name": 'g',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/图层 52.png',
+        "id": 1,
+        "category1_name": 'h',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/图层 57.png',
+        "id": 1,
+        "category1_name": 'c',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/图层 58.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/图层 59.png',
+        "id": 1,
+        "category1_name": 'b',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/图层 60.png',
+        "id": 1,
+        "category1_name": 'i',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/图层 61.png',
+        "id": 1,
+        "category1_name": 'j',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/图层 62.png',
+        "id": 1,
+        "category1_name": 'k',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/图层 63.png',
+        "id": 1,
+        "category1_name": 'a',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/图层 64.png',
         "id": 1,
         "category1_name": 'o',
         "favourite_num": 20
     }, {
-        "show_image": './image-w/11.jpg',
+        "show_image": './image/图层 65.png',
         "id": 1,
-        "category1_name": 'a',
+        "category1_name": 'm',
         "favourite_num": 20
     }, {
-        "show_image": './image-w/6.jpg',
+        "show_image": './image/图层 66.png',
         "id": 1,
-        "category1_name": 'a',
+        "category1_name": 'i',
         "favourite_num": 20
     }, {
-        "show_image": './image-w/2.jpg',
+        "show_image": './image/图层 67.png',
         "id": 1,
-        "category1_name": 'a',
+        "category1_name": 'b',
+        "favourite_num": 20
+    }, {
+        "show_image": './image/图层 68.png',
+        "id": 1,
+        "category1_name": 'e',
         "favourite_num": 20
     }];
     var htmlStr = template("pictures", data);

@@ -233,7 +233,7 @@ $(function() {
         "category1_name": 'r',
         "favourite_num": 20
     }, {
-        "show_image": './imag/jhk-1600912089044.png',
+        "show_image": './image/jhk-1600912089044.png',
         "id": 1,
         "category1_name": 's',
         "favourite_num": 20

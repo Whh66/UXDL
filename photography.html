@@ -49,7 +49,7 @@
                 <img src="img/menus.png" alt="" />
                 <ul class="nav-box">
                     <li><a href="./index.html">首页</a></li>
-                    <li class="color-change"><a href="./photography.html">摄影</a></li>
+                    <li class="color-change"><a href="photography.html">摄影</a></li>
                     <li><a href="./design.html">设计模板</a></li>
                     <li><a href="./creative.html">创意背景</a></li>
                     <li><a href="./illustration.html">插画</a></li>
@@ -87,21 +87,6 @@
         <div class="classification">
             <div class="fication">
                 <ul class="fic-text fic-text-one">
-                    <li class="color-change">
-                        <a href="javascript:;">全部</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">人像</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">动物</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">产品</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">风景</a>
-                    </li>
                 </ul>
                 <ul class="fic-img">
                     <li>
@@ -176,21 +161,6 @@
             <!-- 分类 -->
             <div class="fication">
                 <ul class="fic-text fic-text-two">
-                    <li class="color-change">
-                        <a href="javascript:;">全部</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">人像</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">动物</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">产品</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">风景</a>
-                    </li>
                 </ul>
                 <!-- 图标 -->
                 <ul class="fic-img">
@@ -653,22 +623,16 @@
     </div>
 
     <!-- 二级分类导航模板 -->
-    <!-- <script type="text/html" id="classify">
-        <li>
-            <a href="javascript:;" style="color: #ed6650">全部</a>
+    <script type="text/html" id="classify">
+        <li class="color-change">
+            <a href="javascript:;">全部</a>
         </li>
         {{each}}
         <li>
-            <a href="javascript:;"><span>{{$value.name}}</span>
-                <i class="layui-icon" style="font-size: 7px">&#xe61a;</i></a>
-            <ul class="fic-text-menu">
-                {{each $value.categoryList}} {{each $value.categoryList}}
-                <li><a href="javascript:;">{{$value.name}}</a></li>
-                {{/each}} {{/each}}
-            </ul>
+            <a href="javascript:;"><span>{{$value.name}}</span></a>
         </li>
         {{/each}}
-    </script> -->
+    </script>
 
     <!-- 图片模板 -->
     <script type="text/html" id="pictures">
