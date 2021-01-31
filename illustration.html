@@ -86,22 +86,87 @@
         <div class="classification">
             <div class="fication">
                 <ul class="fic-text fic-text-one">
+<<<<<<< HEAD
                     <li class="color-change">
                         <a href="javascript:;">全部</a>
                     </li>
+=======
+                </ul>
+                <ul class="fic-img">
+>>>>>>> illustration
                     <li>
-                        <a href="javascript:;">人物插画</a>
+                        <a href="javascript:;"><img src="img/p1.png" alt="" /></a>
                     </li>
                     <li>
-                        <a href="javascript:;">动物插画</a>
+                        <a href="javascript:;"><img src="img/p2.png" alt="" /></a>
                     </li>
                     <li>
-                        <a href="javascript:;">场景插画</a>
+                        <a href="javascript:;"><img src="img/p3.png" alt="" /></a>
                     </li>
                     <li>
-                        <a href="javascript:;">产品插画</a>
+                        <a href="javascript:;"><img src="img/p4.png" alt="" /></a>
                     </li>
                 </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="fication-slide">
+        <div class="slide-logo">
+            <img src="img/logo.png" alt="" />
+            <span>搜索<i class="layui-icon layui-icon-down"></i></span>
+            <ul class="search-selected2">
+                <li data-falg="0">摄影</li>
+                <li data-falg="1">设计模板</li>
+                <li data-falg="2">创意背景</li>
+                <li data-falg="3">插画</li>
+                <li data-falg="4">免扣元素</li>
+                <li data-falg="5">办公文档</li>
+            </ul>
+        </div>
+        <div class="top-search-box">
+            <div class="func-search-class">
+                <span>插画</span>
+                <i class="layui-icon" style="font-size: 7px">&#xe61a;</i>
+                <ul class="search-selected">
+                    <li data-falg="0">摄影</li>
+                    <li data-falg="1">设计模板</li>
+                    <li data-falg="2">创意背景</li>
+                    <li data-falg="3">插画</li>
+                    <li data-falg="4">免扣元素</li>
+                    <li data-falg="5">办公文档</li>
+                </ul>
+            </div>
+            <div class="search-input">
+                <input type="text" placeholder="通 过 关 键 字 搜 索 U X D L" id="search-text2" />
+            </div>
+            <button class="qtw-button"></button>
+        </div>
+
+        <!-- 登陆注册按钮 -->
+        <div class="right">
+            <div class="register"><a href="javascript:;">注册</a></div>
+            <div class="login"><a href="javascript:;">登陆</a></div>
+        </div>
+        <!-- 登录后用户部分 -->
+        <div class="user">
+            <a href="javascript:;"> <img src="img/member.png" alt="" /></a>
+            <div class="avatar">
+                <a href="javascript:;"> <img src="img/avatar.png" alt="" /></a>
+                <ol>
+                    <li><a href="upload.html">上传</a></li>
+                    <li><a href="centre.html">个人主页</a></li>
+                    <li><a href="javascript:;" id="download_history">下载记录</a></li>
+                    <li class="exit"><a href="javascript:;">退出</a></li>
+                </ol>
+            </div>
+        </div>
+        <div class="classification">
+            <!-- 分类 -->
+            <div class="fication">
+                <ul class="fic-text fic-text-two">
+                </ul>
+                <!-- 图标 -->
                 <ul class="fic-img">
                     <li>
                         <a href="javascript:;"><img src="img/p1.png" alt="" /></a>
@@ -120,6 +185,7 @@
         </div>
     </div>
 
+<<<<<<< HEAD
     <div class="fication-slide">
         <div class="slide-logo">
             <img src="img/logo.png" alt="" />
@@ -209,6 +275,8 @@
         </div>
     </div>
 
+=======
+>>>>>>> illustration
     <!-- 内容 -->
     <div class="content">
         <!-- 精选藏管 selected -->
@@ -652,22 +720,16 @@
     </div>
 
     <!-- 二级分类导航模板 -->
-    <!-- <script type="text/html" id="classify">
+    <script type="text/html" id="classify">
         <li>
             <a href="javascript:;" style="color: #ed6650">全部</a>
         </li>
         {{each}}
         <li>
-            <a href="javascript:;"><span>{{$value.name}}</span>
-                <i class="layui-icon" style="font-size: 7px">&#xe61a;</i></a>
-            <ul class="fic-text-menu">
-                {{each $value.categoryList}} {{each $value.categoryList}}
-                <li><a href="javascript:;">{{$value.name}}</a></li>
-                {{/each}} {{/each}}
-            </ul>
+            <a href="javascript:;"><span>{{$value.name}}</span></a>
         </li>
         {{/each}}
-    </script> -->
+    </script>
 
     <!-- 图片模板 -->
     <script type="text/html" id="pictures">
