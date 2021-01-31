@@ -630,10 +630,12 @@ $(function() {
     toggle($('#w>div'));
     // 利用index控制页面瀑布流的显示
     $('#one-select').on('click', 'li', function() {
-        $(this).addClass('changeColor').siblings('li').removeClass('changeColor');
+        $(this).children('a').addClass('changeColor');
+        $(this).siblings().children('a').removeClass('changeColor');
         var index = $(this).attr('index');
         console.log(index);
-        $('#two-select li').eq(index).addClass('changeColor').siblings('li').removeClass('changeColor');
+        $('#two-select li').eq(index).children('a').addClass('changeColor');
+        $('#two-select li').eq(index).siblings().children('a').removeClass('changeColor');
         if (index === "0") {
             $('#w').children('div').show();
         } else {
@@ -646,10 +648,12 @@ $(function() {
     })
 
     $('#two-select ').on('click', 'li', function() {
-        $(this).addClass('changeColor').siblings('li').removeClass('changeColor');
+        $(this).children('a').addClass('changeColor');
+        $(this).siblings().children('a').removeClass('changeColor')
         var index = $(this).attr('index');
         console.log(index);
-        $('#one-select>li').eq(index).addClass('changeColor').siblings('li').removeClass('changeColor');
+        $('#one-select li').eq(index).children('a').addClass('changeColor');
+        $('#one-select li').eq(index).siblings().children('a').removeClass('changeColor');
         // console.log($('.one li').eq(index).children().html());
 
         if (index === "0") {
