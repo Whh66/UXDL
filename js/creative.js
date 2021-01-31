@@ -595,7 +595,7 @@ $(function() {
     //         var htmlStr = template("classify", res.data);
     //         // // console.log(htmlStr);
     //         // // 渲染 HTML 结构
-    //         $(".one").html(htmlStr);
+    //         $("#one-select").html(htmlStr);
     //     },
     // });
 
@@ -618,60 +618,6 @@ $(function() {
         console.log($('.two').html(htmlstr));
         $('#one-select').html(htmlstr);
 
-        //--------------------------------待删除
-        //c4d
-        // var tbCommerceHtml = [];
-        // for (var i = 0; i < tbCommerce.length; i++) {
-        //     tbCommerceHtml.push(`
-        //     <li><a href="javascript:;">${tbCommerce[i].name}</a></li>
-        //     `);
-        // }
-
-        // $(".fic-text li:nth-child(3) .main-submenu").html(tbCommerceHtml.join(""));
-        //商务
-        // var designerHtml = [];
-        // for (var i = 0; i < designer.length; i++) {
-        //     designerHtml.push(`
-        //     <li><a href="javascript:;">${designer[i].name}</a></li>
-        //     `);
-        // }
-
-        // $(".fic-text li:nth-child(2) .main-submenu").html(designerHtml.join(""));
-        //科技
-        // var uiDesignHtml = [];
-        // for (var i = 0; i < uiDesign.length; i++) {
-        //     uiDesignHtml.push(`
-        //     <li><a href="javascript:;">${uiDesign[i].name}</a></li>
-        //     `);
-        // }
-
-        // $(".fic-text li:nth-child(4) .main-submenu").html(uiDesignHtml.join(""));
-        //节日
-        // var templateHtml = [];
-        // for (var i = 0; i < template1.length; i++) {
-        //     templateHtml.push(`
-        //     <li><a href="javascript:;">${template1[i].name}</a></li>
-        //     `);
-        // }
-
-        // $(".fic-text li:nth-child(5) .main-submenu").html(templateHtml.join(""));
-
-        // 小li鼠标滑入事件
-        // $(".main-submenu li").mouseenter(function() {
-        //     $(this).siblings("li").removeClass("main-submit-hover");
-        //     $(this).addClass("main-submit-hover");
-        // });
-
-        // $(function() {
-        //     var $li = $(".fic-text>li");
-        //     $li.mouseenter(function() {
-        //         $(this).children("ul").show();
-        //     });
-        //     $li.mouseleave(function() {
-        //         $(this).children("ul").hide();
-        //     });
-        //----------------------------------------
-        // });
     });
     // 模拟跳转页面功能
 
@@ -687,9 +633,7 @@ $(function() {
         $(this).addClass('changeColor').siblings('li').removeClass('changeColor');
         var index = $(this).attr('index');
         console.log(index);
-        // $(one[index]).addClass('color-change').siblings('li').removeClass('color-change');
-        $('#two-select>li').eq(index).addClass('changeColor').siblings('li').removeClass('changeColor');
-        console.log($('#two-select li').eq(index).children().html());
+        $('#two-select li').eq(index).addClass('changeColor').siblings('li').removeClass('changeColor');
         if (index === "0") {
             $('#w').children('div').show();
         } else {
@@ -700,8 +644,7 @@ $(function() {
             scrollTop: 0
         }, 0);
     })
-    console.log($('#one-select'));
-    console.log($('#one-select').children(0));
+
     $('#two-select ').on('click', 'li', function() {
         $(this).addClass('changeColor').siblings('li').removeClass('changeColor');
         var index = $(this).attr('index');
