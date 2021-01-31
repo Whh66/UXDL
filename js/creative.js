@@ -74,13 +74,13 @@ $(function() {
 
 
     // 鼠标滑动，改变颜色
-    // $('.fic-text').on('click', '.second-li', function() {
-    //     // console.log(1);
-    //     $(this).siblings().children('a').removeClass('changeColor')
-    //     $(this).siblings().children('a').children('i').html('&#xe61a;')
-    //     $(this).children('a').addClass('changeColor')
-    //     $(this).children('a').children('i').html('&#xe619;')
-    // })
+    $('.fic-text').on('click', '.second-li', function() {
+        // console.log(1);
+        $(this).siblings().children('a').removeClass('changeColor')
+        $(this).siblings().children('a').children('i').html('&#xe61a;')
+        $(this).children('a').addClass('changeColor')
+        $(this).children('a').children('i').html('&#xe619;')
+    })
 
     // 添加收藏功能
     $("#gallery-wrapper").on("click", "#favourite", function(e) {
@@ -630,19 +630,15 @@ $(function() {
     toggle($('#w>div'));
     // 利用index控制页面瀑布流的显示
     $('#one-select').on('click', 'li', function() {
-        $(this).children().addClass('changeColor');
-        $(this).siblings().children('a').removeClass('changeColor')
+        $(this).addClass('changeColor').siblings('li').removeClass('changeColor');
         var index = $(this).attr('index');
-        // console.log(index);
-        // $(one[index]).addClass('color-change').siblings('li').removeClass('color-change');
-        $('#two-select li').eq(index).children().addClass('changeColor');
-        console.log($('#two-select li').eq(index).children());
-        $('#two-select li').eq(index).siblings().children('a').removeClass('changeColor');
+        console.log(index);
+        $('#two-select li').eq(index).addClass('changeColor').siblings('li').removeClass('changeColor');
         if (index === "0") {
             $('#w').children('div').show();
         } else {
             $('#w>div').eq(index).show().siblings('div').hide();
-            // console.log($('#w>div').eq(index));
+            console.log($('#w>div').eq(index));
         }
         $("html,body").animate({
             scrollTop: 0
@@ -650,12 +646,10 @@ $(function() {
     })
 
     $('#two-select ').on('click', 'li', function() {
-        $(this).children().addClass('changeColor');
-        $(this).siblings().children('a').removeClass('changeColor')
+        $(this).addClass('changeColor').siblings('li').removeClass('changeColor');
         var index = $(this).attr('index');
         console.log(index);
-        $('#one-select li').eq(index).children().addClass('changeColor');
-        $('#one-select li').eq(index).siblings('li').children().removeClass('changeColor');
+        $('#one-select>li').eq(index).addClass('changeColor').siblings('li').removeClass('changeColor');
         // console.log($('.one li').eq(index).children().html());
 
         if (index === "0") {
