@@ -71,10 +71,10 @@ $(function() {
         method: "GET",
         url: "http://139.9.143.69:8001/materials/categorys/2",
         success: function(res) {
-            console.log(res.data);
+            // console.log(res.data);
             // 调用 template 函数
             var htmlStr = template("classify", res.data[0].categoryList);
-            // // 渲染 HTML 结构
+            // 渲染 HTML 结构
             $(".fic-text").html(htmlStr);
         },
     });
@@ -124,11 +124,6 @@ $(function() {
         "show_image": './image/jhk-1600912084427.png',
         "id": 1,
         "category1_name": 'r',
-        "favourite_num": 20
-    }, {
-        "show_image": './imag/jhk-1600912089044.png',
-        "id": 1,
-        "category1_name": 's',
         "favourite_num": 20
     }, {
         "show_image": './image/jhk-1600912091318.png',
@@ -381,6 +376,11 @@ $(function() {
         "category1_name": 'a',
         "favourite_num": 20
     }, {
+        "show_image": './image/jhk-1600912089044.png',
+        "id": 1,
+        "category1_name": 's',
+        "favourite_num": 20
+    }, {
         "show_image": './image/图层 23.png',
         "id": 1,
         "category1_name": 'a',
@@ -484,7 +484,6 @@ $(function() {
     var htmlStr = template("pictures", data);
     $("#gallery-wrapper").html(htmlStr);
     $("#gallery-wrapper1").html(htmlStr);
-    // $("#gallery-wrapper1").html(htmlStr);
     $("#gallery-wrapper3").html(htmlStr);
     $("#gallery-wrapper4").html(htmlStr);
     $("#gallery-wrapper5").html(htmlStr);
