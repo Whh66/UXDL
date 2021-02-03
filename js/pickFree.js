@@ -76,7 +76,7 @@ $(function () {
         method: "GET",
         url: "http://139.9.143.69:8001/materials/categorys/0",
         success: function (res) {
-            console.log(res.data);
+            // console.log(res.data);
             // // 调用 template 函数
             // var htmlStr = template("classify", res.data);
             // // // console.log(htmlStr);
@@ -125,6 +125,11 @@ $(function () {
 
     // 点击模块导航栏，可切换内容
     // 为li添加自定义元素index，
+
+
+
+
+    // #####################################
     function bianli(ele) {
         $.each(ele, function (i, element) {
             $(element).attr("index", i);
@@ -133,9 +138,11 @@ $(function () {
     var one = $('#fic-text-one li');
     var two = $('#fic-text-two li');
     var picture = $('.content>div');
+    var btns = $('.morr')
     bianli(one);
     bianli(two);
     bianli(picture);
+    bianli(btns)
     //利用index控制页面瀑布流的显示
 
     one.on('click', function () {
@@ -146,6 +153,7 @@ $(function () {
             $('.content').children('div').show();
             toAll();
         } else {
+            console.log($(picture[index]).children($("section")))
             $(picture[index]).show().siblings('div').hide();
             toOther();
         }
@@ -169,217 +177,984 @@ $(function () {
         }, 0);
     })
 
+    function toAll() {
+        $('#page').hide();
+        $(".morr").text('显示更多');
+        refresh();
+    }
+
+    function toOther() {
+        $('#page').show();
+        $(".morr").text('下一页');
+        refresh();
+    }
+
+    function refresh() {
+        arr0 = [];
+        i0 = 5;
+        q0 = 0
+        arr1 = [];
+        i1 = 5;
+        q1 = 0
+        arr2 = [];
+        i2 = 5;
+        q2 = 0
+        arr3 = [];
+        i3 = 5;
+        q3 = 0
+        arr4 = [];
+        i4 = 5;
+        q4 = 0
+        arr5 = [];
+        i5 = 5;
+        q5 = 0;
+        gengduo0(data0)
+        gengduo1(data1)
+        gengduo2(data2)
+        gengduo3(data3)
+        gengduo4(data4)
+        gengduo5(data5)
+        $(".morr").css({
+            background: " linear-gradient(90deg, #f7ad44, #eb5753)",
+            cursor: "pointer",
+        })
+    }
+
+
     // 暂时渲染
-    var data = [{
-        "show_image": './img/6.png',
+    var data0 = [{
+        "show_image": './img/design-img/jhk-1600912084427.png',
         "id": 1,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/6.jpg',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600912091318.png',
+        "id": 2,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/7.png',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600912089044.png',
+        "id": 3,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/7.jpg',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600912094975.png',
+        "id": 4,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/5.jpg',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600912095476.png',
+        "id": 5,
         "category1_name": '大男孩',
         "favourite_num": 299
     }, {
-        "show_image": './img/5.png',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600912099677.png',
+        "id": 6,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/8.png',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600912102542.png',
+        "id": 7,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/10.jpg',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600912105899.png',
+        "id": 8,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/9.png',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600912108638.png',
+        "id": 9,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/9.jpg',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600912113307.png',
+        "id": 10,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/6.png',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600912115896.png',
+        "id": 11,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/6.jpg',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600912117786.png',
+        "id": 12,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/7.png',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600912124948.png',
+        "id": 13,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/7.jpg',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600912138641.png',
+        "id": 14,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/5.jpg',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600912164350.png',
+        "id": 15,
         "category1_name": '大男孩',
         "favourite_num": 299
     }, {
-        "show_image": './img/5.png',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600912166690.png',
+        "id": 16,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/8.png',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600912179180.png',
+        "id": 17,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/10.jpg',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600912186639.png',
+        "id": 18,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/9.png',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600912188520.png',
+        "id": 19,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/9.jpg',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600917333677.png',
+        "id": 20,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }]
+    var data1 = [{
+        "show_image": './img/design-img/jhk-1600917347025.png',
+        "id": 21,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/6.png',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600917381473.png',
+        "id": 22,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/6.jpg',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600917385530.png',
+        "id": 23,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/7.png',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600917389115.png',
+        "id": 24,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/7.jpg',
-        "id": 1,
-        "category1_name": '小女孩',
-        "favourite_num": 20
-    }, {
-        "show_image": './img/5.jpg',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600917392691.png',
+        "id": 25,
         "category1_name": '大男孩',
         "favourite_num": 299
     }, {
-        "show_image": './img/5.png',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600917395334.png',
+        "id": 26,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/8.png',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600917398090.png',
+        "id": 27,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/10.jpg',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600917665328.png',
+        "id": 28,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/9.png',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600917668957.png',
+        "id": 29,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/9.jpg',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600917763452.png',
+        "id": 30,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/6.png',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600917904980.png',
+        "id": 31,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/6.jpg',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600917976501.png',
+        "id": 32,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/7.png',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600917978478.png',
+        "id": 33,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/7.jpg',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600917980860.png',
+        "id": 34,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/5.jpg',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600917987209.png',
+        "id": 35,
         "category1_name": '大男孩',
         "favourite_num": 299
     }, {
-        "show_image": './img/5.png',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600917993579.png',
+        "id": 36,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/8.png',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600917994808.png',
+        "id": 37,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/10.jpg',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600918000940.png',
+        "id": 38,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/9.png',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600918004686.png',
+        "id": 39,
         "category1_name": '小女孩',
         "favourite_num": 20
     }, {
-        "show_image": './img/9.jpg',
-        "id": 1,
+        "show_image": './img/design-img/jhk-1600918007805.png',
+        "id": 40,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }]
+    var data2 = [{
+        "show_image": './img/design-img/jhk-1600918220838.png',
+        "id": 41,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600918311096.png',
+        "id": 42,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600918520085.png',
+        "id": 43,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600918649712.png',
+        "id": 44,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600918652392.png',
+        "id": 45,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600918666715.png',
+        "id": 46,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600918671614.png',
+        "id": 47,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600918678467.png',
+        "id": 48,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600918707732.png',
+        "id": 49,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600918741039.png',
+        "id": 50,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600918991675.png',
+        "id": 51,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600919036346.png',
+        "id": 52,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 23.png',
+        "id": 53,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 25.png',
+        "id": 54,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 33.png',
+        "id": 55,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 48.png',
+        "id": 56,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 49.png',
+        "id": 57,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 50.png',
+        "id": 58,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 51.png',
+        "id": 59,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 52.png',
+        "id": 60,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 57.png',
+        "id": 61,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 58.png',
+        "id": 62,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 59.png',
+        "id": 63,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 60.png',
+        "id": 64,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 61.png',
+        "id": 65,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 62.png',
+        "id": 66,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 63.png',
+        "id": 67,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 64.png',
+        "id": 68,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 65.png',
+        "id": 69,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 66.png',
+        "id": 70,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 67.png',
+        "id": 71,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 68.png',
+        "id": 72,
         "category1_name": '小女孩',
         "favourite_num": 20
     }];
-    var htmlStr = template("pictures", data);
-    $("#gallery-wrapper").html(htmlStr);
-    $("#gallery-wrapper1").html(htmlStr);
-    $("#gallery-wrapper6").html(htmlStr);
-    $("#gallery-wrapper3").html(htmlStr);
-    $("#gallery-wrapper4").html(htmlStr);
-    $("#gallery-wrapper5").html(htmlStr);
-    $(window).resize();
+    var data3 = [{
+        "show_image": './img/design-img/jhk-1600918220838.png',
+        "id": 41,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600918311096.png',
+        "id": 42,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600918520085.png',
+        "id": 43,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600918649712.png',
+        "id": 44,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600918652392.png',
+        "id": 45,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600918666715.png',
+        "id": 46,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600918671614.png',
+        "id": 47,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600918678467.png',
+        "id": 48,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600918707732.png',
+        "id": 49,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600918741039.png',
+        "id": 50,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600918991675.png',
+        "id": 51,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600919036346.png',
+        "id": 52,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 23.png',
+        "id": 53,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 25.png',
+        "id": 54,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 33.png',
+        "id": 55,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 48.png',
+        "id": 56,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 49.png',
+        "id": 57,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 50.png',
+        "id": 58,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 51.png',
+        "id": 59,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 52.png',
+        "id": 60,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 57.png',
+        "id": 61,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 58.png',
+        "id": 62,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 59.png',
+        "id": 63,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 60.png',
+        "id": 64,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 61.png',
+        "id": 65,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 62.png',
+        "id": 66,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 63.png',
+        "id": 67,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 64.png',
+        "id": 68,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 65.png',
+        "id": 69,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 66.png',
+        "id": 70,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 67.png',
+        "id": 71,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/图层 68.png',
+        "id": 72,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }];
+    var data4 = [{
+        "show_image": './img/design-img/jhk-1600912084427.png',
+        "id": 1,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600912091318.png',
+        "id": 2,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600912089044.png',
+        "id": 3,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600912094975.png',
+        "id": 4,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600912095476.png',
+        "id": 5,
+        "category1_name": '大男孩',
+        "favourite_num": 299
+    }, {
+        "show_image": './img/design-img/jhk-1600912099677.png',
+        "id": 6,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600912102542.png',
+        "id": 7,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600912105899.png',
+        "id": 8,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600912108638.png',
+        "id": 9,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600912113307.png',
+        "id": 10,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600912115896.png',
+        "id": 11,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600912117786.png',
+        "id": 12,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600912124948.png',
+        "id": 13,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600912138641.png',
+        "id": 14,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600912164350.png',
+        "id": 15,
+        "category1_name": '大男孩',
+        "favourite_num": 299
+    }, {
+        "show_image": './img/design-img/jhk-1600912166690.png',
+        "id": 16,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600912179180.png',
+        "id": 17,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600912186639.png',
+        "id": 18,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600912188520.png',
+        "id": 19,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600917333677.png',
+        "id": 20,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }]
+    var data5 = [{
+        "show_image": './img/design-img/jhk-1600917347025.png',
+        "id": 21,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600917381473.png',
+        "id": 22,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600917385530.png',
+        "id": 23,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600917389115.png',
+        "id": 24,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600917392691.png',
+        "id": 25,
+        "category1_name": '大男孩',
+        "favourite_num": 299
+    }, {
+        "show_image": './img/design-img/jhk-1600917395334.png',
+        "id": 26,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600917398090.png',
+        "id": 27,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600917665328.png',
+        "id": 28,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600917668957.png',
+        "id": 29,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600917763452.png',
+        "id": 30,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600917904980.png',
+        "id": 31,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600917976501.png',
+        "id": 32,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600917978478.png',
+        "id": 33,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600917980860.png',
+        "id": 34,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600917987209.png',
+        "id": 35,
+        "category1_name": '大男孩',
+        "favourite_num": 299
+    }, {
+        "show_image": './img/design-img/jhk-1600917993579.png',
+        "id": 36,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600917994808.png',
+        "id": 37,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600918000940.png',
+        "id": 38,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600918004686.png',
+        "id": 39,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }, {
+        "show_image": './img/design-img/jhk-1600918007805.png',
+        "id": 40,
+        "category1_name": '小女孩',
+        "favourite_num": 20
+    }]
+    var arr0 = [];
+    var i0 = 5;
+    var q0 = 0;
 
+    var arr1 = [];
+    var i1 = 5;
+    var q1 = 0;
+
+    var arr2 = [];
+    var i2 = 5;
+    var q2 = 0;
+
+    var arr3 = [];
+    var i3 = 5;
+    var q3 = 0;
+
+    var arr4 = [];
+    var i4 = 5;
+    var q4 = 0;
+
+    var arr5 = [];
+    var i5 = 5;
+    var q5 = 0;
+
+    // 每次点击查看更多按钮，就多加载五张图片
+    function gengduo0(data, that) {
+        for (var j = q0; j < i0; j++) {
+            if (data[j] == undefined) {
+                that.css({
+                    background: "#ccc",
+                    cursor: "not-allowed",
+                })
+                return
+            }
+            arr0.push(data[j])
+        }
+        console.log(arr0);
+        let htmlStr = template("pictures", arr0);
+        $("#gallery-wrapper").html(htmlStr);
+        $(window).resize();
+    }
+
+    function gengduo1(data, that) {
+        for (var j = q1; j < i1; j++) {
+            if (data[j] == undefined) {
+                that.css({
+                    background: "#ccc",
+                    cursor: "not-allowed",
+                })
+                return
+            }
+            arr1.push(data[j])
+        }
+        console.log(arr1);
+        let htmlStr = template("pictures", arr1);
+        $("#gallery-wrapper1").html(htmlStr);
+        $(window).resize();
+    }
+
+    function gengduo2(data, that) {
+        for (var j = q2; j < i2; j++) {
+            if (data[j] == undefined) {
+                that.css({
+                    background: "#ccc",
+                    cursor: "not-allowed",
+                })
+                return
+            }
+            arr2.push(data[j])
+        }
+        console.log(arr2);
+        let htmlStr = template("pictures", arr2);
+        $("#gallery-wrapper3").html(htmlStr);
+        $(window).resize();
+    }
+
+    function gengduo3(data, that) {
+        for (var j = q3; j < i3; j++) {
+            if (data[j] == undefined) {
+                that.css({
+                    background: "#ccc",
+                    cursor: "not-allowed",
+                })
+                return
+            }
+            arr3.push(data[j])
+        }
+        console.log(arr3);
+        let htmlStr = template("pictures", arr3);
+        $("#gallery-wrapper4").html(htmlStr);
+        $(window).resize();
+    }
+
+    function gengduo4(data, that) {
+        for (var j = q4; j < i4; j++) {
+            if (data[j] == undefined) {
+                that.css({
+                    background: "#ccc",
+                    cursor: "not-allowed",
+                })
+                return
+            }
+            arr4.push(data[j])
+        }
+        console.log(arr4);
+        let htmlStr = template("pictures", arr4);
+        $("#gallery-wrapper5").html(htmlStr);
+        $(window).resize();
+    }
+
+    function gengduo5(data, that) {
+        for (var j = q5; j < i5; j++) {
+            if (data[j] == undefined) {
+                that.css({
+                    background: "#ccc",
+                    cursor: "not-allowed",
+                })
+                return
+            }
+            arr5.push(data[j])
+        }
+        console.log(arr5);
+        let htmlStr = template("pictures", arr5);
+        $("#gallery-wrapper6").html(htmlStr);
+        $(window).resize();
+    }
+
+
+    $(".morr").on('click', function () {
+        var that = $(this);
+        console.log($(this).attr("index"));
+        if ($(this).attr("index") == 0) {
+            q0 += 5;
+            i0 += 5;
+            gengduo0(data0, that)
+        } else if ($(this).attr("index") == 1) {
+            q1 += 5;
+            i1 += 5;
+            gengduo1(data1, that)
+        } else if ($(this).attr("index") == 2) {
+            q2 += 5;
+            i2 += 5;
+            gengduo2(data2, that)
+        } else if ($(this).attr("index") == 3) {
+            q3 += 5;
+            i3 += 5;
+            gengduo3(data3, that)
+        } else if ($(this).attr("index") == 4) {
+            q4 += 5;
+            i4 += 5;
+            gengduo4(data0, that)
+        } else if ($(this).attr("index") == 5) {
+            q5 += 5;
+            i5 += 5;
+            gengduo5(data5, that)
+        }
+
+    })
+    gengduo0(data0)
+    gengduo1(data1)
+    gengduo2(data2)
+    gengduo3(data3)
+    gengduo4(data4)
+    gengduo5(data5)
+
+    // $(".morr").on('click', function () {
+    //     // if (data <= 20) {
+    //     //     $(this).css({
+    //     //         background: "#ccc",
+    //     //         cursor: "not-allowed",
+    //     //     })
+    //     // } else       
+    //     // console.log(data);
+    //     // console.log(i);
+    //     var i = 0
+    //     if (data.length > 20) {
+    //         i = i + 10;
+    //         console.log(i);
+    //         for (var j = 0; j < i; j++) {
+    //             arr.push(data[j])
+    //         }
+    //         return arr
+    //     }
+    // })
+    // var o = gengduo(data);
+    // console.log(o);
+    // var htmlStr = template("pictures", arr);
+    // $("#gallery-wrapper").html(htmlStr);
+    // $("#gallery-wrapper1").html(htmlStr);
+    // $("#gallery-wrapper6").html(htmlStr);
+    // $("#gallery-wrapper3").html(htmlStr);
+    // $("#gallery-wrapper4").html(htmlStr);
+    // $("#gallery-wrapper5").html(htmlStr);
+    // $(window).resize();
+    // 显示更多按钮
+    // $(".morr").on("click", function () {
+    //     $(this)
+    //         .prev()
+    //         .css({
+    //             // 'overflow': 'visible',
+    //             "max-height": $(this).prev().children().css('height')
+    //         });
+    //     $(this).css({
+    //         background: "#ccc",
+    //         cursor: "not-allowed",
+    //     });
+    // });
 
 
 
@@ -478,43 +1253,7 @@ $(function () {
     //     });
     // });
     // 显示更多按钮
-    // 显示更多按钮
-    $(".morr").on("click", function () {
-        $(this)
-            .prev()
-            .css({
-                // 'overflow': 'visible',
-                "max-height": $(this).prev().children().css('height')
-            });
-        $(this).css({
-            background: "#ccc",
-            cursor: "not-allowed",
-        });
-    });
 
-    function toAll() {
-        $('#page').hide();
-        $(".morr").text('显示更多');
-        refresh();
-    }
-
-    function toOther() {
-        $('#page').show();
-        $(".morr").text('下一页');
-        refresh();
-    }
-
-    function refresh() {
-        $(".morr").prev()
-            .css({
-                // 'overflow': 'visible',
-                "max-height": '1220px'
-            });
-        $(".morr").css({
-            background: " linear-gradient(90deg, #f7ad44, #eb5753)",
-            cursor: "pointer",
-        })
-    }
     // // 调整iframe
     // function setIframeHeight(iframe) {
     //     if (iframe) {
